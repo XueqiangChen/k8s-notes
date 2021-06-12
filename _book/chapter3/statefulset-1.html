@@ -1,0 +1,808 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.6 深入理解 StatefulSet（一）：拓扑状态 · 《kubernetes 学习笔记》</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="chenxueqiang">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="statefulset-2.html" />
+    
+    
+    <link rel="prev" href="deployment.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ahamoment.cn" target="_blank" class="custom-link">AHA MOMENT</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1. 容器技术概念入门篇
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2. kubernetes 集群搭建与实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter2/kubeadm.html">
+            
+                <a href="../chapter2/kubeadm.html">
+            
+                    
+                    2.1 使用kubeadm 安装k8s集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3. 容器编排与 kubernetes 作业管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="why-pod.html">
+            
+                <a href="why-pod.html">
+            
+                    
+                    3.1 为什么我们需要Pod
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="pod-concept1.html">
+            
+                <a href="pod-concept1.html">
+            
+                    
+                    3.2 深入解析Pod对象(一)：基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="pod-concept2.html">
+            
+                <a href="pod-concept2.html">
+            
+                    
+                    3.3 深入解析Pod对象(二): 使用进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="controller-mode.html">
+            
+                <a href="controller-mode.html">
+            
+                    
+                    3.4 谈谈“控制器”模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="deployment.html">
+            
+                <a href="deployment.html">
+            
+                    
+                    3.3 Deployment：作业副本与水平扩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="statefulset-1.html">
+            
+                <a href="statefulset-1.html">
+            
+                    
+                    3.6 深入理解 StatefulSet（一）：拓扑状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="statefulset-2.html">
+            
+                <a href="statefulset-2.html">
+            
+                    
+                    3.7 深入理解 StatefulSet（二）：存储状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="daemonset.html">
+            
+                <a href="daemonset.html">
+            
+                    
+                    3.8 容器化守护进程的意义：DaemonSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="job.html">
+            
+                <a href="job.html">
+            
+                    
+                    3.9 撬动离线业务：Job 与 CronJob
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="declarative-api.html">
+            
+                <a href="declarative-api.html">
+            
+                    
+                    3.10 声明式 API 与 Kubernetes 编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4. kubernetes 容器持久化存储
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5. kubernetes 网络
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    6. kubernetes 作业调度与资源管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter6/resource-model.html">
+            
+                <a href="../chapter6/resource-model.html">
+            
+                    
+                    6.1 k8s 的资源模型与资源管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter6/default-scheduler.html">
+            
+                <a href="../chapter6/default-scheduler.html">
+            
+                    
+                    6.2 十字路口上的 kubernetes 默认调度器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter6/qos-sc.html">
+            
+                <a href="../chapter6/qos-sc.html">
+            
+                    
+                    6.3 Qos 源代码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../chapter6/client-go.html">
+            
+                <a href="../chapter6/client-go.html">
+            
+                    
+                    6.4 kubernetes go 客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    7. kubernetes 容器运行时
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    8. kubernetes 容器监控与日志
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    9. kubernetes 生态周边
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../chapter9/commands.html">
+            
+                <a href="../chapter9/commands.html">
+            
+                    
+                    9.1 常用的 k8s 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../chapter9/health-check.html">
+            
+                <a href="../chapter9/health-check.html">
+            
+                    
+                    9.2 容器健康检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../chapter9/code-generation-for-customresources.html">
+            
+                <a href="../chapter9/code-generation-for-customresources.html">
+            
+                    
+                    9.3 [译]Kubernetes深入研究：CustomResources的代码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.6 深入理解 StatefulSet（一）：拓扑状态</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p>&#x672C;&#x6587;&#x8F6C;&#x81EA;&#x5F20;&#x78CA;&#x8001;&#x5E08;&#x7684;&#x300A;&#x6DF1;&#x5165;&#x5256;&#x6790; Kubernetes&#x300B;&#x8BFE;&#x7A0B;&#xFF0C;&#x672C;&#x8282;&#x5185;&#x5BB9;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD; StatefulSet &#x7684;&#x62D3;&#x6251;&#x72B6;&#x6001;</p>
+</blockquote>
+<!--more-->
+<p>&#x5728;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x5728;&#x7ED3;&#x5C3E;&#x5904;&#x8BA8;&#x8BBA;&#x5230;&#x4E86; Deployment &#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x4E0D;&#x8DB3;&#x4EE5;&#x8986;&#x76D6;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x7F16;&#x6392;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x9020;&#x6210;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x6839;&#x672C;&#x539F;&#x56E0;&#xFF0C;&#x5728;&#x4E8E; Deployment &#x5BF9;&#x5E94;&#x7528;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5316;&#x5047;&#x8BBE;&#x3002;<strong>&#x5B83;&#x8BA4;&#x4E3A;&#xFF0C;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x6240;&#x6709; Pod&#xFF0C;&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x7684;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5B83;&#x4EEC;&#x4E92;&#x76F8;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x987A;&#x5E8F;&#xFF0C;&#x4E5F;&#x65E0;&#x6240;&#x8C13;&#x8FD0;&#x884C;&#x5728;&#x54EA;&#x53F0;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x3002;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#xFF0C;Deployment &#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Pod &#x6A21;&#x677F;&#x521B;&#x5EFA;&#x65B0;&#x7684; Pod&#xFF1B;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#xFF0C;Deployment &#x5C31;&#x53EF;&#x4EE5;&#x201C;&#x6740;&#x6389;&#x201D;&#x4EFB;&#x610F;&#x4E00;&#x4E2A; Pod&#x3002;</strong></p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x90FD;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x8FD9;&#x6837;&#x7684;&#x8981;&#x6C42;&#x3002;</p>
+<p>&#x5C24;&#x5176;&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x5E94;&#x7528;&#xFF0C;&#x5B83;&#x7684;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#xFF0C;&#x5F80;&#x5F80;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x4E3B;&#x4ECE;&#x5173;&#x7CFB;&#x3001;&#x4E3B;&#x5907;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x5C31;&#x662F;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7C7B;&#x5E94;&#x7528;&#xFF0C;&#x5B83;&#x7684;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5F80;&#x5F80;&#x90FD;&#x4F1A;&#x5728;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x4E0A;&#x4FDD;&#x5B58;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#x3002;&#x800C;&#x8FD9;&#x4E9B;&#x5B9E;&#x4F8B;&#x4E00;&#x65E6;&#x88AB;&#x6740;&#x6389;&#xFF0C;&#x5373;&#x4FBF;&#x91CD;&#x5EFA;&#x51FA;&#x6765;&#xFF0C;&#x5B9E;&#x4F8B;&#x4E0E;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x4E5F;&#x5DF2;&#x7ECF;&#x4E22;&#x5931;&#xFF0C;&#x4ECE;&#x800C;&#x5BFC;&#x81F4;&#x5E94;&#x7528;&#x5931;&#x8D25;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x79CD;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x6709;&#x4E0D;&#x5BF9;&#x7B49;&#x5173;&#x7CFB;&#xFF0C;&#x4EE5;&#x53CA;&#x5B9E;&#x4F8B;&#x5BF9;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#xFF08;Stateful Application&#xFF09;&#x3002;</p>
+<p>&#x5BB9;&#x5668;&#x6280;&#x672F;&#x8BDE;&#x751F;&#x540E;&#xFF0C;&#x5927;&#x5BB6;&#x5F88;&#x5FEB;&#x53D1;&#x73B0;&#xFF0C;&#x5B83;&#x7528;&#x6765;&#x5C01;&#x88C5;&#x201C;&#x65E0;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#xFF08;Stateless Application&#xFF09;&#xFF0C;&#x5C24;&#x5176;&#x662F; Web &#x670D;&#x52A1;&#xFF0C;&#x975E;&#x5E38;&#x597D;&#x7528;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E00;&#x65E6;&#x4F60;&#x60F3;&#x8981;&#x7528;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x201C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#xFF0C;&#x5176;&#x56F0;&#x96BE;&#x7A0B;&#x5EA6;&#x5C31;&#x4F1A;&#x76F4;&#x7EBF;&#x4E0A;&#x5347;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x8D77;&#x6765;&#xFF0C;&#x5355;&#x7EAF;&#x4F9D;&#x9760;&#x5BB9;&#x5668;&#x6280;&#x672F;&#x672C;&#x8EAB;&#x5DF2;&#x7ECF;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#xFF0C;&#x8FD9;&#x4E5F;&#x5C31;&#x5BFC;&#x81F4;&#x4E86;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#xFF0C;&#x201C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#x51E0;&#x4E4E;&#x6210;&#x4E86;&#x5BB9;&#x5668;&#x6280;&#x672F;&#x5708;&#x5B50;&#x7684;&#x201C;&#x5FCC;&#x8BB3;&#x201D;&#xFF0C;&#x5927;&#x5BB6;&#x4E00;&#x542C;&#x5230;&#x8FD9;&#x4E2A;&#x8BCD;&#xFF0C;&#x5C31;&#x7EB7;&#x7EB7;&#x6447;&#x5934;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;Kubernetes &#x9879;&#x76EE;&#x8FD8;&#x662F;&#x6210;&#x4E3A;&#x4E86;&#x201C;&#x7B2C;&#x4E00;&#x4E2A;&#x5403;&#x8783;&#x87F9;&#x7684;&#x4EBA;&#x201D;&#x3002;&#x5F97;&#x76CA;&#x4E8E;&#x201C;&#x63A7;&#x5236;&#x5668;&#x6A21;&#x5F0F;&#x201D;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#xFF0C;Kubernetes &#x9879;&#x76EE;&#x5F88;&#x65E9;&#x5C31;&#x5728; Deployment &#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x6269;&#x5C55;&#x51FA;&#x4E86;&#x5BF9;&#x201C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#x7684;&#x521D;&#x6B65;&#x652F;&#x6301;&#x3002;&#x8FD9;&#x4E2A;&#x7F16;&#x6392;&#x529F;&#x80FD;&#xFF0C;&#x5C31;&#x662F;&#xFF1A;StatefulSet&#x3002;</p>
+<p>StatefulSet &#x7684;&#x8BBE;&#x8BA1;&#x5176;&#x5B9E;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x5B83;&#x628A;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x91CC;&#x7684;&#x5E94;&#x7528;&#x72B6;&#x6001;&#xFF0C;&#x62BD;&#x8C61;&#x4E3A;&#x4E86;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ol>
+<li><strong>&#x62D3;&#x6251;&#x72B6;&#x6001;&#x3002;</strong>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5E94;&#x7528;&#x7684;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x5BF9;&#x7B49;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x8FD9;&#x4E9B;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#xFF0C;&#x5FC5;&#x987B;&#x6309;&#x7167;&#x67D0;&#x4E9B;&#x987A;&#x5E8F;&#x542F;&#x52A8;&#xFF0C;&#x6BD4;&#x5982;&#x5E94;&#x7528;&#x7684;&#x4E3B;&#x8282;&#x70B9; A &#x8981;&#x5148;&#x4E8E;&#x4ECE;&#x8282;&#x70B9; B &#x542F;&#x52A8;&#x3002;&#x800C;&#x5982;&#x679C;&#x4F60;&#x628A; A &#x548C; B &#x4E24;&#x4E2A; Pod &#x5220;&#x9664;&#x6389;&#xFF0C;&#x5B83;&#x4EEC;&#x518D;&#x6B21;&#x88AB;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x65F6;&#x4E5F;&#x5FC5;&#x987B;&#x4E25;&#x683C;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x987A;&#x5E8F;&#x624D;&#x884C;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x65B0;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684; Pod&#xFF0C;&#x5FC5;&#x987B;&#x548C;&#x539F;&#x6765; Pod &#x7684;&#x7F51;&#x7EDC;&#x6807;&#x8BC6;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x6837;&#x539F;&#x5148;&#x7684;&#x8BBF;&#x95EE;&#x8005;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x540C;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8BBF;&#x95EE;&#x5230;&#x8FD9;&#x4E2A;&#x65B0; Pod&#x3002;</li>
+<li><strong>&#x5B58;&#x50A8;&#x72B6;&#x6001;&#x3002;</strong>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5E94;&#x7528;&#x7684;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x5206;&#x522B;&#x7ED1;&#x5B9A;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;Pod A &#x7B2C;&#x4E00;&#x6B21;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x548C;&#x9694;&#x4E86;&#x5341;&#x5206;&#x949F;&#x4E4B;&#x540E;&#x518D;&#x6B21;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x540C;&#x4E00;&#x4EFD;&#xFF0C;&#x54EA;&#x6015;&#x5728;&#x6B64;&#x671F;&#x95F4; Pod A &#x88AB;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x8FC7;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6700;&#x5178;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5E94;&#x7528;&#x7684;&#x591A;&#x4E2A;&#x5B58;&#x50A8;&#x5B9E;&#x4F8B;&#x3002;</li>
+</ol>
+<p>&#x6240;&#x4EE5;&#xFF0C;StatefulSet &#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#xFF0C;<strong>&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#x8BB0;&#x5F55;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;&#x5728; Pod &#x88AB;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x80FD;&#x591F;&#x4E3A;&#x65B0; Pod &#x6062;&#x590D;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x3002;</strong></p>
+<p>&#x5728;&#x5F00;&#x59CB;&#x8BB2;&#x8FF0; StatefulSet &#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x5C31;&#x5FC5;&#x987B;&#x5148;&#x4E3A;&#x4F60;&#x8BB2;&#x89E3;&#x4E00;&#x4E2A; Kubernetes &#x9879;&#x76EE;&#x4E2D;&#x975E;&#x5E38;&#x5B9E;&#x7528;&#x7684;&#x6982;&#x5FF5;&#xFF1A;<strong>Headless Service&#x3002;</strong></p>
+<p>&#x6211;&#x5728;&#x548C;&#x4F60;&#x4E00;&#x8D77;&#x8BA8;&#x8BBA; Kubernetes &#x67B6;&#x6784;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x66FE;&#x4ECB;&#x7ECD;&#x8FC7;&#xFF0C;Service &#x662F; Kubernetes &#x9879;&#x76EE;&#x4E2D;&#x7528;&#x6765;&#x5C06;&#x4E00;&#x7EC4; Pod &#x66B4;&#x9732;&#x7ED9;&#x5916;&#x754C;&#x8BBF;&#x95EE;&#x7684;&#x4E00;&#x79CD;&#x673A;&#x5236;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x4E2A; Deployment &#x6709; 3 &#x4E2A; Pod&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x5C31;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; Service&#x3002;&#x7136;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x53EA;&#x8981;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#x8FD9;&#x4E2A; Service&#xFF0C;&#x5B83;&#x5C31;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x7684; Pod&#x3002;&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x4E2A; Service &#x53C8;&#x662F;&#x5982;&#x4F55;&#x88AB;&#x8BBF;&#x95EE;&#x7684;&#x5462;&#xFF1F;</p>
+<p><strong>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x4EE5; Service &#x7684; VIP&#xFF08;Virtual IP&#xFF0C;&#x5373;&#xFF1A;&#x865A;&#x62DF; IP&#xFF09;&#x65B9;&#x5F0F;&#x3002;</strong>&#x6BD4;&#x5982;&#xFF1A;&#x5F53;&#x6211;&#x8BBF;&#x95EE; 10.0.23.1 &#x8FD9;&#x4E2A; Service &#x7684; IP &#x5730;&#x5740;&#x65F6;&#xFF0C;10.0.23.1 &#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A; VIP&#xFF0C;&#x5B83;&#x4F1A;&#x628A;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x5230;&#x8BE5; Service &#x6240;&#x4EE3;&#x7406;&#x7684;&#x67D0;&#x4E00;&#x4E2A; Pod &#x4E0A;&#x3002;&#x8FD9;&#x91CC;&#x7684;&#x5177;&#x4F53;&#x539F;&#x7406;&#xFF0C;&#x6211;&#x4F1A;&#x5728;&#x540E;&#x7EED;&#x7684; Service &#x7AE0;&#x8282;&#x4E2D;&#x8FDB;&#x884C;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p><strong>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5C31;&#x662F;&#x4EE5; Service &#x7684; DNS &#x65B9;&#x5F0F;&#x3002;</strong>&#x6BD4;&#x5982;&#xFF1A;&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x8981;&#x6211;&#x8BBF;&#x95EE;&#x201C;my-svc.my-namespace.svc.cluster.local&#x201D;&#x8FD9;&#x6761; DNS &#x8BB0;&#x5F55;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x540D;&#x53EB; my-svc &#x7684; Service &#x6240;&#x4EE3;&#x7406;&#x7684;&#x67D0;&#x4E00;&#x4E2A; Pod&#x3002;</p>
+<p>&#x800C;&#x5728;&#x7B2C;&#x4E8C;&#x79CD; Service DNS &#x7684;&#x65B9;&#x5F0F;&#x4E0B;&#xFF0C;&#x5177;&#x4F53;&#x8FD8;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x7B2C;&#x4E00;&#x79CD;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#xFF0C;&#x662F; Normal Service&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x8BBF;&#x95EE;&#x201C;my-svc.my-namespace.svc.cluster.local&#x201D;&#x89E3;&#x6790;&#x5230;&#x7684;&#xFF0C;&#x6B63;&#x662F; my-svc &#x8FD9;&#x4E2A; Service &#x7684; VIP&#xFF0C;&#x540E;&#x9762;&#x7684;&#x6D41;&#x7A0B;&#x5C31;&#x8DDF; VIP &#x65B9;&#x5F0F;&#x4E00;&#x81F4;&#x4E86;&#x3002;</p>
+<p>&#x800C;&#x7B2C;&#x4E8C;&#x79CD;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#xFF0C;&#x6B63;&#x662F; Headless Service&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x8BBF;&#x95EE;&#x201C;my-svc.my-namespace.svc.cluster.local&#x201D;&#x89E3;&#x6790;&#x5230;&#x7684;&#xFF0C;&#x76F4;&#x63A5;&#x5C31;&#x662F; my-svc &#x4EE3;&#x7406;&#x7684;&#x67D0;&#x4E00;&#x4E2A; Pod &#x7684; IP &#x5730;&#x5740;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;Headless Service &#x4E0D;&#x9700;&#x8981;&#x5206;&#x914D;&#x4E00;&#x4E2A; VIP&#xFF0C;&#x800C;&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4EE5; DNS &#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x6790;&#x51FA;&#x88AB;&#x4EE3;&#x7406; Pod &#x7684; IP &#x5730;&#x5740;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BBE;&#x8BA1;&#x53C8;&#x6709;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;&#x5462;&#xFF1F;&#x60F3;&#x8981;&#x56DE;&#x7B54;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4ECE; Headless Service &#x7684;&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x770B;&#x8D77;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684; Headless Service &#x5BF9;&#x5E94;&#x7684; YAML &#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
+<span class="hljs-attr">kind:</span> Service
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> nginx
+<span class="hljs-attr">  labels:</span>
+<span class="hljs-attr">    app:</span> nginx
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  ports:</span>
+<span class="hljs-attr">  - port:</span> <span class="hljs-number">80</span>
+<span class="hljs-attr">    name:</span> web
+<span class="hljs-attr">  clusterIP:</span> None
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    app:</span> nginx
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6240;&#x8C13;&#x7684; Headless Service&#xFF0C;&#x5176;&#x5B9E;&#x4ECD;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x51C6; Service &#x7684; YAML &#x6587;&#x4EF6;&#x3002;&#x53EA;&#x4E0D;&#x8FC7;&#xFF0C;&#x5B83;&#x7684; clusterIP &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x662F;&#xFF1A;None&#xFF0C;&#x5373;&#xFF1A;&#x8FD9;&#x4E2A; Service&#xFF0C;&#x6CA1;&#x6709;&#x4E00;&#x4E2A; VIP &#x4F5C;&#x4E3A;&#x201C;&#x5934;&#x201D;&#x3002;&#x8FD9;&#x4E5F;&#x5C31;&#x662F; Headless &#x7684;&#x542B;&#x4E49;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x4E2A; Service &#x88AB;&#x521B;&#x5EFA;&#x540E;&#x5E76;&#x4E0D;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x4E00;&#x4E2A; VIP&#xFF0C;&#x800C;&#x662F;&#x4F1A;&#x4EE5; DNS &#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x66B4;&#x9732;&#x51FA;&#x5B83;&#x6240;&#x4EE3;&#x7406;&#x7684; Pod&#x3002;</p>
+<p>&#x800C;&#x5B83;&#x6240;&#x4EE3;&#x7406;&#x7684; Pod&#xFF0C;&#x4F9D;&#x7136;&#x662F;&#x91C7;&#x7528;&#x6211;&#x5728;&#x524D;&#x9762;&#x7B2C; 12 &#x7BC7;&#x6587;&#x7AE0;&#x300A;&#x725B;&#x5200;&#x5C0F;&#x8BD5;&#xFF1A;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5316;&#x5E94;&#x7528;&#x300B;&#x4E2D;&#x63D0;&#x5230;&#x7684; Label Selector &#x673A;&#x5236;&#x9009;&#x62E9;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x5373;&#xFF1A;&#x6240;&#x6709;&#x643A;&#x5E26;&#x4E86; app=nginx &#x6807;&#x7B7E;&#x7684; Pod&#xFF0C;&#x90FD;&#x4F1A;&#x88AB;&#x8FD9;&#x4E2A; Service &#x4EE3;&#x7406;&#x8D77;&#x6765;&#x3002;&#x7136;&#x540E;&#x5173;&#x952E;&#x6765;&#x4E86;&#x3002;&#x5F53;&#x4F60;&#x6309;&#x7167;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; Headless Service &#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x6240;&#x4EE3;&#x7406;&#x7684;&#x6240;&#x6709; Pod &#x7684; IP &#x5730;&#x5740;&#xFF0C;&#x90FD;&#x4F1A;&#x88AB;&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x8FD9;&#x6837;&#x683C;&#x5F0F;&#x7684; DNS &#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-bash">&lt;pod-name&gt;.&lt;svc-name&gt;.&lt;namespace&gt;.svc.cluster.local
+</code></pre>
+<p>&#x8FD9;&#x4E2A; DNS &#x8BB0;&#x5F55;&#xFF0C;&#x6B63;&#x662F; Kubernetes &#x9879;&#x76EE;&#x4E3A; Pod &#x5206;&#x914D;&#x7684;&#x552F;&#x4E00;&#x7684;&#x201C;&#x53EF;&#x89E3;&#x6790;&#x8EAB;&#x4EFD;&#x201D;&#xFF08;Resolvable Identity&#xFF09;&#x3002;</p>
+<p>&#x6709;&#x4E86;&#x8FD9;&#x4E2A;&#x201C;&#x53EF;&#x89E3;&#x6790;&#x8EAB;&#x4EFD;&#x201D;&#xFF0C;&#x53EA;&#x8981;&#x4F60;&#x77E5;&#x9053;&#x4E86;&#x4E00;&#x4E2A; Pod &#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x5BF9;&#x5E94;&#x7684; Service &#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x786E;&#x5B9A;&#x5730;&#x901A;&#x8FC7;&#x8FD9;&#x6761; DNS &#x8BB0;&#x5F55;&#x8BBF;&#x95EE;&#x5230; Pod &#x7684; IP &#x5730;&#x5740;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;StatefulSet &#x53C8;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A; DNS &#x8BB0;&#x5F55;&#x6765;&#x7EF4;&#x6301; Pod &#x7684;&#x62D3;&#x6251;&#x72B6;&#x6001;&#x7684;&#x5462;&#xFF1F;&#x4E3A;&#x4E86;&#x56DE;&#x7B54;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x7F16;&#x5199;&#x4E00;&#x4E2A; StatefulSet &#x7684; YAML &#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> apps/v1
+<span class="hljs-attr">kind:</span> StatefulSet
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> web
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  serviceName:</span> <span class="hljs-string">&quot;nginx&quot;</span>
+<span class="hljs-attr">  replicas:</span> <span class="hljs-number">2</span>
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    matchLabels:</span>
+<span class="hljs-attr">      app:</span> nginx
+<span class="hljs-attr">  template:</span>
+<span class="hljs-attr">    metadata:</span>
+<span class="hljs-attr">      labels:</span>
+<span class="hljs-attr">        app:</span> nginx
+<span class="hljs-attr">    spec:</span>
+<span class="hljs-attr">      containers:</span>
+<span class="hljs-attr">      - name:</span> nginx
+<span class="hljs-attr">        image:</span> nginx:<span class="hljs-number">1.9</span><span class="hljs-number">.1</span>
+<span class="hljs-attr">        ports:</span>
+<span class="hljs-attr">        - containerPort:</span> <span class="hljs-number">80</span>
+<span class="hljs-attr">          name:</span> web
+</code></pre>
+<p>&#x8FD9;&#x4E2A; YAML &#x6587;&#x4EF6;&#xFF0C;&#x548C;&#x6211;&#x4EEC;&#x5728;&#x524D;&#x9762;&#x6587;&#x7AE0;&#x4E2D;&#x7528;&#x5230;&#x7684; nginx-deployment &#x7684;&#x552F;&#x4E00;&#x533A;&#x522B;&#xFF0C;&#x5C31;&#x662F;&#x591A;&#x4E86;&#x4E00;&#x4E2A; serviceName=nginx &#x5B57;&#x6BB5;&#x3002;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x5C31;&#x662F;&#x544A;&#x8BC9; StatefulSet &#x63A7;&#x5236;&#x5668;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x63A7;&#x5236;&#x5FAA;&#x73AF;&#xFF08;Control Loop&#xFF09;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; nginx &#x8FD9;&#x4E2A; Headless Service &#x6765;&#x4FDD;&#x8BC1; Pod &#x7684;&#x201C;&#x53EF;&#x89E3;&#x6790;&#x8EAB;&#x4EFD;&#x201D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x4F60;&#x901A;&#x8FC7; kubectl create &#x521B;&#x5EFA;&#x4E86;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A; Service &#x548C; StatefulSet &#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl create <span class="hljs-_">-f</span> svc.yaml
+$ kubectl get service nginx
+NAME      TYPE         CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+nginx     ClusterIP    None         &lt;none&gt;        80/TCP    10s
+
+$ kubectl create <span class="hljs-_">-f</span> statefulset.yaml
+$ kubectl get statefulset web
+NAME      DESIRED   CURRENT   AGE
+web       2         1         19s
+</code></pre>
+<p>&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x624B;&#x6BD4;&#x8F83;&#x5FEB;&#x7684;&#x8BDD;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; kubectl &#x7684; -w &#x53C2;&#x6570;&#xFF0C;&#x5373;&#xFF1A;Watch &#x529F;&#x80FD;&#xFF0C;&#x5B9E;&#x65F6;&#x67E5;&#x770B; StatefulSet &#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x6709;&#x72B6;&#x6001;&#x5B9E;&#x4F8B;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<blockquote>
+<p>&#x5907;&#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x624B;&#x4E0D;&#x591F;&#x5FEB;&#x7684;&#x8BDD;&#xFF0C;Pod &#x5F88;&#x5FEB;&#x5C31;&#x521B;&#x5EFA;&#x5B8C;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x4F60;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A; StatefulSet &#x7684; Events &#x770B;&#x5230;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-bash">$ kubectl get pods -w <span class="hljs-_">-l</span> app=nginx
+NAME      READY     STATUS    RESTARTS   AGE
+web-0     0/1       Pending   0          0s
+web-0     0/1       Pending   0         0s
+web-0     0/1       ContainerCreating   0         0s
+web-0     1/1       Running   0         19s
+web-1     0/1       Pending   0         0s
+web-1     0/1       Pending   0         0s
+web-1     0/1       ContainerCreating   0         0s
+web-1     1/1       Running   0         20s
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A; Pod &#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x96BE;&#x770B;&#x5230;&#xFF0C;StatefulSet &#x7ED9;&#x5B83;&#x6240;&#x7BA1;&#x7406;&#x7684;&#x6240;&#x6709; Pod &#x7684;&#x540D;&#x5B57;&#xFF0C;&#x8FDB;&#x884C;&#x4E86;&#x7F16;&#x53F7;&#xFF0C;&#x7F16;&#x53F7;&#x89C4;&#x5219;&#x662F;&#xFF1A;-&#x3002;</p>
+<p>&#x800C;&#x4E14;&#x8FD9;&#x4E9B;&#x7F16;&#x53F7;&#x90FD;&#x662F;&#x4ECE; 0 &#x5F00;&#x59CB;&#x7D2F;&#x52A0;&#xFF0C;&#x4E0E; StatefulSet &#x7684;&#x6BCF;&#x4E2A; Pod &#x5B9E;&#x4F8B;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#xFF0C;&#x7EDD;&#x4E0D;&#x91CD;&#x590D;&#x3002;</p>
+<p>&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E9B; Pod &#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x4E5F;&#x662F;&#x4E25;&#x683C;&#x6309;&#x7167;&#x7F16;&#x53F7;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x7684;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5728; web-0 &#x8FDB;&#x5165;&#x5230; Running &#x72B6;&#x6001;&#x3001;&#x5E76;&#x4E14;&#x7EC6;&#x5206;&#x72B6;&#x6001;&#xFF08;Conditions&#xFF09;&#x6210;&#x4E3A; Ready &#x4E4B;&#x524D;&#xFF0C;web-1 &#x4F1A;&#x4E00;&#x76F4;&#x5904;&#x4E8E; Pending &#x72B6;&#x6001;&#x3002;</p>
+<p>&#x5F53;&#x8FD9;&#x4E24;&#x4E2A; Pod &#x90FD;&#x8FDB;&#x5165;&#x4E86; Running &#x72B6;&#x6001;&#x4E4B;&#x540E;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5230;&#x5B83;&#x4EEC;&#x5404;&#x81EA;&#x552F;&#x4E00;&#x7684;&#x201C;&#x7F51;&#x7EDC;&#x8EAB;&#x4EFD;&#x201D;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528; kubectl exec &#x547D;&#x4EE4;&#x8FDB;&#x5165;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#x67E5;&#x770B;&#x5B83;&#x4EEC;&#x7684; hostname&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl <span class="hljs-built_in">exec</span> web-0 -- sh -c <span class="hljs-string">&apos;hostname&apos;</span>
+web-0
+$ kubectl <span class="hljs-built_in">exec</span> web-1 -- sh -c <span class="hljs-string">&apos;hostname&apos;</span>
+web-1
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A; Pod &#x7684; hostname &#x4E0E; Pod &#x540D;&#x5B57;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x90FD;&#x88AB;&#x5206;&#x914D;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x7F16;&#x53F7;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x8BD5;&#x7740;&#x4EE5; DNS &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x8BBF;&#x95EE;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A; Headless Service&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl run -i --tty --image busybox:1.28.4 dns-test --restart=Never --rm /bin/sh
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#xFF0C;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x4E86;&#x4E00;&#x4E2A;&#x4E00;&#x6B21;&#x6027;&#x7684; Pod&#xFF0C;&#x56E0;&#x4E3A;&#x2013;rm &#x610F;&#x5473;&#x7740; Pod &#x9000;&#x51FA;&#x540E;&#x5C31;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x6389;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A; Pod &#x7684;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x5C1D;&#x8BD5;&#x7528; nslookup &#x547D;&#x4EE4;&#xFF0C;&#x89E3;&#x6790;&#x4E00;&#x4E0B; Pod &#x5BF9;&#x5E94;&#x7684; Headless Service&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl run -i --tty --image busybox:1.28.4 dns-test --restart=Never --rm /bin/sh
+$ nslookup web-0.nginx
+Server:    10.0.0.10
+Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      web-0.nginx
+Address 1: 10.244.1.7
+
+$ nslookup web-1.nginx
+Server:    10.0.0.10
+Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      web-1.nginx
+Address 1: 10.244.2.7
+</code></pre>
+<p>&#x4ECE; nslookup &#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5728;&#x8BBF;&#x95EE; web-0.nginx &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6700;&#x540E;&#x89E3;&#x6790;&#x5230;&#x7684;&#xFF0C;&#x6B63;&#x662F; web-0 &#x8FD9;&#x4E2A; Pod &#x7684; IP &#x5730;&#x5740;&#xFF1B;&#x800C;&#x5F53;&#x8BBF;&#x95EE; web-1.nginx &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89E3;&#x6790;&#x5230;&#x7684;&#x5219;&#x662F; web-1 &#x7684; IP &#x5730;&#x5740;&#x3002;</p>
+<p>&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E2A; Terminal &#x91CC;&#x628A;&#x8FD9;&#x4E24;&#x4E2A;&#x201C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#x7684; Pod &#x5220;&#x6389;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl delete pod <span class="hljs-_">-l</span> app=nginx
+pod <span class="hljs-string">&quot;web-0&quot;</span> deleted
+pod <span class="hljs-string">&quot;web-1&quot;</span> deleted
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x518D;&#x5728;&#x5F53;&#x524D; Terminal &#x91CC; Watch &#x4E00;&#x4E0B;&#x8FD9;&#x4E24;&#x4E2A; Pod &#x7684;&#x72B6;&#x6001;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x73B0;&#x8C61;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl get pod -w <span class="hljs-_">-l</span> app=nginx
+NAME      READY     STATUS              RESTARTS   AGE
+web-0     0/1       ContainerCreating   0          0s
+NAME      READY     STATUS    RESTARTS   AGE
+web-0     1/1       Running   0          2s
+web-1     0/1       Pending   0         0s
+web-1     0/1       ContainerCreating   0         0s
+web-1     1/1       Running   0         32s
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E24;&#x4E2A; Pod &#x5220;&#x9664;&#x4E4B;&#x540E;&#xFF0C;Kubernetes &#x4F1A;&#x6309;&#x7167;&#x539F;&#x5148;&#x7F16;&#x53F7;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x521B;&#x5EFA;&#x51FA;&#x4E86;&#x4E24;&#x4E2A;&#x65B0;&#x7684; Pod&#x3002;&#x5E76;&#x4E14;&#xFF0C;Kubernetes &#x4F9D;&#x7136;&#x4E3A;&#x5B83;&#x4EEC;&#x5206;&#x914D;&#x4E86;&#x4E0E;&#x539F;&#x6765;&#x76F8;&#x540C;&#x7684;&#x201C;&#x7F51;&#x7EDC;&#x8EAB;&#x4EFD;&#x201D;&#xFF1A;web-0.nginx &#x548C; web-1.nginx&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x4E25;&#x683C;&#x7684;&#x5BF9;&#x5E94;&#x89C4;&#x5219;&#xFF0C;<strong>StatefulSet &#x5C31;&#x4FDD;&#x8BC1;&#x4E86; Pod &#x7F51;&#x7EDC;&#x6807;&#x8BC6;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x3002;</strong></p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x679C; web-0 &#x662F;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x5148;&#x542F;&#x52A8;&#x7684;&#x4E3B;&#x8282;&#x70B9;&#xFF0C;web-1 &#x662F;&#x4E00;&#x4E2A;&#x540E;&#x542F;&#x52A8;&#x7684;&#x4ECE;&#x8282;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x8981;&#x8FD9;&#x4E2A; StatefulSet &#x4E0D;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x4F60;&#x8BBF;&#x95EE; web-0.nginx &#x65F6;&#x59CB;&#x7EC8;&#x90FD;&#x4F1A;&#x843D;&#x5728;&#x4E3B;&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x8BBF;&#x95EE; web-1.nginx &#x65F6;&#xFF0C;&#x5219;&#x59CB;&#x7EC8;&#x90FD;&#x4F1A;&#x843D;&#x5728;&#x4ECE;&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E2A;&#x5173;&#x7CFB;&#x7EDD;&#x5BF9;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x4EFB;&#x4F55;&#x53D8;&#x5316;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x518D;&#x7528; nslookup &#x547D;&#x4EE4;&#xFF0C;&#x67E5;&#x770B;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x65B0; Pod &#x5BF9;&#x5E94;&#x7684; Headless Service &#x7684;&#x8BDD;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl run -i --tty --image busybox dns-test --restart=Never --rm /bin/sh 
+$ nslookup web-0.nginx
+Server:    10.0.0.10
+Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      web-0.nginx
+Address 1: 10.244.1.8
+
+$ nslookup web-1.nginx
+Server:    10.0.0.10
+Address 1: 10.0.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      web-1.nginx
+Address 1: 10.244.2.8
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A; StatefulSet &#x4E2D;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x65B0; Pod &#x7684;&#x201C;&#x7F51;&#x7EDC;&#x6807;&#x8BC6;&#x201D;&#xFF08;&#x6BD4;&#x5982;&#xFF1A;web-0.nginx &#x548C; web-1.nginx&#xFF09;&#xFF0C;&#x518D;&#x6B21;&#x89E3;&#x6790;&#x5230;&#x4E86;&#x6B63;&#x786E;&#x7684; IP &#x5730;&#x5740;&#xFF08;&#x6BD4;&#x5982;&#xFF1A;web-0 Pod &#x7684; IP &#x5730;&#x5740; 10.244.1.8&#xFF09;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;Kubernetes &#x5C31;&#x6210;&#x529F;&#x5730;&#x5C06; Pod &#x7684;&#x62D3;&#x6251;&#x72B6;&#x6001;&#xFF08;&#x6BD4;&#x5982;&#xFF1A;&#x54EA;&#x4E2A;&#x8282;&#x70B9;&#x5148;&#x542F;&#x52A8;&#xFF0C;&#x54EA;&#x4E2A;&#x8282;&#x70B9;&#x540E;&#x542F;&#x52A8;&#xFF09;&#xFF0C;&#x6309;&#x7167; Pod &#x7684;&#x201C;&#x540D;&#x5B57; + &#x7F16;&#x53F7;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x56FA;&#x5B9A;&#x4E86;&#x4E0B;&#x6765;&#x3002;&#x6B64;&#x5916;&#xFF0C;Kubernetes &#x8FD8;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A; Pod &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x5E76;&#x4E14;&#x552F;&#x4E00;&#x7684;&#x8BBF;&#x95EE;&#x5165;&#x53E3;&#xFF0C;&#x5373;&#xFF1A;&#x8FD9;&#x4E2A; Pod &#x5BF9;&#x5E94;&#x7684; DNS &#x8BB0;&#x5F55;&#x3002;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#xFF0C;&#x5728; StatefulSet &#x7684;&#x6574;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;&#x90FD;&#x4F1A;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF0C;&#x7EDD;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x5BF9;&#x5E94; Pod &#x7684;&#x5220;&#x9664;&#x6216;&#x8005;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x800C;&#x5931;&#x6548;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x76F8;&#x4FE1;&#x4F60;&#x4E5F;&#x5DF2;&#x7ECF;&#x6CE8;&#x610F;&#x5230;&#x4E86;&#xFF0C;&#x5C3D;&#x7BA1; web-0.nginx &#x8FD9;&#x6761;&#x8BB0;&#x5F55;&#x672C;&#x8EAB;&#x4E0D;&#x4F1A;&#x53D8;&#xFF0C;&#x4F46;&#x5B83;&#x89E3;&#x6790;&#x5230;&#x7684; Pod &#x7684; IP &#x5730;&#x5740;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5BF9;&#x4E8E;&#x201C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#x5B9E;&#x4F8B;&#x7684;&#x8BBF;&#x95EE;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528; DNS &#x8BB0;&#x5F55;&#x6216;&#x8005; hostname &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x7EDD;&#x4E0D;&#x5E94;&#x8BE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B; Pod &#x7684; IP &#x5730;&#x5740;&#x3002;</p>
+<p><strong>&#x603B;&#x7ED3;</strong></p>
+<p>&#x5728;&#x4ECA;&#x5929;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x9996;&#x5148;&#x548C;&#x4F60;&#x5206;&#x4EAB;&#x4E86; StatefulSet &#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF0C;&#x89E3;&#x91CA;&#x4E86;&#x4EC0;&#x4E48;&#x662F;&#x5E94;&#x7528;&#x7684;&#x201C;&#x72B6;&#x6001;&#x201D;&#x3002;</p>
+<p>&#x7D27;&#x63A5;&#x7740; &#xFF0C;&#x6211;&#x4E3A;&#x4F60;&#x5206;&#x6790;&#x4E86; StatefulSet &#x5982;&#x4F55;&#x4FDD;&#x8BC1;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x201C;&#x62D3;&#x6251;&#x72B6;&#x6001;&#x201D;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x7528;&#x4E00;&#x53E5;&#x8BDD;&#x6765;&#x603B;&#x7ED3;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<blockquote>
+<p>StatefulSet &#x8FD9;&#x4E2A;&#x63A7;&#x5236;&#x5668;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x4E4B;&#x4E00;&#xFF0C;&#x5C31;&#x662F;&#x4F7F;&#x7528; Pod &#x6A21;&#x677F;&#x521B;&#x5EFA; Pod &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x7F16;&#x53F7;&#xFF0C;&#x5E76;&#x4E14;&#x6309;&#x7167;&#x7F16;&#x53F7;&#x987A;&#x5E8F;&#x9010;&#x4E00;&#x5B8C;&#x6210;&#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x3002;&#x800C;&#x5F53; StatefulSet &#x7684;&#x201C;&#x63A7;&#x5236;&#x5FAA;&#x73AF;&#x201D;&#x53D1;&#x73B0; Pod &#x7684;&#x201C;&#x5B9E;&#x9645;&#x72B6;&#x6001;&#x201D;&#x4E0E;&#x201C;&#x671F;&#x671B;&#x72B6;&#x6001;&#x201D;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x9700;&#x8981;&#x65B0;&#x5EFA;&#x6216;&#x8005;&#x5220;&#x9664; Pod &#x8FDB;&#x884C;&#x201C;&#x8C03;&#x8C10;&#x201D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4F1A;&#x4E25;&#x683C;&#x6309;&#x7167;&#x8FD9;&#x4E9B; Pod &#x7F16;&#x53F7;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x9010;&#x4E00;&#x5B8C;&#x6210;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x3002;</p>
+</blockquote>
+<p>&#x6240;&#x4EE5;&#xFF0C;StatefulSet &#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x5BF9; Deployment &#x7684;&#x6539;&#x826F;&#x3002;</p>
+<p>&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#xFF0C;&#x901A;&#x8FC7; Headless Service &#x7684;&#x65B9;&#x5F0F;&#xFF0C;StatefulSet &#x4E3A;&#x6BCF;&#x4E2A; Pod &#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x5E76;&#x4E14;&#x7A33;&#x5B9A;&#x7684; DNS &#x8BB0;&#x5F55;&#xFF0C;&#x6765;&#x4F5C;&#x4E3A;&#x5B83;&#x7684;&#x8BBF;&#x95EE;&#x5165;&#x53E3;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5728;&#x90E8;&#x7F72;&#x201C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;&#x201D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5E94;&#x7528;&#x7684;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x62E5;&#x6709;&#x552F;&#x4E00;&#x5E76;&#x4E14;&#x7A33;&#x5B9A;&#x7684;&#x201C;&#x7F51;&#x7EDC;&#x6807;&#x8BC6;&#x201D;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x5047;&#x8BBE;&#x3002;&#x5728;&#x4E0B;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x5C06;&#x4F1A;&#x7EE7;&#x7EED;&#x4E3A;&#x4F60;&#x5256;&#x6790; StatefulSet &#x5982;&#x4F55;&#x5904;&#x7406;&#x5B58;&#x50A8;&#x72B6;&#x6001;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="deployment.html" class="navigation navigation-prev " aria-label="Previous page: 3.3 Deployment：作业副本与水平扩容">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="statefulset-2.html" class="navigation navigation-next " aria-label="Next page: 3.7 深入理解 StatefulSet（二）：存储状态">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.6 深入理解 StatefulSet（一）：拓扑状态","date":"2021-03-02T23:45:28.000Z","draft":false,"tags":["kubernetes","statefulset"],"categories":["云计算"],"level":"1.4.6","depth":2,"next":{"title":"3.7 深入理解 StatefulSet（二）：存储状态","level":"1.4.7","depth":2,"path":"chapter3/statefulset-2.md","ref":"chapter3/statefulset-2.md","articles":[]},"previous":{"title":"3.3 Deployment：作业副本与水平扩容","level":"1.4.5","depth":2,"path":"chapter3/deployment.md","ref":"chapter3/deployment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","sharing","back-to-top-button","page-treeview","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter3/statefulset-1.md","mtime":"2021-06-12T12:00:30.391Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-12T15:16:03.768Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

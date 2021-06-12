@@ -1,0 +1,842 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9.1 常用的 k8s 命令 · 《kubernetes 学习笔记》</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="chenxueqiang">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="health-check.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://ahamoment.cn" target="_blank" class="custom-link">AHA MOMENT</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    1. 容器技术概念入门篇
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    2. kubernetes 集群搭建与实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter2/kubeadm.html">
+            
+                <a href="../chapter2/kubeadm.html">
+            
+                    
+                    2.1 使用kubeadm 安装k8s集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    3. 容器编排与 kubernetes 作业管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter3/why-pod.html">
+            
+                <a href="../chapter3/why-pod.html">
+            
+                    
+                    3.1 为什么我们需要Pod
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter3/pod-concept1.html">
+            
+                <a href="../chapter3/pod-concept1.html">
+            
+                    
+                    3.2 深入解析Pod对象(一)：基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter3/pod-concept2.html">
+            
+                <a href="../chapter3/pod-concept2.html">
+            
+                    
+                    3.3 深入解析Pod对象(二): 使用进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../chapter3/controller-mode.html">
+            
+                <a href="../chapter3/controller-mode.html">
+            
+                    
+                    3.4 谈谈“控制器”模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../chapter3/deployment.html">
+            
+                <a href="../chapter3/deployment.html">
+            
+                    
+                    3.3 Deployment：作业副本与水平扩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../chapter3/statefulset-1.html">
+            
+                <a href="../chapter3/statefulset-1.html">
+            
+                    
+                    3.6 深入理解 StatefulSet（一）：拓扑状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../chapter3/statefulset-2.html">
+            
+                <a href="../chapter3/statefulset-2.html">
+            
+                    
+                    3.7 深入理解 StatefulSet（二）：存储状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../chapter3/daemonset.html">
+            
+                <a href="../chapter3/daemonset.html">
+            
+                    
+                    3.8 容器化守护进程的意义：DaemonSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../chapter3/job.html">
+            
+                <a href="../chapter3/job.html">
+            
+                    
+                    3.9 撬动离线业务：Job 与 CronJob
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../chapter3/declarative-api.html">
+            
+                <a href="../chapter3/declarative-api.html">
+            
+                    
+                    3.10 声明式 API 与 Kubernetes 编程范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    4. kubernetes 容器持久化存储
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    5. kubernetes 网络
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    6. kubernetes 作业调度与资源管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../chapter6/resource-model.html">
+            
+                <a href="../chapter6/resource-model.html">
+            
+                    
+                    6.1 k8s 的资源模型与资源管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../chapter6/default-scheduler.html">
+            
+                <a href="../chapter6/default-scheduler.html">
+            
+                    
+                    6.2 十字路口上的 kubernetes 默认调度器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../chapter6/qos-sc.html">
+            
+                <a href="../chapter6/qos-sc.html">
+            
+                    
+                    6.3 Qos 源代码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../chapter6/client-go.html">
+            
+                <a href="../chapter6/client-go.html">
+            
+                    
+                    6.4 kubernetes go 客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    7. kubernetes 容器运行时
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    8. kubernetes 容器监控与日志
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    9. kubernetes 生态周边
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.10.1" data-path="commands.html">
+            
+                <a href="commands.html">
+            
+                    
+                    9.1 常用的 k8s 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="health-check.html">
+            
+                <a href="health-check.html">
+            
+                    
+                    9.2 容器健康检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="code-generation-for-customresources.html">
+            
+                <a href="code-generation-for-customresources.html">
+            
+                    
+                    9.3 [译]Kubernetes深入研究：CustomResources的代码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >9.1 常用的 k8s 命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#1-yaml-&#x6587;&#x4EF6;">1. yaml &#x6587;&#x4EF6;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#11-&#x521B;&#x5EFA;">1.1 &#x521B;&#x5EFA;</a><i></i></div></li>
+<li><div><a href="#12-&#x4FEE;&#x6539;">1.2 &#x4FEE;&#x6539;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#2-pod">2. Pod</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#21-&#x67E5;&#x8BE2;">2.1 &#x67E5;&#x8BE2;</a><i></i></div></li>
+<li><div><a href="#22-&#x767B;&#x5F55;">2.2 &#x767B;&#x5F55;</a><i></i></div></li>
+<li><div><a href="#23-&#x5220;&#x9664;">2.3 &#x5220;&#x9664;</a><i></i></div></li>
+<li><div><a href="#24-&#x66F4;&#x65B0;">2.4. &#x66F4;&#x65B0;</a><i></i></div></li>
+<li><div><a href="#25-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684;pod">2.5 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684;Pod</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#3-&#x65E5;&#x5FD7;">3. &#x65E5;&#x5FD7;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#31-kube-apiserver-&#x65E5;&#x5FD7;">3.1. kube-apiserver &#x65E5;&#x5FD7;</a><i></i></div></li>
+<li><div><a href="#32-kube-controller-manager-&#x65E5;&#x5FD7;">3.2. kube-controller-manager &#x65E5;&#x5FD7;</a><i></i></div></li>
+<li><div><a href="#33-kube-scheduler-&#x65E5;&#x5FD7;">3.3. kube-scheduler &#x65E5;&#x5FD7;</a><i></i></div></li>
+<li><div><a href="#34-kubelet-&#x65E5;&#x5FD7;">3.4. kubelet &#x65E5;&#x5FD7;</a><i></i></div></li>
+<li><div><a href="#35-pod-&#x65E5;&#x5FD7;">3.5. Pod &#x65E5;&#x5FD7;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#4-&#x6C61;&#x70B9;">4. &#x6C61;&#x70B9;</a><i></i></div></li>
+<li><div><a href="#5-projectedvolume">5. ProjectedVolume</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#51-secret">5.1 Secret</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#511-&#x521B;&#x5EFA;">5.1.1. &#x521B;&#x5EFA;</a><i></i></div></li>
+<li><div><a href="#512-&#x67E5;&#x8BE2;">5.1.2 &#x67E5;&#x8BE2;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#52-configmap">5.2. ConfigMap</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#521-&#x521B;&#x5EFA;">5.2.1. &#x521B;&#x5EFA;</a><i></i></div></li>
+<li><div><a href="#522-&#x67E5;&#x8BE2;">5.22. &#x67E5;&#x8BE2;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+
+<h2 id="1-yaml-&#x6587;&#x4EF6;">1. yaml &#x6587;&#x4EF6;</h2>
+<h3 id="11-&#x521B;&#x5EFA;">1.1 &#x521B;&#x5EFA;</h3>
+<pre><code class="lang-bash">$ kubectl create <span class="hljs-_">-f</span> &#x6211;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+</code></pre>
+<h3 id="12-&#x4FEE;&#x6539;">1.2 &#x4FEE;&#x6539;</h3>
+<p>&#x66F4;&#x65B0; yaml &#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl replace <span class="hljs-_">-f</span> nginx-deployment.yaml
+</code></pre>
+<p>&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x8868;&#x8FBE;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528; apply &#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl apply <span class="hljs-_">-f</span> nginx-deployment.yaml
+</code></pre>
+<h2 id="2-pod">2. Pod</h2>
+<h3 id="21-&#x67E5;&#x8BE2;">2.1 &#x67E5;&#x8BE2;</h3>
+<p><strong>&#x83B7;&#x53D6; pod &#x7684;&#x4FE1;&#x606F;</strong></p>
+<pre><code class="lang-bash">kubectl get pods -n <span class="hljs-variable">${namespace}</span>
+</code></pre>
+<p><strong>&#x6839;&#x636E; pod &#x7684;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4; </strong></p>
+<pre><code class="lang-bash">kubectl get pods <span class="hljs-_">-l</span> app=nginx
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#xFF0C;&#x6240;&#x6709; key-value &#x683C;&#x5F0F;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x90FD;&#x4F7F;&#x7528;&#x201C;=&#x201D;&#x800C;&#x975E;&#x201C;:&#x201D;&#x8868;&#x793A;&#x3002;</p>
+<p><strong>&#x83B7;&#x53D6; pod &#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</strong></p>
+<pre><code class="lang-bash">$ kubectl describe pod &lt;pod-name&gt;
+</code></pre>
+<h3 id="22-&#x767B;&#x5F55;">2.2 &#x767B;&#x5F55;</h3>
+<p>&#x8FDB;&#x5165;&#x5230; Pod &#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl <span class="hljs-built_in">exec</span> -it nginx-deployment-5c678cfb6d-lg9lw -- /bin/bash
+</code></pre>
+<h3 id="23-&#x5220;&#x9664;">2.3 &#x5220;&#x9664;</h3>
+<p>&#x5220;&#x9664; Pod&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl delete <span class="hljs-_">-f</span> nginx-deployment.yaml
+</code></pre>
+<h3 id="24-&#x66F4;&#x65B0;">2.4. &#x66F4;&#x65B0;</h3>
+<p>&#x901A;&#x8FC7;&#x4FEE;&#x6539;yaml&#x6587;&#x4EF6;&#x66F4;&#x65B0;pod</p>
+<pre><code class="lang-yaml">...    
+<span class="hljs-attr">    spec:</span>
+<span class="hljs-attr">      containers:</span>
+<span class="hljs-attr">      - name:</span> nginx
+<span class="hljs-attr">        image:</span> nginx:<span class="hljs-number">1.8</span> <span class="hljs-comment">#&#x8FD9;&#x91CC;&#x88AB;&#x4ECE;1.7.9&#x4FEE;&#x6539;&#x4E3A;1.8</span>
+<span class="hljs-attr">        ports:</span>
+<span class="hljs-attr">      - containerPort:</span> <span class="hljs-number">80</span>
+</code></pre>
+<p>&#x6267;&#x884C; <code>kubectl replace</code> &#x547D;&#x4EE4;</p>
+<pre><code class="lang-bash">$ kubectl replace <span class="hljs-_">-f</span> nginx-deployment.yaml
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x66F4;&#x63A8;&#x8350;&#x7528; <code>kubectl apply</code> &#x547D;&#x4EE4;&#xFF0C;&#x6765;&#x7EDF;&#x4E00;&#x8FDB;&#x884C; Kubernetes &#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-bash">
+<span class="hljs-comment"># &#x4FEE;&#x6539;nginx-deployment.yaml&#x7684;&#x5185;&#x5BB9;</span>
+
+$ kubectl apply <span class="hljs-_">-f</span> nginx-deployment.yaml
+</code></pre>
+<h3 id="25-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684;pod">2.5 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7684;Pod</h3>
+<pre><code class="lang-bash">$ kubectl run -i --tty --image busybox:1.28.4 dns-test --restart=Never --rm /bin/sh
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#xFF0C;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x4E86;&#x4E00;&#x4E2A;&#x4E00;&#x6B21;&#x6027;&#x7684; Pod&#xFF0C;&#x56E0;&#x4E3A;&#x2013;rm &#x610F;&#x5473;&#x7740; Pod &#x9000;&#x51FA;&#x540E;&#x5C31;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x6389;&#x3002;</p>
+<h2 id="3-&#x65E5;&#x5FD7;">3. &#x65E5;&#x5FD7;</h2>
+<h3 id="31-kube-apiserver-&#x65E5;&#x5FD7;">3.1. kube-apiserver &#x65E5;&#x5FD7;</h3>
+<pre><code class="lang-bash">PODNAME=$(kubectl -n kube-system get pod <span class="hljs-_">-l</span> component=kube-apiserver -o jsonpath=<span class="hljs-string">&apos;{.items[0].metadata.name}&apos;</span>)
+kubectl -n kube-system logs <span class="hljs-variable">$PODNAME</span> --tail 100
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x5047;&#x8BBE;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x4EE5; Kubernetes &#x9759;&#x6001; Pod &#x7684;&#x5F62;&#x5F0F;&#x6765;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x679C; kube-apiserver &#x662F;&#x7528; systemd &#x7BA1;&#x7406;&#x7684;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x767B;&#x5F55;&#x5230; master &#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; <code>journalctl -u kube-apiserver</code> &#x67E5;&#x770B;&#x5176;&#x65E5;&#x5FD7;&#x3002;</p>
+<h3 id="32-kube-controller-manager-&#x65E5;&#x5FD7;">3.2. kube-controller-manager &#x65E5;&#x5FD7;</h3>
+<pre><code class="lang-bash">PODNAME=$(kubectl -n kube-system get pod <span class="hljs-_">-l</span> component=kube-controller-manager -o jsonpath=<span class="hljs-string">&apos;{.items[0].metadata.name}&apos;</span>)
+kubectl -n kube-system logs <span class="hljs-variable">$PODNAME</span> --tail 100
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x5047;&#x8BBE;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x4EE5; Kubernetes &#x9759;&#x6001; Pod &#x7684;&#x5F62;&#x5F0F;&#x6765;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x679C; kube-controller-manager &#x662F;&#x7528; systemd &#x7BA1;&#x7406;&#x7684;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x767B;&#x5F55;&#x5230; master &#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; <code>journalctl -u kube-controller-manager</code> &#x67E5;&#x770B;&#x5176;&#x65E5;&#x5FD7;&#x3002;</p>
+<h3 id="33-kube-scheduler-&#x65E5;&#x5FD7;">3.3. kube-scheduler &#x65E5;&#x5FD7;</h3>
+<pre><code class="lang-bash">PODNAME=$(kubectl -n kube-system get pod <span class="hljs-_">-l</span> component=kube-scheduler -o jsonpath=<span class="hljs-string">&apos;{.items[0].metadata.name}&apos;</span>)
+kubectl -n kube-system logs <span class="hljs-variable">$PODNAME</span> --tail 100
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x5047;&#x8BBE;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x4EE5; Kubernetes &#x9759;&#x6001; Pod &#x7684;&#x5F62;&#x5F0F;&#x6765;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x679C; kube-scheduler &#x662F;&#x7528; systemd &#x7BA1;&#x7406;&#x7684;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x767B;&#x5F55;&#x5230; master &#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528; <code>journalctl -u kube-scheduler</code> &#x67E5;&#x770B;&#x5176;&#x65E5;&#x5FD7;&#x3002;</p>
+<h3 id="34-kubelet-&#x65E5;&#x5FD7;">3.4. kubelet &#x65E5;&#x5FD7;</h3>
+<pre><code class="lang-bash">journalctl <span class="hljs-_">-l</span> -u kubelet
+</code></pre>
+<h3 id="35-pod-&#x65E5;&#x5FD7;">3.5. Pod &#x65E5;&#x5FD7;</h3>
+<p>&#x67E5;&#x770B;&#x6307;&#x5B9A;Pod&#x7684;&#x65E5;&#x5FD7;</p>
+<pre><code class="lang-bash">kubectl logs &lt;pod-name&gt; -n &lt;namespace&gt;
+
+<span class="hljs-comment"># &#x7C7B;&#x4F3C; tail -f &#x7684;&#x65E5;&#x5FD7;</span>
+kubectl logs <span class="hljs-_">-f</span> &lt;pod-name&gt; -n &lt;namespace&gt;
+</code></pre>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Return snapshot logs from pod nginx with only one container</span>
+kubectl logs nginx
+
+<span class="hljs-comment"># Return snapshot logs from pod nginx with multi containers</span>
+kubectl logs nginx --all-containers=<span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Return snapshot logs from all containers in pods defined by label app=nginx</span>
+kubectl logs -lapp=nginx --all-containers=<span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Return snapshot of previous terminated ruby container logs from pod web-1</span>
+kubectl logs -p -c ruby web-1
+
+<span class="hljs-comment"># Begin streaming the logs of the ruby container in pod web-1</span>
+kubectl logs <span class="hljs-_">-f</span> -c ruby web-1
+
+<span class="hljs-comment"># Begin streaming the logs from all containers in pods defined by label app=nginx</span>
+kubectl logs <span class="hljs-_">-f</span> -lapp=nginx --all-containers=<span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Display only the most recent 20 lines of output in pod nginx</span>
+kubectl logs --tail=20 nginx
+
+<span class="hljs-comment"># Show all logs from pod nginx written in the last hour</span>
+kubectl logs --since=1h nginx
+
+<span class="hljs-comment"># Show logs from a kubelet with an expired serving certificate</span>
+kubectl logs --insecure-skip-tls-verify-backend nginx
+
+<span class="hljs-comment"># Return snapshot logs from first container of a job named hello</span>
+kubectl logs job/hello
+
+<span class="hljs-comment"># Return snapshot logs from container nginx-1 of a deployment named nginx</span>
+kubectl logs deployment/nginx -c nginx-1
+</code></pre>
+<h2 id="4-&#x6C61;&#x70B9;">4. &#x6C61;&#x70B9;</h2>
+<p>&#x4E00;&#x65E6;&#x67D0;&#x4E2A;&#x8282;&#x70B9;&#x88AB;&#x52A0;&#x4E0A;&#x4E86;&#x4E00;&#x4E2A; Taint&#xFF0C;&#x5373;&#x88AB;&#x201C;&#x6253;&#x4E0A;&#x4E86;&#x6C61;&#x70B9;&#x201D;&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709; Pod &#x5C31;&#x90FD;&#x4E0D;&#x80FD;&#x5728;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x56E0;&#x4E3A; Kubernetes &#x7684; Pod &#x90FD;&#x6709;&#x201C;&#x6D01;&#x7656;&#x201D;&#x3002;</p>
+<p>&#x9664;&#x975E;&#xFF0C;&#x6709;&#x4E2A;&#x522B;&#x7684; Pod &#x58F0;&#x660E;&#x81EA;&#x5DF1;&#x80FD;&#x201C;&#x5BB9;&#x5FCD;&#x201D;&#x8FD9;&#x4E2A;&#x201C;&#x6C61;&#x70B9;&#x201D;&#xFF0C;&#x5373;&#x58F0;&#x660E;&#x4E86; Toleration&#xFF0C;&#x5B83;&#x624D;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x4E3A;&#x8282;&#x70B9;&#x6253;&#x6C61;&#x70B9;(Taint)&#x7684;&#x547D;&#x4EE4;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl taint nodes node1 foo=bar:NoSchedule
+</code></pre>
+<p>&#x8FD9;&#x65F6;&#xFF0C;&#x8BE5; node1 &#x8282;&#x70B9;&#x4E0A;&#x5C31;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x683C;&#x5F0F;&#x7684; Taint&#xFF0C;&#x5373;&#xFF1A;foo=bar:NoSchedule&#x3002;&#x5176;&#x4E2D;&#x503C;&#x91CC;&#x9762;&#x7684; NoSchedule&#xFF0C;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E2A; Taint &#x53EA;&#x4F1A;&#x5728;&#x8C03;&#x5EA6;&#x65B0; Pod &#x65F6;&#x4EA7;&#x751F;&#x4F5C;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5DF2;&#x7ECF;&#x5728; node1 &#x4E0A;&#x8FD0;&#x884C;&#x7684; Pod&#xFF0C;&#x54EA;&#x6015;&#x5B83;&#x4EEC;&#x6CA1;&#x6709; Toleration&#x3002;</p>
+<p>&#x90A3;&#x4E48; Pod &#x53C8;&#x5982;&#x4F55;&#x58F0;&#x660E; Toleration &#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x5728; Pod &#x7684;.yaml &#x6587;&#x4EF6;&#x4E2D;&#x7684; spec &#x90E8;&#x5206;&#xFF0C;&#x52A0;&#x5165; tolerations &#x5B57;&#x6BB5;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
+<span class="hljs-attr">kind:</span> Pod
+...
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  tolerations:</span>
+<span class="hljs-attr">  - key:</span> <span class="hljs-string">&quot;foo&quot;</span>
+<span class="hljs-attr">    operator:</span> <span class="hljs-string">&quot;Equal&quot;</span>
+<span class="hljs-attr">    value:</span> <span class="hljs-string">&quot;bar&quot;</span>
+<span class="hljs-attr">    effect:</span> <span class="hljs-string">&quot;NoSchedule&quot;</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A; Toleration &#x7684;&#x542B;&#x4E49;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A; Pod &#x80FD;&#x201C;&#x5BB9;&#x5FCD;&#x201D;&#x6240;&#x6709;&#x952E;&#x503C;&#x5BF9;&#x4E3A; foo=bar &#x7684; Taint&#xFF08; operator: &#x201C;Equal&#x201D;&#xFF0C;&#x201C;&#x7B49;&#x4E8E;&#x201D;&#x64CD;&#x4F5C;&#xFF09;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#xFF0C;master &#x8282;&#x70B9;&#x4E0A;&#x4F1A;&#x81EA;&#x5E26;&#x4E00;&#x4E2A;&#x6C61;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-yaml">$ kubectl describe node master
+
+<span class="hljs-attr">Name:</span>               master
+<span class="hljs-attr">Roles:</span>              master
+<span class="hljs-attr">Taints:</span>             node-role.kubernetes.io/master:NoSchedule
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;Master &#x8282;&#x70B9;&#x9ED8;&#x8BA4;&#x88AB;&#x52A0;&#x4E0A;&#x4E86;node-role.kubernetes.io/master:NoSchedule&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x201C;&#x6C61;&#x70B9;&#x201D;&#xFF0C;&#x5176;&#x4E2D;&#x201C;&#x952E;&#x201D;&#x662F;node-role.kubernetes.io/master&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x201C;&#x503C;&#x201D;&#x3002;</p>
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x4F60;&#x5C31;&#x9700;&#x8981;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x7528;&#x201C;Exists&#x201D;&#x64CD;&#x4F5C;&#x7B26;&#xFF08;operator: &#x201C;Exists&#x201D;&#xFF0C;&#x201C;&#x5B58;&#x5728;&#x201D;&#x5373;&#x53EF;&#xFF09;&#x6765;&#x8BF4;&#x660E;&#xFF0C;&#x8BE5; Pod &#x80FD;&#x591F;&#x5BB9;&#x5FCD;&#x6240;&#x6709;&#x4EE5; foo &#x4E3A;&#x952E;&#x7684; Taint&#xFF0C;&#x624D;&#x80FD;&#x8BA9;&#x8FD9;&#x4E2A; Pod &#x8FD0;&#x884C;&#x5728;&#x8BE5; Master &#x8282;&#x70B9;&#x4E0A;&#xFF1A;</p>
+<pre><code class="lang-bash">apiVersion: v1
+kind: Pod
+...
+spec:
+  tolerations:
+  - key: <span class="hljs-string">&quot;foo&quot;</span>
+    operator: <span class="hljs-string">&quot;Exists&quot;</span>
+    effect: <span class="hljs-string">&quot;NoSchedule&quot;</span>
+</code></pre>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5C31;&#x662F;&#x60F3;&#x8981;&#x4E00;&#x4E2A;&#x5355;&#x8282;&#x70B9;&#x7684; Kubernetes&#xFF0C;&#x5220;&#x9664;&#x8FD9;&#x4E2A; Taint &#x624D;&#x662F;&#x6B63;&#x786E;&#x7684;&#x9009;&#x62E9;&#xFF1A;</p>
+<pre><code class="lang-bash">$ kubectl taint nodes --all node-role.kubernetes.io/master-
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x201C;node-role.kubernetes.io/master&#x201D;&#x8FD9;&#x4E2A;&#x952E;&#x540E;&#x9762;&#x52A0;&#x4E0A;&#x4E86;&#x4E00;&#x4E2A;&#x77ED;&#x6A2A;&#x7EBF;&#x201C;-&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x683C;&#x5F0F;&#x5C31;&#x610F;&#x5473;&#x7740;&#x79FB;&#x9664;&#x6240;&#x6709;&#x4EE5;&#x201C;node-role.kubernetes.io/master&#x201D;&#x4E3A;&#x952E;&#x7684; Taint&#x3002;</p>
+<h2 id="5-projectedvolume">5. ProjectedVolume</h2>
+<h3 id="51-secret">5.1 Secret</h3>
+<h4 id="511-&#x521B;&#x5EFA;">5.1.1. &#x521B;&#x5EFA;</h4>
+<pre><code class="lang-bash">kubectl create secret generic user --from-file=./username.txt
+</code></pre>
+<h4 id="512-&#x67E5;&#x8BE2;">5.1.2 &#x67E5;&#x8BE2;</h4>
+<pre><code class="lang-bash">kubectl get secrets
+</code></pre>
+<h3 id="52-configmap">5.2. ConfigMap</h3>
+<h4 id="521-&#x521B;&#x5EFA;">5.2.1. &#x521B;&#x5EFA;</h4>
+<pre><code class="lang-bash">$ kubectl create configmap &lt;configmap-na,e&gt; --from-file=&lt;file-name&gt;
+</code></pre>
+<h4 id="522-&#x67E5;&#x8BE2;">5.22. &#x67E5;&#x8BE2;</h4>
+<pre><code class="lang-bash">kubectl get configmaps &lt;configmap-name&gt; -o yaml
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="health-check.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 9.2 容器健康检查">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9.1 常用的 k8s 命令","date":"2021-02-24T23:37:43.000Z","draft":false,"tags":["kubernetes"],"categories":["云计算"],"level":"1.10.1","depth":2,"next":{"title":"9.2 容器健康检查","level":"1.10.2","depth":2,"path":"chapter9/health-check.md","ref":"chapter9/health-check.md","articles":[]},"previous":{"title":"9. kubernetes 生态周边","level":"1.10","depth":1,"ref":"","articles":[{"title":"9.1 常用的 k8s 命令","level":"1.10.1","depth":2,"path":"chapter9/commands.md","ref":"chapter9/commands.md","articles":[]},{"title":"9.2 容器健康检查","level":"1.10.2","depth":2,"path":"chapter9/health-check.md","ref":"chapter9/health-check.md","articles":[]},{"title":"9.3 [译]Kubernetes深入研究：CustomResources的代码生成","level":"1.10.3","depth":2,"path":"chapter9/code-generation-for-customresources.md","ref":"chapter9/code-generation-for-customresources.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","sharing","back-to-top-button","page-treeview","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter9/commands.md","mtime":"2021-06-12T12:27:05.767Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-12T15:16:03.768Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
