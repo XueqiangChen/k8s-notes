@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
@@ -29,11 +29,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
                 
             
                 
@@ -61,6 +65,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -69,6 +74,23 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    
+
+    
+        <link rel="shortcut icon" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../asset/img/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../asset/img/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../asset/img/favicon.ico">
+        
     
 
     </head>
@@ -539,39 +561,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
-<li><div><a href="#1-&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">1. &#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#&#x673A;&#x5668;&#x914D;&#x7F6E;">&#x673A;&#x5668;&#x914D;&#x7F6E;</a><i></i></div></li>
-<li><div><a href="#&#x7EC4;&#x4EF6;&#x4FE1;&#x606F;">&#x7EC4;&#x4EF6;&#x4FE1;&#x606F;</a><i></i></div></li>
-<li><div><a href="#&#x5B9E;&#x8DF5;&#x76EE;&#x6807;">&#x5B9E;&#x8DF5;&#x76EE;&#x6807;</a><i></i></div></li>
-<li><div><a href="#&#x57FA;&#x672C;&#x914D;&#x7F6E;">&#x57FA;&#x672C;&#x914D;&#x7F6E;</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#2-&#x5B89;&#x88C5;-kubeadm-&#x548C;-docker">2. &#x5B89;&#x88C5; kubeadm &#x548C; docker</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#docker-&#x5B89;&#x88C5;">docker &#x5B89;&#x88C5;</a><i></i></div></li>
-<li><div><a href="#kubeadm">kubeadm</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#3-&#x90E8;&#x7F72;kubernetes-&#x7684;master&#x8282;&#x70B9;">3. &#x90E8;&#x7F72;kubernetes &#x7684;master&#x8282;&#x70B9;</a><i></i></div></li>
-<li><div><a href="#4-&#x90E8;&#x7F72;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;">4. &#x90E8;&#x7F72;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;</a><i></i></div></li>
-<li><div><a href="#5-&#x90E8;&#x7F72;-k8s-&#x7684;-worker-&#x8282;&#x70B9;">5. &#x90E8;&#x7F72; k8s &#x7684; worker &#x8282;&#x70B9;</a><i></i></div></li>
-<li><div><a href="#6-&#x90E8;&#x7F72;-dashboard-&#x53EF;&#x89C6;&#x5316;&#x63D2;&#x4EF6;">6. &#x90E8;&#x7F72; Dashboard &#x53EF;&#x89C6;&#x5316;&#x63D2;&#x4EF6;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#&#x521B;&#x5EFA;dashboard&#x7BA1;&#x7406;&#x5458;">&#x521B;&#x5EFA;dashboard&#x7BA1;&#x7406;&#x5458;</a><i></i></div></li>
-<li><div><a href="#62-&#x4E3A;&#x7528;&#x6237;&#x5206;&#x914D;&#x6743;&#x9650;">6.2. &#x4E3A;&#x7528;&#x6237;&#x5206;&#x914D;&#x6743;&#x9650;</a><i></i></div></li>
-<li><div><a href="#63-&#x67E5;&#x770B;&#x767B;&#x5F55;&#x7684;token">6.3. &#x67E5;&#x770B;&#x767B;&#x5F55;&#x7684;token</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#7-&#x90E8;&#x7F72;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;">7. &#x90E8;&#x7F72;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;</a><i></i></div></li>
-<li><div><a href="#8-&#x5378;&#x8F7D;&#x96C6;&#x7FA4;">8. &#x5378;&#x8F7D;&#x96C6;&#x7FA4;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#81-master">8.1 Master</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;">&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;</a><i></i></div></li>
-</ul>
-</div>
-
-
-<h2 id="1-&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">1. &#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
+                                <h2 id="1-&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">1. &#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
 <h3 id="&#x673A;&#x5668;&#x914D;&#x7F6E;">&#x673A;&#x5668;&#x914D;&#x7F6E;</h3>
 <ol>
 <li>8&#x6838;CPU&#x3001;8GB&#x5185;&#x5B58;&#xFF1B;</li>
@@ -619,54 +609,54 @@
 <h3 id="&#x57FA;&#x672C;&#x914D;&#x7F6E;">&#x57FA;&#x672C;&#x914D;&#x7F6E;</h3>
 <p>&#x5F00;&#x59CB;&#x5B89;&#x88C5;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x5BF9;&#x7CFB;&#x7EDF;&#x505A;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
 <p><strong>&#x6240;&#x6709;&#x8282;&#x70B9;&#x914D;&#x7F6E; hosts</strong></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># cat /etc/hosts</span>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># cat /etc/hosts</span>
 
-10.186.4.100 master
-10.186.4.167 node1
-10.186.4.168 node2
-10.186.4.169 node3
+<span class="token number">10.186</span>.4.100 master
+<span class="token number">10.186</span>.4.167 node1
+<span class="token number">10.186</span>.4.168 node2
+<span class="token number">10.186</span>.4.169 node3
 </code></pre>
 <p><strong>&#x6240;&#x6709;&#x8282;&#x70B9;&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;&#x3001;selinux&#x3001;dnsmasq</strong></p>
-<pre><code class="lang-bash">systemctl <span class="hljs-built_in">disable</span> --now firewalld
-<span class="hljs-comment">#&#x5173;&#x95ED;dnsmasq(&#x5426;&#x5219;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;docker&#x5BB9;&#x5668;&#x65E0;&#x6CD5;&#x89E3;&#x6790;&#x57DF;&#x540D;)</span>
-systemctl <span class="hljs-built_in">disable</span> --now dnsmasq
-systemctl <span class="hljs-built_in">disable</span> --now NetworkManager
+<pre class="language-"><code class="lang-bash">systemctl disable --now firewalld
+<span class="token comment">#&#x5173;&#x95ED;dnsmasq(&#x5426;&#x5219;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;docker&#x5BB9;&#x5668;&#x65E0;&#x6CD5;&#x89E3;&#x6790;&#x57DF;&#x540D;)</span>
+systemctl disable --now dnsmasq
+systemctl disable --now NetworkManager
 
-<span class="hljs-comment"># Set SELinux in permissive mode (effectively disabling it)</span>
-sudo setenforce 0
-sudo sed -i <span class="hljs-string">&apos;s/^SELINUX=enforcing$/SELINUX=permissive/&apos;</span> /etc/selinux/config
+<span class="token comment"># Set SELinux in permissive mode (effectively disabling it)</span>
+<span class="token function">sudo</span> setenforce <span class="token number">0</span>
+<span class="token function">sudo</span> <span class="token function">sed</span> -i <span class="token string">&apos;s/^SELINUX=enforcing$/SELINUX=permissive/&apos;</span> /etc/selinux/config
 </code></pre>
 <p><strong>&#x5173;&#x95ED;swap</strong></p>
-<pre><code class="lang-bash">swapoff <span class="hljs-_">-a</span> &amp;&amp; sysctl -w vm.swappiness=0
-sed -ri <span class="hljs-string">&apos;/^[^#]*swap/s@^@#@&apos;</span> /etc/fstab
+<pre class="language-"><code class="lang-bash">swapoff -a <span class="token operator">&amp;&amp;</span> sysctl -w vm.swappiness<span class="token operator">=</span><span class="token number">0</span>
+<span class="token function">sed</span> -ri <span class="token string">&apos;/^[^#]*swap/s@^@#@&apos;</span> /etc/fstab
 </code></pre>
 <p><strong>&#x5141;&#x8BB8;iptales&#x67E5;&#x770B;&#x7F51;&#x6865;&#x6D41;&#x91CF;</strong></p>
-<pre><code class="lang-bash">cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+<pre class="language-"><code class="lang-bash"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/modules-load.d/k8s.conf</span>
 br_netfilter
-EOF
+EOF</span>
 
-cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/sysctl.d/k8s.conf</span>
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
-EOF
+EOF</span>
 
-sudo sysctl --system
+<span class="token function">sudo</span> sysctl --system
 </code></pre>
 <p><strong>&#x5B89;&#x88C5;ntpdate</strong></p>
-<pre><code class="lang-bash">rpm -ivh http://mirrors.wlnmp.com/centos/wlnmp-release-centos.noarch.rpm
-yum install ntpdate -y
+<pre class="language-"><code class="lang-bash"><span class="token function">rpm</span> -ivh http://mirrors.wlnmp.com/centos/wlnmp-release-centos.noarch.rpm
+yum <span class="token function">install</span> ntpdate -y
 </code></pre>
 <p>&#x540C;&#x6B65;&#x65F6;&#x95F4;</p>
-<pre><code class="lang-bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;Asia/Shanghai&apos;</span> &gt;/etc/timezone
+<pre class="language-"><code class="lang-bash"><span class="token function">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;Asia/Shanghai&apos;</span> <span class="token operator">&gt;</span>/etc/timezone
 ntpdate time2.aliyun.com
 </code></pre>
 <p>&#x52A0;&#x5165;&#x5230; crontab</p>
-<pre><code class="lang-bash">*/5 * * * * ntpdate time2.aliyun.com
+<pre class="language-"><code class="lang-bash">*/5 * * * * ntpdate time2.aliyun.com
 </code></pre>
 <p><strong>&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x514D;&#x5BC6;&#x767B;&#x5F55;</strong></p>
-<pre><code class="lang-bash">ssh-keygen -t rsa
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> master node1 node2 node3;<span class="hljs-keyword">do</span> ssh-copy-id -i .ssh/id_rsa.pub <span class="hljs-variable">$i</span>;<span class="hljs-keyword">done</span>
+<pre class="language-"><code class="lang-bash">ssh-keygen -t rsa
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> master node1 node2 node3<span class="token punctuation">;</span><span class="token keyword">do</span> ssh-copy-id -i .ssh/id_rsa.pub <span class="token variable">$i</span><span class="token punctuation">;</span><span class="token keyword">done</span>
 </code></pre>
 <p><strong>&#x5F00;&#x653E;&#x7AEF;&#x53E3;</strong></p>
 <p><img src="https://chenxqblog-1258795182.cos.ap-guangzhou.myqcloud.com/k8s-port.png" alt=""></p>
@@ -677,54 +667,54 @@ ntpdate time2.aliyun.com
 <p>&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x53C2;&#x8003;<a href="https://docs.docker.com/engine/install/centos/" target="_blank">docker install</a></p>
 </blockquote>
 <p><strong>yum&#x6E90;&#x914D;&#x7F6E;</strong></p>
-<pre><code class="lang-bash">yum install -y yum-utils
+<pre class="language-"><code class="lang-bash">yum <span class="token function">install</span> -y yum-utils
 
-<span class="hljs-comment"># &#x5B98;&#x65B9;&#x6E90;</span>
-sudo yum-config-manager \
-    --add-repo \
+<span class="token comment"># &#x5B98;&#x65B9;&#x6E90;</span>
+<span class="token function">sudo</span> yum-config-manager <span class="token punctuation">\</span>
+    --add-repo <span class="token punctuation">\</span>
     https://download.docker.com/linux/centos/docker-ce.repo
 
-<span class="hljs-comment"># &#x963F;&#x91CC;&#x4E91;&#x6E90;</span>
-yum-config-manager \
-    --add-repo \
+<span class="token comment"># &#x963F;&#x91CC;&#x4E91;&#x6E90;</span>
+yum-config-manager <span class="token punctuation">\</span>
+    --add-repo <span class="token punctuation">\</span>
     https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 </code></pre>
 <p>&#x5982;&#x679C;&#x662F;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; docker&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5B89;&#x88C5;:</p>
-<pre><code class="lang-bash">$ sudo yum install docker-ce docker-ce-cli containerd.io
+<pre class="language-"><code class="lang-bash">$ <span class="token function">sudo</span> yum <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
 </code></pre>
 <p>&#x6307;&#x5B9A;&#x7248;&#x672C;&#x5B89;&#x88C5;&#x7684;&#x8BDD;&#xFF0C;&#x5148;&#x67E5;&#x770B;&#x6E90;&#x4E2D;&#x53EF;&#x7528;&#x7684;docker&#x7248;&#x672C;&#xFF1A;</p>
-<pre><code class="lang-bash">$ yum list docker-ce --showduplicates | sort -r
+<pre class="language-"><code class="lang-bash">$ yum list docker-ce --showduplicates <span class="token operator">|</span> <span class="token function">sort</span> -r
 
-docker-ce.x86_64  3:18.09.1-3.el7                     docker-ce-stable
-docker-ce.x86_64  3:18.09.0-3.el7                     docker-ce-stable
-docker-ce.x86_64  18.06.1.ce-3.el7                    docker-ce-stable
-docker-ce.x86_64  18.06.0.ce-3.el7                    docker-ce-stable
+docker-ce.x86_64  <span class="token number">3</span>:18.09.1-3.el7                     docker-ce-stable
+docker-ce.x86_64  <span class="token number">3</span>:18.09.0-3.el7                     docker-ce-stable
+docker-ce.x86_64  <span class="token number">18.06</span>.1.ce-3.el7                    docker-ce-stable
+docker-ce.x86_64  <span class="token number">18.06</span>.0.ce-3.el7                    docker-ce-stable
 </code></pre>
 <p>&#x901A;&#x8FC7;&#x8F6F;&#x4EF6;&#x5305;&#x540D;&#x79F0;&#x5B89;&#x88C5;&#x7279;&#x5B9A;&#x7248;&#x672C;&#xFF0C;&#x8F6F;&#x4EF6;&#x5305;&#x540D;&#x79F0;&#x662F;&#x8F6F;&#x4EF6;&#x5305;&#x540D;&#x79F0;&#xFF08;docker-ce&#xFF09;&#x52A0;&#x4E0A;&#x7248;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x7B2C;&#x4E8C;&#x5217;&#xFF09;&#xFF0C;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5192;&#x53F7;&#xFF08;:)&#x5F00;&#x59CB;&#xFF0C;&#x76F4;&#x81F3;&#x7B2C;&#x4E00;&#x4E2A;&#x8FDE;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x7528;&#x8FDE;&#x5B57;&#x7B26;&#xFF08;-&#xFF09;&#x8FDE;&#x63A5;&#x3002;&#x4F8B;&#x5982;docker-ce-18.09.9&#x3002;</p>
-<pre><code class="lang-bash">$ sudo yum install -y docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io
+<pre class="language-"><code class="lang-bash">$ <span class="token function">sudo</span> yum <span class="token function">install</span> -y docker-ce-<span class="token operator">&lt;</span>VERSION_STRING<span class="token operator">&gt;</span> docker-ce-cli-<span class="token operator">&lt;</span>VERSION_STRING<span class="token operator">&gt;</span> containerd.io
 </code></pre>
 <p>&#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x542F;&#x52A8;</p>
-<pre><code class="lang-bash">$ sudo systemctl start docker 
-$ systemctl daemon-reload &amp;&amp; systemctl <span class="hljs-built_in">enable</span> --now docker
+<pre class="language-"><code class="lang-bash">$ <span class="token function">sudo</span> systemctl start docker 
+$ systemctl daemon-reload <span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> --now docker
 </code></pre>
 <h3 id="kubeadm">kubeadm</h3>
 <blockquote>
 <p>&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x53C2;&#x8003; <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/" target="_blank">Installing kubeadm</a></p>
 </blockquote>
 <p>&#x6DFB;&#x52A0; yum &#x6E90;&#xFF0C;&#x6267;&#x884C;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#x3002;</p>
-<pre><code class="lang-bash">cat &lt;&lt;EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+<pre class="language-"><code class="lang-bash"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/yum.repos.d/kubernetes.repo</span>
 [kubernetes]
 name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\<span class="hljs-variable">$basearch</span>
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\<span class="token variable">$basearch</span>
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 exclude=kubelet kubeadm kubectl
-EOF
+EOF</span>
 
-<span class="hljs-comment"># &#x963F;&#x91CC;&#x4E91;&#x6E90;</span>
-cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+<span class="token comment"># &#x963F;&#x91CC;&#x4E91;&#x6E90;</span>
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span> /etc/yum.repos.d/kubernetes.repo</span>
 [kubernetes]
 name=Kubernetes
 baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
@@ -732,35 +722,35 @@ enabled=1
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-EOF
+EOF</span>
 
-sed -i <span class="hljs-_">-e</span> <span class="hljs-string">&apos;/mirrors.cloud.aliyuncs.com/d&apos;</span> <span class="hljs-_">-e</span> <span class="hljs-string">&apos;/mirrors.aliyuncs.com/d&apos;</span> /etc/yum.repos.d/CentOS-Base.repo
+<span class="token function">sed</span> -i -e <span class="token string">&apos;/mirrors.cloud.aliyuncs.com/d&apos;</span> -e <span class="token string">&apos;/mirrors.aliyuncs.com/d&apos;</span> /etc/yum.repos.d/CentOS-Base.repo
 
-sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+<span class="token function">sudo</span> yum <span class="token function">install</span> -y kubelet kubeadm kubectl --disableexcludes<span class="token operator">=</span>kubernetes
 
-sudo systemctl <span class="hljs-built_in">enable</span> --now kubelet
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> --now kubelet
 </code></pre>
 <p>&#x5728;&#x4E0A;&#x8FF0;&#x5B89;&#x88C5; kubeadm &#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;kubeadm &#x548C; kubelet&#x3001;kubectl&#x3001;kubernetes-cni &#x8FD9;&#x51E0;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x5B89;&#x88C5;&#x597D;&#x3002;</p>
 <p>&#x5B89;&#x88C5;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x7248;&#x672C;&#xFF1A;</p>
-<pre><code class="lang-bash">sudo yum install -y kubelet-1.20.0-0 kubeadm-1.20.0-0 kubectl-1.20.0-0 --disableexcludes=kubernetes
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> yum <span class="token function">install</span> -y kubelet-1.20.0-0 kubeadm-1.20.0-0 kubectl-1.20.0-0 --disableexcludes<span class="token operator">=</span>kubernetes
 </code></pre>
 <p><strong><code>kubectl</code> &#x547D;&#x4EE4;&#x542F;&#x7528; <code>shell</code> &#x81EA;&#x52A8;&#x8865;&#x9F50;&#x529F;&#x80FD;</strong></p>
-<pre><code class="lang-bash"><span class="hljs-comment"># 1.&#x5B89;&#x88C5;bash-completion</span>
-yum install bash-completion
-<span class="hljs-comment"># &#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4F60;&#x7684; Shell &#x5E76;&#x8FD0;&#x884C; type _init_completion</span>
-<span class="hljs-built_in">type</span> _init_completion
+<pre class="language-"><code class="lang-bash"><span class="token comment"># 1.&#x5B89;&#x88C5;bash-completion</span>
+yum <span class="token function">install</span> bash-completion
+<span class="token comment"># &#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4F60;&#x7684; Shell &#x5E76;&#x8FD0;&#x884C; type _init_completion</span>
+<span class="token builtin class-name">type</span> _init_completion
 
-<span class="hljs-comment"># 2.&#x542F;&#x52A8; kubectl &#x81EA;&#x52A8;&#x8865;&#x9F50;</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;source &lt;(kubectl completion bash)&apos;</span> &gt;&gt;~/.bashrc
-<span class="hljs-built_in">source</span> ~/.bashrc
+<span class="token comment"># 2.&#x542F;&#x52A8; kubectl &#x81EA;&#x52A8;&#x8865;&#x9F50;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&apos;source &lt;(kubectl completion bash)&apos;</span> <span class="token operator">&gt;&gt;</span>~/.bashrc
+<span class="token builtin class-name">source</span> ~/.bashrc
 </code></pre>
 <p><strong>&#x5F00;&#x673A;&#x81EA;&#x542F;&#x52A8;</strong></p>
-<pre><code class="lang-bash">systemctl daemon-reload &amp;&amp; systemctl <span class="hljs-built_in">enable</span> --now kubelet
+<pre class="language-"><code class="lang-bash">systemctl daemon-reload <span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> --now kubelet
 </code></pre>
 <h2 id="3-&#x90E8;&#x7F72;kubernetes-&#x7684;master&#x8282;&#x70B9;">3. &#x90E8;&#x7F72;kubernetes &#x7684;master&#x8282;&#x70B9;</h2>
 <p><a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/" target="_blank">kubeadm &#x521D;&#x59CB;&#x5316;</a>&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x6216;&#x8005;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-config" target="_blank"><code>kubeadm config</code></a> &#x547D;&#x4EE4;&#x6765;&#x67E5;&#x770B; <code>kubeadm</code> &#x7684;&#x914D;&#x7F6E;&#x3002;</p>
 <p>&#x521D;&#x59CB;&#x5316;&#x9700;&#x8981;&#x7684;&#x955C;&#x50CF;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>kubeadm config images list</code> &#x6765;&#x67E5;&#x770B;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># kubeadm config images list</span>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># kubeadm config images list</span>
 
 k8s.gcr.io/kube-apiserver:v1.20.4
 k8s.gcr.io/kube-controller-manager:v1.20.4
@@ -773,11 +763,11 @@ k8s.gcr.io/coredns:1.7.0
 <p>&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; <code>kubeadm config images pull</code> &#x547D;&#x4EE4;&#x63D0;&#x524D;&#x62C9;&#x53D6;&#x955C;&#x50CF;&#xFF0C;&#x83B7;&#x53D6;&#x955C;&#x50CF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7684; <code>k8s.gcr.io</code> &#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x6E90;&#xFF0C;&#x56FD;&#x5185;&#x662F;&#x4E0B;&#x8F7D;&#x4E0D;&#x4E86;&#x7684;&#x3002;&#x6709;&#x4E24;&#x4E2A;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;</p>
 <ol>
 <li><p>&#x4F7F;&#x7528;&#x56FD;&#x5185;&#x7684;&#x963F;&#x91CC;&#x4E91;&#x955C;&#x50CF;&#x6E90;&#xFF1A; </p>
-<pre><code class="lang-bash">cat &gt;/etc/sysconfig/kubelet&lt;&lt;EOF
-KUBELET_EXTRA_ARGS=<span class="hljs-string">&quot;--pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.2&quot;</span>
-EOF
+<pre class="language-"><code class="lang-bash"><span class="token function">cat</span> <span class="token operator">&gt;</span>/etc/sysconfig/kubelet<span class="token operator">&lt;&lt;</span><span class="token string">EOF
+KUBELET_EXTRA_ARGS=&quot;--pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause-amd64:3.2&quot;
+EOF</span>
 
-<span class="hljs-comment"># &#x6216;&#x8005;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x6307;&#x5B9A; image repo</span>
+<span class="token comment"># &#x6216;&#x8005;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x6307;&#x5B9A; image repo</span>
 kubeadm config images pull --image-repository registry.aliyuncs.com/google_containers
 </code></pre>
 </li>
@@ -785,185 +775,185 @@ kubeadm config images pull --image-repository registry.aliyuncs.com/google_conta
 </li>
 </ol>
 <p><code>kubeadm</code> &#x7684;&#x521D;&#x59CB;&#x5316;&#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x4E86;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;<code>kubeadm</code> &#x5BF9;&#x4E8E;&#x4F4E;&#x7248;&#x672C;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x4E0D;&#x517C;&#x5BB9;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7; <code>kubeadm config migrate --new-config ${new-file} --old config ${old-file}</code> &#x547D;&#x4EE4;&#x6765;&#x8F6C;&#x6362;&#x3002;</p>
-<pre><code class="lang-yaml"><span class="hljs-comment"># kubeadm.yml</span>
-<span class="hljs-attr">apiVersion:</span> kubeadm.k8s.io/v1beta2
-<span class="hljs-attr">bootstrapTokens:</span>
-<span class="hljs-attr">- groups:</span>
-<span class="hljs-attr">  - system:</span>bootstrappers:kubeadm:default-node-token
-<span class="hljs-attr">  token:</span> bw4tlw.owb266appoos6afw
-<span class="hljs-attr">  ttl:</span> <span class="hljs-number">24</span>h0m0s
-<span class="hljs-attr">  usages:</span>
-<span class="hljs-bullet">  -</span> signing
-<span class="hljs-bullet">  -</span> authentication
-<span class="hljs-attr">kind:</span> InitConfiguration
-<span class="hljs-attr">localAPIEndpoint:</span>
-<span class="hljs-attr">  advertiseAddress:</span> <span class="hljs-number">10.186</span><span class="hljs-number">.4</span><span class="hljs-number">.100</span>
-<span class="hljs-attr">  bindPort:</span> <span class="hljs-number">6443</span>
-<span class="hljs-attr">nodeRegistration:</span>
-<span class="hljs-attr">  criSocket:</span> /var/run/dockershim.sock
-<span class="hljs-attr">  name:</span> yxj-test
-<span class="hljs-attr">  taints:</span>
-<span class="hljs-attr">  - effect:</span> NoSchedule
-<span class="hljs-attr">    key:</span> node-role.kubernetes.io/master
-<span class="hljs-meta">---</span>
-<span class="hljs-attr">apiServer:</span>
-<span class="hljs-attr">  extraArgs:</span>
-<span class="hljs-attr">    runtime-config:</span> api/all=<span class="hljs-literal">true</span>
-<span class="hljs-attr">  timeoutForControlPlane:</span> <span class="hljs-number">4</span>m0s
-<span class="hljs-attr">apiVersion:</span> kubeadm.k8s.io/v1beta2
-<span class="hljs-attr">certificatesDir:</span> /etc/kubernetes/pki
-<span class="hljs-attr">clusterName:</span> kubernetes
-<span class="hljs-attr">controllerManager:</span>
-<span class="hljs-attr">  extraArgs:</span>
-<span class="hljs-attr">    horizontal-pod-autoscaler-sync-period:</span> <span class="hljs-number">10</span>s
-<span class="hljs-attr">    horizontal-pod-autoscaler-use-rest-clients:</span> <span class="hljs-string">&quot;true&quot;</span>
-<span class="hljs-attr">    node-monitor-grace-period:</span> <span class="hljs-number">10</span>s
-<span class="hljs-attr">dns:</span>
-<span class="hljs-attr">  type:</span> CoreDNS
-<span class="hljs-attr">etcd:</span>
-<span class="hljs-attr">  local:</span>
-<span class="hljs-attr">    dataDir:</span> /var/lib/etcd
-<span class="hljs-attr">imageRepository:</span> k8s.gcr.io
-<span class="hljs-attr">kind:</span> ClusterConfiguration
-<span class="hljs-attr">kubernetesVersion:</span> v1<span class="hljs-number">.20</span><span class="hljs-number">.3</span>
-<span class="hljs-attr">imageRepository:</span> registry.cn-hangzhou.aliyuncs.com/google_containers
-<span class="hljs-attr">networking:</span>
-<span class="hljs-attr">  dnsDomain:</span> cluster.local
-<span class="hljs-attr">  podSubnet:</span> <span class="hljs-number">10.32</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>/<span class="hljs-number">12</span>
-<span class="hljs-attr">  serviceSubnet:</span> <span class="hljs-number">10.96</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>/<span class="hljs-number">12</span>
-<span class="hljs-attr">scheduler:</span> {}
+<pre class="language-"><code class="lang-yaml"><span class="token comment"># kubeadm.yml</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> kubeadm.k8s.io/v1beta2
+<span class="token key atrule">bootstrapTokens</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">groups</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> system<span class="token punctuation">:</span>bootstrappers<span class="token punctuation">:</span>kubeadm<span class="token punctuation">:</span>default<span class="token punctuation">-</span>node<span class="token punctuation">-</span>token
+  <span class="token key atrule">token</span><span class="token punctuation">:</span> bw4tlw.owb266appoos6afw
+  <span class="token key atrule">ttl</span><span class="token punctuation">:</span> 24h0m0s
+  <span class="token key atrule">usages</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> signing
+  <span class="token punctuation">-</span> authentication
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> InitConfiguration
+<span class="token key atrule">localAPIEndpoint</span><span class="token punctuation">:</span>
+  <span class="token key atrule">advertiseAddress</span><span class="token punctuation">:</span> 10.186.4.100
+  <span class="token key atrule">bindPort</span><span class="token punctuation">:</span> <span class="token number">6443</span>
+<span class="token key atrule">nodeRegistration</span><span class="token punctuation">:</span>
+  <span class="token key atrule">criSocket</span><span class="token punctuation">:</span> /var/run/dockershim.sock
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> yxj<span class="token punctuation">-</span>test
+  <span class="token key atrule">taints</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">effect</span><span class="token punctuation">:</span> NoSchedule
+    <span class="token key atrule">key</span><span class="token punctuation">:</span> node<span class="token punctuation">-</span>role.kubernetes.io/master
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiServer</span><span class="token punctuation">:</span>
+  <span class="token key atrule">extraArgs</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runtime-config</span><span class="token punctuation">:</span> api/all=true
+  <span class="token key atrule">timeoutForControlPlane</span><span class="token punctuation">:</span> 4m0s
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> kubeadm.k8s.io/v1beta2
+<span class="token key atrule">certificatesDir</span><span class="token punctuation">:</span> /etc/kubernetes/pki
+<span class="token key atrule">clusterName</span><span class="token punctuation">:</span> kubernetes
+<span class="token key atrule">controllerManager</span><span class="token punctuation">:</span>
+  <span class="token key atrule">extraArgs</span><span class="token punctuation">:</span>
+    <span class="token key atrule">horizontal-pod-autoscaler-sync-period</span><span class="token punctuation">:</span> 10s
+    <span class="token key atrule">horizontal-pod-autoscaler-use-rest-clients</span><span class="token punctuation">:</span> <span class="token string">&quot;true&quot;</span>
+    <span class="token key atrule">node-monitor-grace-period</span><span class="token punctuation">:</span> 10s
+<span class="token key atrule">dns</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> CoreDNS
+<span class="token key atrule">etcd</span><span class="token punctuation">:</span>
+  <span class="token key atrule">local</span><span class="token punctuation">:</span>
+    <span class="token key atrule">dataDir</span><span class="token punctuation">:</span> /var/lib/etcd
+<span class="token key atrule">imageRepository</span><span class="token punctuation">:</span> k8s.gcr.io
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterConfiguration
+<span class="token key atrule">kubernetesVersion</span><span class="token punctuation">:</span> v1.20.3
+<span class="token key atrule">imageRepository</span><span class="token punctuation">:</span> registry.cn<span class="token punctuation">-</span>hangzhou.aliyuncs.com/google_containers
+<span class="token key atrule">networking</span><span class="token punctuation">:</span>
+  <span class="token key atrule">dnsDomain</span><span class="token punctuation">:</span> cluster.local
+  <span class="token key atrule">podSubnet</span><span class="token punctuation">:</span> 10.32.0.0/12
+  <span class="token key atrule">serviceSubnet</span><span class="token punctuation">:</span> 10.96.0.0/12
+<span class="token key atrule">scheduler</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x7ED9;kube-controller-manager &#x8BBE;&#x7F6E;&#x4E86;</p>
-<pre><code class="lang-bash">horizontal-pod-autoscaler-use-rest-clients: <span class="hljs-string">&quot;true&quot;</span>
+<pre class="language-"><code class="lang-bash">horizontal-pod-autoscaler-use-rest-clients: <span class="token string">&quot;true&quot;</span>
 </code></pre>
 <p>&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5C06;&#x6765;&#x90E8;&#x7F72;&#x7684; kube-controller-manager &#x80FD;&#x591F;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;&#xFF08;Custom Metrics&#xFF09;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x6C34;&#x5E73;&#x6269;&#x5C55;&#x3002;</p>
 <p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;&#x662F;wave&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;Pod &#x7684; cidr &#x7F51;&#x7EDC;&#x4E3A;&#xFF1A;</p>
-<pre><code class="lang-bash">podSubnet: 10.32.0.0/12
+<pre class="language-"><code class="lang-bash">podSubnet: <span class="token number">10.32</span>.0.0/12
 </code></pre>
 <p>&#x7136;&#x540E;&#xFF0C;&#x6267;&#x884C;&#x4E00;&#x53E5;&#x6307;&#x4EE4;&#xFF1A;</p>
-<pre><code class="lang-bash">$ kubeadm init --config kubeadm.yaml
-[init] Using Kubernetes version: v1.20.0
-[preflight] Running pre-flight checks
-        [WARNING IsDockerSystemdCheck]: detected <span class="hljs-string">&quot;cgroupfs&quot;</span> as the Docker cgroup driver. The recommended driver is <span class="hljs-string">&quot;systemd&quot;</span>. Please follow the guide at https://kubernetes.io/docs/setup/cri/
-[preflight] Pulling images required <span class="hljs-keyword">for</span> setting up a Kubernetes cluster
-[preflight] This might take a minute or two, depending on the speed of your internet connection
-[preflight] You can also perform this action <span class="hljs-keyword">in</span> beforehand using <span class="hljs-string">&apos;kubeadm config images pull&apos;</span>
-[certs] Using certificateDir folder <span class="hljs-string">&quot;/etc/kubernetes/pki&quot;</span>
-[certs] Generating <span class="hljs-string">&quot;ca&quot;</span> certificate and key
-[certs] Generating <span class="hljs-string">&quot;apiserver&quot;</span> certificate and key
-[certs] apiserver serving cert is signed <span class="hljs-keyword">for</span> DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local yxj-test] and IPs [10.96.0.1 10.186.4.100]
-[certs] Generating <span class="hljs-string">&quot;apiserver-kubelet-client&quot;</span> certificate and key
-[certs] Generating <span class="hljs-string">&quot;front-proxy-ca&quot;</span> certificate and key
-[certs] Generating <span class="hljs-string">&quot;front-proxy-client&quot;</span> certificate and key
-[certs] Generating <span class="hljs-string">&quot;etcd/ca&quot;</span> certificate and key
-[certs] Generating <span class="hljs-string">&quot;etcd/server&quot;</span> certificate and key
-[certs] etcd/server serving cert is signed <span class="hljs-keyword">for</span> DNS names [localhost yxj-test] and IPs [10.186.4.100 127.0.0.1 ::1]
-[certs] Generating <span class="hljs-string">&quot;etcd/peer&quot;</span> certificate and key
-[certs] etcd/peer serving cert is signed <span class="hljs-keyword">for</span> DNS names [localhost yxj-test] and IPs [10.186.4.100 127.0.0.1 ::1]
-[certs] Generating <span class="hljs-string">&quot;etcd/healthcheck-client&quot;</span> certificate and key
-[certs] Generating <span class="hljs-string">&quot;apiserver-etcd-client&quot;</span> certificate and key
-[certs] Generating <span class="hljs-string">&quot;sa&quot;</span> key and public key
-[kubeconfig] Using kubeconfig folder <span class="hljs-string">&quot;/etc/kubernetes&quot;</span>
-[kubeconfig] Writing <span class="hljs-string">&quot;admin.conf&quot;</span> kubeconfig file
-[kubeconfig] Writing <span class="hljs-string">&quot;kubelet.conf&quot;</span> kubeconfig file
-[kubeconfig] Writing <span class="hljs-string">&quot;controller-manager.conf&quot;</span> kubeconfig file
-[kubeconfig] Writing <span class="hljs-string">&quot;scheduler.conf&quot;</span> kubeconfig file
-[kubelet-start] Writing kubelet environment file with flags to file <span class="hljs-string">&quot;/var/lib/kubelet/kubeadm-flags.env&quot;</span>
-[kubelet-start] Writing kubelet configuration to file <span class="hljs-string">&quot;/var/lib/kubelet/config.yaml&quot;</span>
-[kubelet-start] Starting the kubelet
-[control-plane] Using manifest folder <span class="hljs-string">&quot;/etc/kubernetes/manifests&quot;</span>
-[control-plane] Creating static Pod manifest <span class="hljs-keyword">for</span> <span class="hljs-string">&quot;kube-apiserver&quot;</span>
-[control-plane] Creating static Pod manifest <span class="hljs-keyword">for</span> <span class="hljs-string">&quot;kube-controller-manager&quot;</span>
-[control-plane] Creating static Pod manifest <span class="hljs-keyword">for</span> <span class="hljs-string">&quot;kube-scheduler&quot;</span>
-[etcd] Creating static Pod manifest <span class="hljs-keyword">for</span> <span class="hljs-built_in">local</span> etcd <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;/etc/kubernetes/manifests&quot;</span>
-[<span class="hljs-built_in">wait</span>-control-plane] Waiting <span class="hljs-keyword">for</span> the kubelet to boot up the control plane as static Pods from directory <span class="hljs-string">&quot;/etc/kubernetes/manifests&quot;</span>. This can take up to 4m0s
-[apiclient] All control plane components are healthy after 15.004566 seconds
-[upload-config] Storing the configuration used <span class="hljs-keyword">in</span> ConfigMap <span class="hljs-string">&quot;kubeadm-config&quot;</span> <span class="hljs-keyword">in</span> the <span class="hljs-string">&quot;kube-system&quot;</span> Namespace
-[kubelet] Creating a ConfigMap <span class="hljs-string">&quot;kubelet-config-1.20&quot;</span> <span class="hljs-keyword">in</span> namespace kube-system with the configuration <span class="hljs-keyword">for</span> the kubelets <span class="hljs-keyword">in</span> the cluster
-[upload-certs] Skipping phase. Please see --upload-certs
-[mark-control-plane] Marking the node yxj-test as control-plane by adding the labels <span class="hljs-string">&quot;node-role.kubernetes.io/master=&apos;&apos;&quot;</span> and <span class="hljs-string">&quot;node-role.kubernetes.io/control-plane=&apos;&apos; (deprecated)&quot;</span>
-[mark-control-plane] Marking the node yxj-test as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
-[bootstrap-token] Using token: bw4tlw.owb266appoos6afw
-[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
-[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes
-[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs <span class="hljs-keyword">in</span> order <span class="hljs-keyword">for</span> nodes to get long term certificate credentials
-[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
-[bootstrap-token] configured RBAC rules to allow certificate rotation <span class="hljs-keyword">for</span> all node client certificates <span class="hljs-keyword">in</span> the cluster
-[bootstrap-token] Creating the <span class="hljs-string">&quot;cluster-info&quot;</span> ConfigMap <span class="hljs-keyword">in</span> the <span class="hljs-string">&quot;kube-public&quot;</span> namespace
-[kubelet-finalize] Updating <span class="hljs-string">&quot;/etc/kubernetes/kubelet.conf&quot;</span> to point to a rotatable kubelet client certificate and key
-[addons] Applied essential addon: CoreDNS
-[addons] Applied essential addon: kube-proxy
+<pre class="language-"><code class="lang-bash">$ kubeadm init --config kubeadm.yaml
+<span class="token punctuation">[</span>init<span class="token punctuation">]</span> Using Kubernetes version: v1.20.0
+<span class="token punctuation">[</span>preflight<span class="token punctuation">]</span> Running pre-flight checks
+        <span class="token punctuation">[</span>WARNING IsDockerSystemdCheck<span class="token punctuation">]</span>: detected <span class="token string">&quot;cgroupfs&quot;</span> as the Docker cgroup driver. The recommended driver is <span class="token string">&quot;systemd&quot;</span><span class="token builtin class-name">.</span> Please follow the guide at https://kubernetes.io/docs/setup/cri/
+<span class="token punctuation">[</span>preflight<span class="token punctuation">]</span> Pulling images required <span class="token keyword">for</span> setting up a Kubernetes cluster
+<span class="token punctuation">[</span>preflight<span class="token punctuation">]</span> This might take a minute or two, depending on the speed of your internet connection
+<span class="token punctuation">[</span>preflight<span class="token punctuation">]</span> You can also perform this action <span class="token keyword">in</span> beforehand using <span class="token string">&apos;kubeadm config images pull&apos;</span>
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Using certificateDir folder <span class="token string">&quot;/etc/kubernetes/pki&quot;</span>
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;ca&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;apiserver&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> apiserver serving cert is signed <span class="token keyword">for</span> DNS names <span class="token punctuation">[</span>kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local yxj-test<span class="token punctuation">]</span> and IPs <span class="token punctuation">[</span><span class="token number">10.96</span>.0.1 <span class="token number">10.186</span>.4.100<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;apiserver-kubelet-client&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;front-proxy-ca&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;front-proxy-client&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;etcd/ca&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;etcd/server&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> etcd/server serving cert is signed <span class="token keyword">for</span> DNS names <span class="token punctuation">[</span>localhost yxj-test<span class="token punctuation">]</span> and IPs <span class="token punctuation">[</span><span class="token number">10.186</span>.4.100 <span class="token number">127.0</span>.0.1 ::1<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;etcd/peer&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> etcd/peer serving cert is signed <span class="token keyword">for</span> DNS names <span class="token punctuation">[</span>localhost yxj-test<span class="token punctuation">]</span> and IPs <span class="token punctuation">[</span><span class="token number">10.186</span>.4.100 <span class="token number">127.0</span>.0.1 ::1<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;etcd/healthcheck-client&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;apiserver-etcd-client&quot;</span> certificate and key
+<span class="token punctuation">[</span>certs<span class="token punctuation">]</span> Generating <span class="token string">&quot;sa&quot;</span> key and public key
+<span class="token punctuation">[</span>kubeconfig<span class="token punctuation">]</span> Using kubeconfig folder <span class="token string">&quot;/etc/kubernetes&quot;</span>
+<span class="token punctuation">[</span>kubeconfig<span class="token punctuation">]</span> Writing <span class="token string">&quot;admin.conf&quot;</span> kubeconfig <span class="token function">file</span>
+<span class="token punctuation">[</span>kubeconfig<span class="token punctuation">]</span> Writing <span class="token string">&quot;kubelet.conf&quot;</span> kubeconfig <span class="token function">file</span>
+<span class="token punctuation">[</span>kubeconfig<span class="token punctuation">]</span> Writing <span class="token string">&quot;controller-manager.conf&quot;</span> kubeconfig <span class="token function">file</span>
+<span class="token punctuation">[</span>kubeconfig<span class="token punctuation">]</span> Writing <span class="token string">&quot;scheduler.conf&quot;</span> kubeconfig <span class="token function">file</span>
+<span class="token punctuation">[</span>kubelet-start<span class="token punctuation">]</span> Writing kubelet environment <span class="token function">file</span> with flags to <span class="token function">file</span> <span class="token string">&quot;/var/lib/kubelet/kubeadm-flags.env&quot;</span>
+<span class="token punctuation">[</span>kubelet-start<span class="token punctuation">]</span> Writing kubelet configuration to <span class="token function">file</span> <span class="token string">&quot;/var/lib/kubelet/config.yaml&quot;</span>
+<span class="token punctuation">[</span>kubelet-start<span class="token punctuation">]</span> Starting the kubelet
+<span class="token punctuation">[</span>control-plane<span class="token punctuation">]</span> Using manifest folder <span class="token string">&quot;/etc/kubernetes/manifests&quot;</span>
+<span class="token punctuation">[</span>control-plane<span class="token punctuation">]</span> Creating static Pod manifest <span class="token keyword">for</span> <span class="token string">&quot;kube-apiserver&quot;</span>
+<span class="token punctuation">[</span>control-plane<span class="token punctuation">]</span> Creating static Pod manifest <span class="token keyword">for</span> <span class="token string">&quot;kube-controller-manager&quot;</span>
+<span class="token punctuation">[</span>control-plane<span class="token punctuation">]</span> Creating static Pod manifest <span class="token keyword">for</span> <span class="token string">&quot;kube-scheduler&quot;</span>
+<span class="token punctuation">[</span>etcd<span class="token punctuation">]</span> Creating static Pod manifest <span class="token keyword">for</span> <span class="token builtin class-name">local</span> etcd <span class="token keyword">in</span> <span class="token string">&quot;/etc/kubernetes/manifests&quot;</span>
+<span class="token punctuation">[</span>wait-control-plane<span class="token punctuation">]</span> Waiting <span class="token keyword">for</span> the kubelet to boot up the control plane as static Pods from directory <span class="token string">&quot;/etc/kubernetes/manifests&quot;</span><span class="token builtin class-name">.</span> This can take up to 4m0s
+<span class="token punctuation">[</span>apiclient<span class="token punctuation">]</span> All control plane components are healthy after <span class="token number">15.004566</span> seconds
+<span class="token punctuation">[</span>upload-config<span class="token punctuation">]</span> Storing the configuration used <span class="token keyword">in</span> ConfigMap <span class="token string">&quot;kubeadm-config&quot;</span> <span class="token keyword">in</span> the <span class="token string">&quot;kube-system&quot;</span> Namespace
+<span class="token punctuation">[</span>kubelet<span class="token punctuation">]</span> Creating a ConfigMap <span class="token string">&quot;kubelet-config-1.20&quot;</span> <span class="token keyword">in</span> namespace kube-system with the configuration <span class="token keyword">for</span> the kubelets <span class="token keyword">in</span> the cluster
+<span class="token punctuation">[</span>upload-certs<span class="token punctuation">]</span> Skipping phase. Please see --upload-certs
+<span class="token punctuation">[</span>mark-control-plane<span class="token punctuation">]</span> Marking the node yxj-test as control-plane by adding the labels <span class="token string">&quot;node-role.kubernetes.io/master=&apos;&apos;&quot;</span> and <span class="token string">&quot;node-role.kubernetes.io/control-plane=&apos;&apos; (deprecated)&quot;</span>
+<span class="token punctuation">[</span>mark-control-plane<span class="token punctuation">]</span> Marking the node yxj-test as control-plane by adding the taints <span class="token punctuation">[</span>node-role.kubernetes.io/master:NoSchedule<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>bootstrap-token<span class="token punctuation">]</span> Using token: bw4tlw.owb266appoos6afw
+<span class="token punctuation">[</span>bootstrap-token<span class="token punctuation">]</span> Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+<span class="token punctuation">[</span>bootstrap-token<span class="token punctuation">]</span> configured RBAC rules to allow Node Bootstrap tokens to get nodes
+<span class="token punctuation">[</span>bootstrap-token<span class="token punctuation">]</span> configured RBAC rules to allow Node Bootstrap tokens to post CSRs <span class="token keyword">in</span> order <span class="token keyword">for</span> nodes to get long term certificate credentials
+<span class="token punctuation">[</span>bootstrap-token<span class="token punctuation">]</span> configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+<span class="token punctuation">[</span>bootstrap-token<span class="token punctuation">]</span> configured RBAC rules to allow certificate rotation <span class="token keyword">for</span> all node client certificates <span class="token keyword">in</span> the cluster
+<span class="token punctuation">[</span>bootstrap-token<span class="token punctuation">]</span> Creating the <span class="token string">&quot;cluster-info&quot;</span> ConfigMap <span class="token keyword">in</span> the <span class="token string">&quot;kube-public&quot;</span> namespace
+<span class="token punctuation">[</span>kubelet-finalize<span class="token punctuation">]</span> Updating <span class="token string">&quot;/etc/kubernetes/kubelet.conf&quot;</span> to point to a rotatable kubelet client certificate and key
+<span class="token punctuation">[</span>addons<span class="token punctuation">]</span> Applied essential addon: CoreDNS
+<span class="token punctuation">[</span>addons<span class="token punctuation">]</span> Applied essential addon: kube-proxy
 
-Your Kubernetes control-plane has initialized successfully!
+Your Kubernetes control-plane has initialized successfully<span class="token operator">!</span>
 
 To start using your cluster, you need to run the following as a regular user:
 
-  mkdir -p <span class="hljs-variable">$HOME</span>/.kube
-  sudo cp -i /etc/kubernetes/admin.conf <span class="hljs-variable">$HOME</span>/.kube/config
-  sudo chown $(id -u):$(id -g) <span class="hljs-variable">$HOME</span>/.kube/config
+  <span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/.kube
+  <span class="token function">sudo</span> <span class="token function">cp</span> -i /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+  <span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -u<span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -g<span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
 
-Alternatively, <span class="hljs-keyword">if</span> you are the root user, you can run:
+Alternatively, <span class="token keyword">if</span> you are the root user, you can run:
 
-  <span class="hljs-built_in">export</span> KUBECONFIG=/etc/kubernetes/admin.conf
+  <span class="token builtin class-name">export</span> <span class="token assign-left variable">KUBECONFIG</span><span class="token operator">=</span>/etc/kubernetes/admin.conf
 
 You should now deploy a pod network to the cluster.
-Run <span class="hljs-string">&quot;kubectl apply -f [podnetwork].yaml&quot;</span> with one of the options listed at:
+Run <span class="token string">&quot;kubectl apply -f [podnetwork].yaml&quot;</span> with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
-Then you can join any number of worker nodes by running the following on each as root:
+Then you can <span class="token function">join</span> any number of worker nodes by running the following on each as root:
 
-kubeadm join 10.186.4.100:6443 --token bw4tlw.owb266appoos6afw \
+kubeadm <span class="token function">join</span> <span class="token number">10.186</span>.4.100:6443 --token bw4tlw.owb266appoos6afw <span class="token punctuation">\</span>
     --discovery-token-ca-cert-hash sha256:67c5b1f31669be60c07280f52b9aab867af54d2d4bb679490216028f858c7fb6
 </code></pre>
 <p>&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210; Kubernetes Master &#x7684;&#x90E8;&#x7F72;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x53EA;&#x9700;&#x8981;&#x51E0;&#x5206;&#x949F;&#x3002;&#x90E8;&#x7F72;&#x5B8C;&#x6210;&#x540E;&#xFF0C;kubeadm &#x4F1A;&#x751F;&#x6210;&#x4E00;&#x884C;&#x6307;&#x4EE4;</p>
-<pre><code class="lang-bash">kubeadm join 10.186.4.100:6443 --token bw4tlw.owb266appoos6afw \
+<pre class="language-"><code class="lang-bash">kubeadm <span class="token function">join</span> <span class="token number">10.186</span>.4.100:6443 --token bw4tlw.owb266appoos6afw <span class="token punctuation">\</span>
     --discovery-token-ca-cert-hash sha256:67c5b1f31669be60c07280f52b9aab867af54d2d4bb679490216028f858c7fb6
 </code></pre>
 <p>&#x8FD9;&#x4E2A; kubeadm join &#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x662F;&#x7528;&#x6765;&#x7ED9;&#x8FD9;&#x4E2A; Master &#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#xFF08;Worker&#xFF09;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x540E;&#x9762;&#x90E8;&#x7F72; Worker &#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#x9A6C;&#x4E0A;&#x4F1A;&#x7528;&#x5230;&#x5B83;&#xFF0C;&#x6240;&#x4EE5;&#x627E;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x628A;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;</p>
 <p>&#x6B64;&#x5916;&#xFF0C;kubeadm &#x8FD8;&#x4F1A;&#x63D0;&#x793A;&#x6211;&#x4EEC;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528; Kubernetes &#x96C6;&#x7FA4;&#x6240;&#x9700;&#x8981;&#x7684;&#x914D;&#x7F6E;&#x547D;&#x4EE4;&#xFF1A;</p>
-<pre><code class="lang-bash">mkdir -p <span class="hljs-variable">$HOME</span>/.kube
-sudo cp -i /etc/kubernetes/admin.conf <span class="hljs-variable">$HOME</span>/.kube/config
-sudo chown $(id -u):$(id -g) <span class="hljs-variable">$HOME</span>/.kube/config
+<pre class="language-"><code class="lang-bash"><span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/.kube
+<span class="token function">sudo</span> <span class="token function">cp</span> -i /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+<span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -u<span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -g<span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
 </code></pre>
 <p>&#x800C;&#x9700;&#x8981;&#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x547D;&#x4EE4;&#x7684;&#x539F;&#x56E0;&#x662F;&#xFF1A;Kubernetes &#x96C6;&#x7FA4;&#x9ED8;&#x8BA4;&#x9700;&#x8981;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x51E0;&#x6761;&#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x521A;&#x521A;&#x90E8;&#x7F72;&#x751F;&#x6210;&#x7684; Kubernetes &#x96C6;&#x7FA4;&#x7684;&#x5B89;&#x5168;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x4FDD;&#x5B58;&#x5230;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;.kube &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;kubectl &#x9ED8;&#x8BA4;&#x4F1A;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6388;&#x6743;&#x4FE1;&#x606F;&#x8BBF;&#x95EE; Kubernetes &#x96C6;&#x7FA4;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x8FD9;&#x4E48;&#x505A;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7; export KUBECONFIG &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x544A;&#x8BC9; kubectl &#x8FD9;&#x4E2A;&#x5B89;&#x5168;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; kubectl get &#x547D;&#x4EE4;&#x6765;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x72B6;&#x6001;&#x4E86;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># kubectl get nodes</span>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># kubectl get nodes</span>
 
 NAME       STATUS   ROLES                  AGE     VERSION
 yxj-test   Ready    control-plane,master   3h14m   v1.20.0
 </code></pre>
 <p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x539F;&#x56E0;&#xFF0C;&#x4E0D;&#x4F1A;&#x5728;master&#x8282;&#x70B9;&#x4E0A;&#x8C03;&#x5EA6;Pod&#x3002;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x5728;master&#x8282;&#x70B9;&#x4E0A;&#x8C03;&#x5EA6;Pod&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5982;&#x4E0B;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># kubectl taint nodes --all node-role.kubernetes.io/master-</span>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># kubectl taint nodes --all node-role.kubernetes.io/master-</span>
 node/yxj-test untainted
-taint <span class="hljs-string">&quot;node-role.kubernetes.io/master&quot;</span> not found
-taint <span class="hljs-string">&quot;node-role.kubernetes.io/master&quot;</span> not found
-taint <span class="hljs-string">&quot;node-role.kubernetes.io/master&quot;</span> not found
+taint <span class="token string">&quot;node-role.kubernetes.io/master&quot;</span> not found
+taint <span class="token string">&quot;node-role.kubernetes.io/master&quot;</span> not found
+taint <span class="token string">&quot;node-role.kubernetes.io/master&quot;</span> not found
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x5C31;&#x5220;&#x9664;&#x4E3B;&#x8282;&#x70B9;&#x4E0A;&#x7684; <code>node-role.kubernetes.io/master</code> &#x6C61;&#x70B9;&#xFF0C;&#x8C03;&#x5EA6;&#x5668;&#x5C31;&#x80FD;&#x5C06;Pod&#x8C03;&#x5EA6;&#x5230; master &#x8282;&#x70B9;&#x4E0A;&#x3002;</p>
 <p><strong>&#x4FEE;&#x6539;&#x7EC4;&#x4EF6;&#x53C2;&#x6570;</strong></p>
 <p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4FEE;&#x6539; k8s &#x7EC4;&#x4EF6;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x5728; <code>/etc/kubernetes/manifests/</code> &#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x7F16;&#x8F91;&#x7EC4;&#x4EF6;&#x7684;yaml&#x6587;&#x4EF6;&#xFF0C;&#x4FDD;&#x5B58;&#x540E;&#x4F1A;&#x91CD;&#x542F;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
 <h2 id="4-&#x90E8;&#x7F72;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;">4. &#x90E8;&#x7F72;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;</h2>
 <p>&#x4EE5;weave&#x4E3A;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-bash">kubectl apply <span class="hljs-_">-f</span> <span class="hljs-string">&quot;https://cloud.weave.works/k8s/net?k8s-version=<span class="hljs-variable">$(kubectl version | base64 | tr -d &apos;\n&apos;)</span>&quot;</span>
+<pre class="language-"><code class="lang-bash">kubectl apply -f <span class="token string">&quot;https://cloud.weave.works/k8s/net?k8s-version=<span class="token variable"><span class="token variable">$(</span>kubectl version <span class="token operator">|</span> base64 <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">&apos;<span class="token entity" title="\n">\n</span>&apos;</span><span class="token variable">)</span></span>&quot;</span>
 </code></pre>
 <p>&#x90E8;&#x7F72;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; kubectl get &#x91CD;&#x65B0;&#x68C0;&#x67E5; Pod &#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># kubectl get pods -n kube-system</span>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># kubectl get pods -n kube-system</span>
 NAME                               READY   STATUS    RESTARTS   AGE
-coredns-74ff55c5b<span class="hljs-_">-f</span>95sj            1/1     Running   0          131m
-coredns-74ff55c5b-zvjdz            1/1     Running   0          131m
-etcd-yxj-test                      1/1     Running   0          131m
-kube-apiserver-yxj-test            1/1     Running   0          131m
-kube-controller-manager-yxj-test   1/1     Running   0          131m
-kube-proxy-nm4tt                   1/1     Running   0          131m
-kube-scheduler-yxj-test            1/1     Running   0          131m
-weave-net-pl4qp                    2/2     Running   1          126m
+coredns-74ff55c5b-f95sj            <span class="token number">1</span>/1     Running   <span class="token number">0</span>          131m
+coredns-74ff55c5b-zvjdz            <span class="token number">1</span>/1     Running   <span class="token number">0</span>          131m
+etcd-yxj-test                      <span class="token number">1</span>/1     Running   <span class="token number">0</span>          131m
+kube-apiserver-yxj-test            <span class="token number">1</span>/1     Running   <span class="token number">0</span>          131m
+kube-controller-manager-yxj-test   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          131m
+kube-proxy-nm4tt                   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          131m
+kube-scheduler-yxj-test            <span class="token number">1</span>/1     Running   <span class="token number">0</span>          131m
+weave-net-pl4qp                    <span class="token number">2</span>/2     Running   <span class="token number">1</span>          126m
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7CFB;&#x7EDF; Pod &#x90FD;&#x6210;&#x529F;&#x542F;&#x52A8;&#x4E86;&#xFF0C;&#x800C;&#x521A;&#x521A;&#x90E8;&#x7F72;&#x7684; Weave &#x7F51;&#x7EDC;&#x63D2;&#x4EF6;&#x5219;&#x5728; kube-system &#x4E0B;&#x9762;&#x65B0;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x53EB; weave-net-pl4qp &#x7684; Pod&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E9B; Pod &#x5C31;&#x662F;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;&#x5728;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x63A7;&#x5236;&#x7EC4;&#x4EF6;&#x3002;</p>
 <p>Kubernetes &#x652F;&#x6301;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x540D;&#x53EB; CNI &#x7684;&#x901A;&#x7528;&#x63A5;&#x53E3;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x5F53;&#x524D;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x7684;&#x4E8B;&#x5B9E;&#x6807;&#x51C6;&#xFF0C;&#x5E02;&#x9762;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x7F51;&#x7EDC;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; CNI &#x63A5;&#x5165; Kubernetes&#xFF0C;&#x6BD4;&#x5982; Flannel&#x3001;Calico&#x3001;Canal&#x3001;Romana &#x7B49;&#x7B49;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x90E8;&#x7F72;&#x65B9;&#x5F0F;&#x4E5F;&#x90FD;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#x201C;&#x4E00;&#x952E;&#x90E8;&#x7F72;&#x201D;&#x3002;</p>
 <blockquote>
 <p>weave &#x63D2;&#x4EF6;&#x90E8;&#x7F72;&#x62A5;&#x9519;&#xFF1A;weave Inconsistent bridge state detected. Please do &apos;weave reset&apos; and try again</p>
 <p>&#x89E3;&#x51B3;&#xFF1A;&#x5B89;&#x88C5;<a href="https://www.weave.works/docs/net/latest/install/installing-weave/" target="_blank">weave</a></p>
-<pre><code class="lang-bash">sudo curl -L git.io/weave -o /usr/<span class="hljs-built_in">local</span>/bin/weave
-sudo chmod a+x /usr/<span class="hljs-built_in">local</span>/bin/weave
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> <span class="token function">curl</span> -L git.io/weave -o /usr/local/bin/weave
+<span class="token function">sudo</span> <span class="token function">chmod</span> a+x /usr/local/bin/weave
 </code></pre>
 </blockquote>
 <h2 id="5-&#x90E8;&#x7F72;-k8s-&#x7684;-worker-&#x8282;&#x70B9;">5. &#x90E8;&#x7F72; k8s &#x7684; worker &#x8282;&#x70B9;</h2>
@@ -973,8 +963,8 @@ sudo chmod a+x /usr/<span class="hljs-built_in">local</span>/bin/weave
 <li><p>&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x5728;&#x6240;&#x6709; Worker &#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C;&#x201C;&#x5B89;&#x88C5; kubeadm &#x548C; Docker&#x201D;&#x4E00;&#x8282;&#x7684;&#x6240;&#x6709;&#x6B65;&#x9AA4;&#x3002;</p>
 </li>
 <li><p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x6267;&#x884C;&#x90E8;&#x7F72; Master &#x8282;&#x70B9;&#x65F6;&#x751F;&#x6210;&#x7684; kubeadm join &#x6307;&#x4EE4;&#xFF1A;</p>
-<pre><code class="lang-bash">kubeadm join 10.186.4.100:6443 --token bw4tlw.owb266appoos6afw \
-    --discovery-token-ca-cert-hash sha256:36f6f60943015fadcc0<span class="hljs-built_in">fc</span>9824611af4d594b7c4b43ab264c2113342fbd1e3994
+<pre class="language-"><code class="lang-bash">kubeadm <span class="token function">join</span> <span class="token number">10.186</span>.4.100:6443 --token bw4tlw.owb266appoos6afw <span class="token punctuation">\</span>
+    --discovery-token-ca-cert-hash sha256:36f6f60943015fadcc0fc9824611af4d594b7c4b43ab264c2113342fbd1e3994
 </code></pre>
 </li>
 </ul>
@@ -982,25 +972,25 @@ sudo chmod a+x /usr/<span class="hljs-built_in">local</span>/bin/weave
 <p>&#x6211;&#x5728;&#x524D;&#x9762;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; Master &#x8282;&#x70B9;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x8FD0;&#x884C;&#x7528;&#x6237; Pod &#x7684;&#x3002;&#x800C; Kubernetes &#x505A;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x4F9D;&#x9760;&#x7684;&#x662F; Kubernetes &#x7684; Taint/Toleration &#x673A;&#x5236;&#x3002;</p>
 <p>&#x5B83;&#x7684;&#x539F;&#x7406;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF1A;&#x4E00;&#x65E6;&#x67D0;&#x4E2A;&#x8282;&#x70B9;&#x88AB;&#x52A0;&#x4E0A;&#x4E86;&#x4E00;&#x4E2A; Taint&#xFF0C;&#x5373;&#x88AB;&#x201C;&#x6253;&#x4E0A;&#x4E86;&#x6C61;&#x70B9;&#x201D;&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709; Pod &#x5C31;&#x90FD;&#x4E0D;&#x80FD;&#x5728;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x56E0;&#x4E3A; Kubernetes &#x7684; Pod &#x90FD;&#x6709;&#x201C;&#x6D01;&#x7656;&#x201D;&#x3002;&#x9664;&#x975E;&#xFF0C;&#x6709;&#x4E2A;&#x522B;&#x7684; Pod &#x58F0;&#x660E;&#x81EA;&#x5DF1;&#x80FD;&#x201C;&#x5BB9;&#x5FCD;&#x201D;&#x8FD9;&#x4E2A;&#x201C;&#x6C61;&#x70B9;&#x201D;&#xFF0C;&#x5373;&#x58F0;&#x660E;&#x4E86; Toleration&#xFF0C;&#x5B83;&#x624D;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x8FD0;&#x884C;&#x3002;</p>
 <p>&#x5176;&#x4E2D;&#xFF0C;&#x4E3A;&#x8282;&#x70B9;&#x6253;&#x4E0A;&#x201C;&#x6C61;&#x70B9;&#x201D;&#xFF08;Taint&#xFF09;&#x7684;&#x547D;&#x4EE4;&#x662F;&#xFF1A;</p>
-<pre><code class="lang-bash">$ kubectl taint nodes node1 foo=bar:NoSchedule
+<pre class="language-"><code class="lang-bash">$ kubectl taint nodes node1 <span class="token assign-left variable">foo</span><span class="token operator">=</span>bar:NoSchedule
 </code></pre>
 <p>&#x8FD9;&#x65F6;&#xFF0C;&#x8BE5; node1 &#x8282;&#x70B9;&#x4E0A;&#x5C31;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x683C;&#x5F0F;&#x7684; Taint&#xFF0C;&#x5373;&#xFF1A;foo=bar:NoSchedule&#x3002;&#x5176;&#x4E2D;&#x503C;&#x91CC;&#x9762;&#x7684; NoSchedule&#xFF0C;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E2A; Taint &#x53EA;&#x4F1A;&#x5728;&#x8C03;&#x5EA6;&#x65B0; Pod &#x65F6;&#x4EA7;&#x751F;&#x4F5C;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5DF2;&#x7ECF;&#x5728; node1 &#x4E0A;&#x8FD0;&#x884C;&#x7684; Pod&#xFF0C;&#x54EA;&#x6015;&#x5B83;&#x4EEC;&#x6CA1;&#x6709; Toleration&#x3002;</p>
 <p>&#x90A3;&#x4E48; Pod &#x53C8;&#x5982;&#x4F55;&#x58F0;&#x660E; Toleration &#x5462;&#xFF1F;</p>
 <p>&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x5728; Pod &#x7684;.yaml &#x6587;&#x4EF6;&#x4E2D;&#x7684; spec &#x90E8;&#x5206;&#xFF0C;&#x52A0;&#x5165; tolerations &#x5B57;&#x6BB5;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code class="lang-bash">
+<pre class="language-"><code class="lang-bash">
 apiVersion: v1
 kind: Pod
-...
+<span class="token punctuation">..</span>.
 spec:
   tolerations:
-  - key: <span class="hljs-string">&quot;foo&quot;</span>
-    operator: <span class="hljs-string">&quot;Equal&quot;</span>
-    value: <span class="hljs-string">&quot;bar&quot;</span>
-    effect: <span class="hljs-string">&quot;NoSchedule&quot;</span>
+  - key: <span class="token string">&quot;foo&quot;</span>
+    operator: <span class="token string">&quot;Equal&quot;</span>
+    value: <span class="token string">&quot;bar&quot;</span>
+    effect: <span class="token string">&quot;NoSchedule&quot;</span>
 </code></pre>
 <p>&#x8FD9;&#x4E2A; Toleration &#x7684;&#x542B;&#x4E49;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A; Pod &#x80FD;&#x201C;&#x5BB9;&#x5FCD;&#x201D;&#x6240;&#x6709;&#x952E;&#x503C;&#x5BF9;&#x4E3A; foo=bar &#x7684; Taint&#xFF08; operator: &#x201C;Equal&#x201D;&#xFF0C;&#x201C;&#x7B49;&#x4E8E;&#x201D;&#x64CD;&#x4F5C;&#xFF09;&#x3002;</p>
 <p>&#x73B0;&#x5728;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x642D;&#x5EFA;&#x7684;&#x96C6;&#x7FA4;&#x4E0A;&#x6765;&#x3002;&#x8FD9;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x901A;&#x8FC7; kubectl describe &#x68C0;&#x67E5;&#x4E00;&#x4E0B; Master &#x8282;&#x70B9;&#x7684; Taint &#x5B57;&#x6BB5;&#xFF0C;&#x5C31;&#x4F1A;&#x6709;&#x6240;&#x53D1;&#x73B0;&#x4E86;&#xFF1A;</p>
-<pre><code class="lang-bash">
+<pre class="language-"><code class="lang-bash">
 $ kubectl describe node master
 
 Name:               master
@@ -1009,51 +999,51 @@ Taints:             node-role.kubernetes.io/master:NoSchedule
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;Master &#x8282;&#x70B9;&#x9ED8;&#x8BA4;&#x88AB;&#x52A0;&#x4E0A;&#x4E86;node-role.kubernetes.io/master:NoSchedule&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x201C;&#x6C61;&#x70B9;&#x201D;&#xFF0C;&#x5176;&#x4E2D;&#x201C;&#x952E;&#x201D;&#x662F;node-role.kubernetes.io/master&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x201C;&#x503C;&#x201D;&#x3002;</p>
 <p>&#x6B64;&#x65F6;&#xFF0C;&#x4F60;&#x5C31;&#x9700;&#x8981;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x7528;&#x201C;Exists&#x201D;&#x64CD;&#x4F5C;&#x7B26;&#xFF08;operator: &#x201C;Exists&#x201D;&#xFF0C;&#x201C;&#x5B58;&#x5728;&#x201D;&#x5373;&#x53EF;&#xFF09;&#x6765;&#x8BF4;&#x660E;&#xFF0C;&#x8BE5; Pod &#x80FD;&#x591F;&#x5BB9;&#x5FCD;&#x6240;&#x6709;&#x4EE5; foo &#x4E3A;&#x952E;&#x7684; Taint&#xFF0C;&#x624D;&#x80FD;&#x8BA9;&#x8FD9;&#x4E2A; Pod &#x8FD0;&#x884C;&#x5728;&#x8BE5; Master &#x8282;&#x70B9;&#x4E0A;&#xFF1A;</p>
-<pre><code class="lang-bash">apiVersion: v1
+<pre class="language-"><code class="lang-bash">apiVersion: v1
 kind: Pod
-...
+<span class="token punctuation">..</span>.
 spec:
   tolerations:
-  - key: <span class="hljs-string">&quot;foo&quot;</span>
-    operator: <span class="hljs-string">&quot;Exists&quot;</span>
-    effect: <span class="hljs-string">&quot;NoSchedule&quot;</span>
+  - key: <span class="token string">&quot;foo&quot;</span>
+    operator: <span class="token string">&quot;Exists&quot;</span>
+    effect: <span class="token string">&quot;NoSchedule&quot;</span>
 </code></pre>
 <p>&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5C31;&#x662F;&#x60F3;&#x8981;&#x4E00;&#x4E2A;&#x5355;&#x8282;&#x70B9;&#x7684; Kubernetes&#xFF0C;&#x5220;&#x9664;&#x8FD9;&#x4E2A; Taint &#x624D;&#x662F;&#x6B63;&#x786E;&#x7684;&#x9009;&#x62E9;&#xFF1A;</p>
-<pre><code class="lang-bash">$ kubectl taint nodes --all node-role.kubernetes.io/master-
+<pre class="language-"><code class="lang-bash">$ kubectl taint nodes --all node-role.kubernetes.io/master-
 </code></pre>
 <p>&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x201C;node-role.kubernetes.io/master&#x201D;&#x8FD9;&#x4E2A;&#x952E;&#x540E;&#x9762;&#x52A0;&#x4E0A;&#x4E86;&#x4E00;&#x4E2A;&#x77ED;&#x6A2A;&#x7EBF;&#x201C;-&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x683C;&#x5F0F;&#x5C31;&#x610F;&#x5473;&#x7740;&#x79FB;&#x9664;&#x6240;&#x6709;&#x4EE5;&#x201C;node-role.kubernetes.io/master&#x201D;&#x4E3A;&#x952E;&#x7684; Taint&#x3002;&#x5230;&#x4E86;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x5B8C;&#x6574;&#x7684; Kubernetes &#x96C6;&#x7FA4;&#x5C31;&#x90E8;&#x7F72;&#x5B8C;&#x6BD5;&#x4E86;&#x3002;&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x7B80;&#x5355;&#x5462;&#xFF1F;&#x6709;&#x4E86; kubeadm &#x8FD9;&#x6837;&#x7684;&#x539F;&#x751F;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;Kubernetes &#x7684;&#x90E8;&#x7F72;&#x5DF2;&#x7ECF;&#x88AB;&#x5927;&#x5927;&#x7B80;&#x5316;&#x3002;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x50CF;&#x8BC1;&#x4E66;&#x3001;&#x6388;&#x6743;&#x3001;&#x5404;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x7B49;&#x90E8;&#x7F72;&#x4E2D;&#x6700;&#x9EBB;&#x70E6;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;kubeadm &#x90FD;&#x5DF2;&#x7ECF;&#x5E2E;&#x4F60;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x5728;&#x8FD9;&#x4E2A; Kubernetes &#x96C6;&#x7FA4;&#x4E0A;&#x5B89;&#x88C5;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x8F85;&#x52A9;&#x63D2;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982; Dashboard &#x548C;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x3002;</p>
 <h2 id="6-&#x90E8;&#x7F72;-dashboard-&#x53EF;&#x89C6;&#x5316;&#x63D2;&#x4EF6;">6. &#x90E8;&#x7F72; Dashboard &#x53EF;&#x89C6;&#x5316;&#x63D2;&#x4EF6;</h2>
 <p>&#x5728; Kubernetes &#x793E;&#x533A;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5F88;&#x53D7;&#x6B22;&#x8FCE;&#x7684; Dashboard &#x9879;&#x76EE;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7ED9;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x53EF;&#x89C6;&#x5316;&#x7684; Web &#x754C;&#x9762;&#x6765;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x96C6;&#x7FA4;&#x7684;&#x5404;&#x79CD;&#x4FE1;&#x606F;&#x3002;&#x6BEB;&#x4E0D;&#x610F;&#x5916;&#xFF0C;&#x5B83;&#x7684;&#x90E8;&#x7F72;&#x4E5F;&#x76F8;&#x5F53;&#x7B80;&#x5355;&#xFF1A;</p>
-<pre><code class="lang-bash">kubectl apply <span class="hljs-_">-f</span> https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+<pre class="language-"><code class="lang-bash">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x901A;&#x8FC7;&#x66B4;&#x9732;NodePort&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7684;yaml&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-yaml">...
-<span class="hljs-attr">kind:</span> Service
-<span class="hljs-attr"> apiVersion:</span> v1
-<span class="hljs-attr"> metadata:</span>
-<span class="hljs-attr">   labels:</span>
-<span class="hljs-attr">     k8s-app:</span> kubernetes-dashboard
-<span class="hljs-attr">   name:</span> kubernetes-dashboard
-<span class="hljs-attr">   namespace:</span> kubernetes-dashboard
-<span class="hljs-attr"> spec:</span>
-<span class="hljs-attr">   type:</span> NodePort
-<span class="hljs-attr">   ports:</span>
-<span class="hljs-attr">     - port:</span> <span class="hljs-number">443</span>
-<span class="hljs-attr">       targetPort:</span> <span class="hljs-number">8443</span>
-<span class="hljs-attr">       nodePort:</span> <span class="hljs-number">30000</span>
-<span class="hljs-attr">   selector:</span>
-<span class="hljs-attr">     k8s-app:</span> kubernetes-dashboard
- ...
+<pre class="language-"><code class="lang-yaml"><span class="token punctuation">...</span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+ <span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+ <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+   <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+     <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>dashboard
+   <span class="token key atrule">name</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>dashboard
+   <span class="token key atrule">namespace</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>dashboard
+ <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+   <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+   <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+     <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">443</span>
+       <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8443</span>
+       <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> <span class="token number">30000</span>
+   <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+     <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kubernetes<span class="token punctuation">-</span>dashboard
+ <span class="token punctuation">...</span>
 </code></pre>
 <p>&#x90E8;&#x7F72;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x67E5;&#x770B; Dashboard &#x5BF9;&#x5E94;&#x7684; Pod &#x7684;&#x72B6;&#x6001;&#x4E86;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># kubectl get pods -n kubernetes-dashboard</span>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># kubectl get pods -n kubernetes-dashboard</span>
 NAME                                         READY   STATUS    RESTARTS   AGE
-dashboard-metrics-scraper-79c5968bdc-wwhns   1/1     Running   0          12m
-kubernetes-dashboard-9f9799597-pkc76         1/1     Running   0          12m
+dashboard-metrics-scraper-79c5968bdc-wwhns   <span class="token number">1</span>/1     Running   <span class="token number">0</span>          12m
+kubernetes-dashboard-9f9799597-pkc76         <span class="token number">1</span>/1     Running   <span class="token number">0</span>          12m
 </code></pre>
 <p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x7531;&#x4E8E; Dashboard &#x662F;&#x4E00;&#x4E2A; Web Server&#xFF0C;&#x5F88;&#x591A;&#x4EBA;&#x7ECF;&#x5E38;&#x4F1A;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x516C;&#x6709;&#x4E91;&#x4E0A;&#x65E0;&#x610F;&#x5730;&#x66B4;&#x9732; Dashboard &#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x4ECE;&#x800C;&#x9020;&#x6210;&#x5B89;&#x5168;&#x9690;&#x60A3;&#x3002;&#x6240;&#x4EE5;&#xFF0C;1.7 &#x7248;&#x672C;&#x4E4B;&#x540E;&#x7684; Dashboard &#x9879;&#x76EE;&#x90E8;&#x7F72;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x9ED8;&#x8BA4;&#x53EA;&#x80FD;&#x901A;&#x8FC7; Proxy &#x7684;&#x65B9;&#x5F0F;&#x5728;&#x672C;&#x5730;&#x8BBF;&#x95EE;&#x3002;&#x5177;&#x4F53;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x67E5;&#x770B; Dashboard &#x9879;&#x76EE;&#x7684;<a href="https://github.com/kubernetes/dashboard" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#x3002;</p>
 <h3 id="&#x521B;&#x5EFA;dashboard&#x7BA1;&#x7406;&#x5458;">&#x521B;&#x5EFA;dashboard&#x7BA1;&#x7406;&#x5458;</h3>
-<pre><code class="lang-bash">[root@fztelecom3-34 dashboard]<span class="hljs-comment"># vim dashboard-admin.yaml</span>
+<pre class="language-"><code class="lang-bash"><span class="token punctuation">[</span>root@fztelecom3-34 dashboard<span class="token punctuation">]</span><span class="token comment"># vim dashboard-admin.yaml</span>
 
 apiVersion: v1
 kind: ServiceAccount
@@ -1064,10 +1054,10 @@ metadata:
   namespace: kubernetes-dashboard
 
 
-[root@fztelecom3-34 dashboard]<span class="hljs-comment"># kubectl create -f ./dashboard-admin.yaml</span>
+<span class="token punctuation">[</span>root@fztelecom3-34 dashboard<span class="token punctuation">]</span><span class="token comment"># kubectl create -f ./dashboard-admin.yaml</span>
 </code></pre>
 <h3 id="62-&#x4E3A;&#x7528;&#x6237;&#x5206;&#x914D;&#x6743;&#x9650;">6.2. &#x4E3A;&#x7528;&#x6237;&#x5206;&#x914D;&#x6743;&#x9650;</h3>
-<pre><code class="lang-bash">[root@fztelecom3-34 dashboard]<span class="hljs-comment"># vim dashboard-admin-bind-cluster-role.yaml</span>
+<pre class="language-"><code class="lang-bash"><span class="token punctuation">[</span>root@fztelecom3-34 dashboard<span class="token punctuation">]</span><span class="token comment"># vim dashboard-admin-bind-cluster-role.yaml</span>
 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -1084,10 +1074,10 @@ subjects:
   name: dashboard-admin
   namespace: kubernetes-dashboard
 
-[root@fztelecom3-34 dashboard]<span class="hljs-comment"># kubectl create -f ./dashboard-admin-bind-cluster-role.yaml</span>
+<span class="token punctuation">[</span>root@fztelecom3-34 dashboard<span class="token punctuation">]</span><span class="token comment"># kubectl create -f ./dashboard-admin-bind-cluster-role.yaml</span>
 </code></pre>
 <h3 id="63-&#x67E5;&#x770B;&#x767B;&#x5F55;&#x7684;token">6.3. &#x67E5;&#x770B;&#x767B;&#x5F55;&#x7684;token</h3>
-<pre><code class="lang-ba">[root@fztelecom3-34 dashboard]# kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep dashboard-admin | awk &apos;{print $1}&apos;)
+<pre class="language-"><code class="lang-ba">[root@fztelecom3-34 dashboard]# kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep dashboard-admin | awk &apos;{print $1}&apos;)
 </code></pre>
 <p>&#x6253;&#x5F00;nodeip:port&#x8BBF;&#x95EE;</p>
 <h2 id="7-&#x90E8;&#x7F72;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;">7. &#x90E8;&#x7F72;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;</h2>
@@ -1098,12 +1088,12 @@ subjects:
 <p>Rook &#x9879;&#x76EE;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Ceph &#x7684; Kubernetes &#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#xFF08;&#x5B83;&#x540E;&#x671F;&#x4E5F;&#x5728;&#x52A0;&#x5165;&#x5BF9;&#x66F4;&#x591A;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;&#x7684;&#x652F;&#x6301;&#xFF09;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x4E0D;&#x540C;&#x4E8E;&#x5BF9; Ceph &#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;&#xFF0C;Rook &#x5728;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#x52A0;&#x5165;&#x4E86;&#x6C34;&#x5E73;&#x6269;&#x5C55;&#x3001;&#x8FC1;&#x79FB;&#x3001;&#x707E;&#x96BE;&#x5907;&#x4EFD;&#x3001;&#x76D1;&#x63A7;&#x7B49;&#x5927;&#x91CF;&#x7684;&#x4F01;&#x4E1A;&#x7EA7;&#x529F;&#x80FD;&#xFF0C;&#x4F7F;&#x5F97;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x3001;&#x751F;&#x4EA7;&#x7EA7;&#x522B;&#x53EF;&#x7528;&#x7684;&#x5BB9;&#x5668;&#x5B58;&#x50A8;&#x63D2;&#x4EF6;&#x3002;</p>
 <p>&#x5F97;&#x76CA;&#x4E8E;&#x5BB9;&#x5668;&#x5316;&#x6280;&#x672F;&#xFF0C;&#x7528;&#x51E0;&#x6761;&#x6307;&#x4EE4;&#xFF0C;Rook &#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x590D;&#x6742;&#x7684; Ceph &#x5B58;&#x50A8;&#x540E;&#x7AEF;&#x90E8;&#x7F72;&#x8D77;&#x6765;&#xFF1A;</p>
 <p><a href="https://rook.io/docs/rook/v1.5/ceph-quickstart.html#ceph-storage-quickstart" target="_blank">https://rook.io/docs/rook/v1.5/ceph-quickstart.html#ceph-storage-quickstart</a></p>
-<pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> --single-branch --branch v1.5.8 https://github.com/rook/rook.git
-<span class="hljs-built_in">cd</span> rook/cluster/examples/kubernetes/ceph
-kubectl create <span class="hljs-_">-f</span> crds.yaml <span class="hljs-_">-f</span> common.yaml <span class="hljs-_">-f</span> operator.yaml
-kubectl create <span class="hljs-_">-f</span> cluster.yaml
+<pre class="language-"><code class="lang-bash"><span class="token function">git</span> clone --single-branch --branch v1.5.8 https://github.com/rook/rook.git
+<span class="token builtin class-name">cd</span> rook/cluster/examples/kubernetes/ceph
+kubectl create -f crds.yaml -f common.yaml -f operator.yaml
+kubectl create -f cluster.yaml
 
-<span class="hljs-comment"># &#x6240;&#x6709;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5916;&#x7F51;&#x6765;&#x62C9;&#x53D6;</span>
+<span class="token comment"># &#x6240;&#x6709;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5916;&#x7F51;&#x6765;&#x62C9;&#x53D6;</span>
 ceph/ceph:v15.2.9
 k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.0.1
 k8s.gcr.io/sig-storage/csi-attacher:v3.0.0
@@ -1114,17 +1104,17 @@ quay.io/cephcsi/cephcsi:v3.2.0
 ceph/ceph:v15.2.9
 </code></pre>
 <p>&#x5728;&#x90E8;&#x7F72;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230; Rook &#x9879;&#x76EE;&#x4F1A;&#x5C06;&#x81EA;&#x5DF1;&#x7684; Pod &#x653E;&#x7F6E;&#x5728;&#x7531;&#x5B83;&#x81EA;&#x5DF1;&#x7BA1;&#x7406;&#x7684;&#x4E24;&#x4E2A; Namespace &#x5F53;&#x4E2D;&#xFF1A;</p>
-<pre><code class="lang-bash">
+<pre class="language-"><code class="lang-bash">
 $ kubectl get pods -n rook-ceph-system
 NAME                                  READY     STATUS    RESTARTS   AGE
-rook-ceph-agent-7cv62                 1/1       Running   0          15s
-rook-ceph-operator-78d498c68c-7fj72   1/1       Running   0          44s
-rook-discover-2ctcv                   1/1       Running   0          15s
+rook-ceph-agent-7cv62                 <span class="token number">1</span>/1       Running   <span class="token number">0</span>          15s
+rook-ceph-operator-78d498c68c-7fj72   <span class="token number">1</span>/1       Running   <span class="token number">0</span>          44s
+rook-discover-2ctcv                   <span class="token number">1</span>/1       Running   <span class="token number">0</span>          15s
 
 $ kubectl get pods -n rook-ceph
 NAME                   READY     STATUS    RESTARTS   AGE
-rook-ceph-mon0-kxnzh   1/1       Running   0          13s
-rook-ceph-mon1-7dn2t   1/1       Running   0          2s
+rook-ceph-mon0-kxnzh   <span class="token number">1</span>/1       Running   <span class="token number">0</span>          13s
+rook-ceph-mon1-7dn2t   <span class="token number">1</span>/1       Running   <span class="token number">0</span>          2s
 </code></pre>
 <p>&#x8FD9;&#x6837;&#xFF0C;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Rook &#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x96C6;&#x7FA4;&#x5C31;&#x4EE5;&#x5BB9;&#x5668;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x4E86;&#xFF0C;&#x800C;&#x63A5;&#x4E0B;&#x6765;&#x5728; Kubernetes &#x9879;&#x76EE;&#x4E0A;&#x521B;&#x5EFA;&#x7684;&#x6240;&#x6709; Pod &#x5C31;&#x80FD;&#x591F;&#x901A;&#x8FC7; Persistent Volume&#xFF08;PV&#xFF09;&#x548C; Persistent Volume Claim&#xFF08;PVC&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x5BB9;&#x5668;&#x91CC;&#x6302;&#x8F7D;&#x7531; Ceph &#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x5377;&#x4E86;&#x3002;</p>
 <p>&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4E2A;&#x7591;&#x95EE;&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x8981;&#x9009;&#x62E9; Rook &#x9879;&#x76EE;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x5F88;&#x6709;&#x524D;&#x9014;</p>
@@ -1136,61 +1126,61 @@ rook-ceph-mon1-7dn2t   1/1       Running   0          2s
 <h3 id="81-master">8.1 Master</h3>
 <p>kubeadm reset</p>
 <p>&#x505C;&#x6B62;docker</p>
-<pre><code class="lang-bash">sudo systemctl stop docker kubelet
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> systemctl stop docker kubelet
 </code></pre>
 <p>&#x5220;&#x9664;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-bash">rm -rf ~/.kube/
+<pre class="language-"><code class="lang-bash"><span class="token function">rm</span> -rf ~/.kube/
 </code></pre>
 <p>Node</p>
-<pre><code class="lang-bash">[root@<span class="hljs-built_in">test</span>-2 ~]<span class="hljs-comment"># kubeadm reset</span>
-[reset] WARNING: Changes made to this host by <span class="hljs-string">&apos;kubeadm init&apos;</span> or <span class="hljs-string">&apos;kubeadm join&apos;</span> will be reverted.
-[reset] Are you sure you want to proceed? [y/N]: y
-[preflight] Running pre-flight checks
-W0305 11:09:18.394192   10467 removeetcdmember.go:79] [reset] No kubeadm config, using etcd pod spec to get data directory
-[reset] No etcd config found. Assuming external etcd
-[reset] Please, manually reset etcd to prevent further issues
-[reset] Stopping the kubelet service
-[reset] Unmounting mounted directories <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;/var/lib/kubelet&quot;</span>
-[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
-[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
-[reset] Deleting contents of stateful directories: [/var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+<pre class="language-"><code class="lang-bash"><span class="token punctuation">[</span>root@test-2 ~<span class="token punctuation">]</span><span class="token comment"># kubeadm reset</span>
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> WARNING: Changes made to this <span class="token function">host</span> by <span class="token string">&apos;kubeadm init&apos;</span> or <span class="token string">&apos;kubeadm join&apos;</span> will be reverted.
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> Are you sure you want to proceed? <span class="token punctuation">[</span>y/N<span class="token punctuation">]</span>: y
+<span class="token punctuation">[</span>preflight<span class="token punctuation">]</span> Running pre-flight checks
+W0305 <span class="token number">11</span>:09:18.394192   <span class="token number">10467</span> removeetcdmember.go:79<span class="token punctuation">]</span> <span class="token punctuation">[</span>reset<span class="token punctuation">]</span> No kubeadm config, using etcd pod spec to get data directory
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> No etcd config found. Assuming external etcd
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> Please, manually reset etcd to prevent further issues
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> Stopping the kubelet <span class="token function">service</span>
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> Unmounting mounted directories <span class="token keyword">in</span> <span class="token string">&quot;/var/lib/kubelet&quot;</span>
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> Deleting contents of config directories: <span class="token punctuation">[</span>/etc/kubernetes/manifests /etc/kubernetes/pki<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> Deleting files: <span class="token punctuation">[</span>/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>reset<span class="token punctuation">]</span> Deleting contents of stateful directories: <span class="token punctuation">[</span>/var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni<span class="token punctuation">]</span>
 
-The reset process does not clean CNI configuration. To <span class="hljs-keyword">do</span> so, you must remove /etc/cni/net.d
+The reset process does not clean CNI configuration. To <span class="token keyword">do</span> so, you must remove /etc/cni/net.d
 
 The reset process does not reset or clean up iptables rules or IPVS tables.
-If you wish to reset iptables, you must <span class="hljs-keyword">do</span> so manually by using the <span class="hljs-string">&quot;iptables&quot;</span> command.
+If you wish to reset iptables, you must <span class="token keyword">do</span> so manually by using the <span class="token string">&quot;iptables&quot;</span> command.
 
-If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
-to reset your system<span class="hljs-string">&apos;s IPVS tables.
+If your cluster was setup to utilize IPVS, run ipvsadm --clear <span class="token punctuation">(</span>or similar<span class="token punctuation">)</span>
+to reset your system&apos;s IPVS tables.
 
 The reset process does not clean your kubeconfig files and you must remove them manually.
-Please, check the contents of the $HOME/.kube/config file.
-</span></code></pre>
+Please, check the contents of the <span class="token environment constant">$HOME</span>/.kube/config file.
+</code></pre>
 <p>&#x505C;&#x6B62;&#x76F8;&#x5173;&#x7684;&#x670D;&#x52A1;</p>
-<pre><code class="lang-bash">sudo systemctl stop docker &amp;&amp; yum remove docker-ce docker-ce-cli containerd.io -y
+<pre class="language-"><code class="lang-bash"><span class="token function">sudo</span> systemctl stop docker <span class="token operator">&amp;&amp;</span> yum remove docker-ce docker-ce-cli containerd.io -y
 </code></pre>
 <p>&#x5220;&#x9664;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#x6E05;&#x9664;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;</span>
-rm -rf /etc/cni/net.d/
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x6E05;&#x9664;&#x7F51;&#x7EDC;&#x63D2;&#x4EF6;&#x7684;&#x914D;&#x7F6E;</span>
+<span class="token function">rm</span> -rf /etc/cni/net.d/
 
-<span class="hljs-comment"># &#x6E05;&#x9664;iptables&#x89C4;&#x5219;&#x6216;&#x8005; IPVS &#x8868;</span>
-<span class="hljs-comment"># &#x67E5;&#x770B;&#x89C4;&#x5219;&#x4EE5;number&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x6761;&#x4E00;&#x6761;&#x7684;&#x51FA;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x53F7;&#x7801;&#x6765;&#x5220;&#x9664;&#x54EA;&#x4E00;&#x6761;&#x89C4;&#x5219;</span>
+<span class="token comment"># &#x6E05;&#x9664;iptables&#x89C4;&#x5219;&#x6216;&#x8005; IPVS &#x8868;</span>
+<span class="token comment"># &#x67E5;&#x770B;&#x89C4;&#x5219;&#x4EE5;number&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x6761;&#x4E00;&#x6761;&#x7684;&#x51FA;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x53F7;&#x7801;&#x6765;&#x5220;&#x9664;&#x54EA;&#x4E00;&#x6761;&#x89C4;&#x5219;</span>
 iptables -L INPUT --line-numbers
-<span class="hljs-comment"># &#x5220;&#x9664;&#x7B2C;&#x4E03;&#x6761;&#x89C4;&#x5219;</span>
-iptables -D INPUT 7
-<span class="hljs-comment"># &#x5220;&#x9664;&#x6240;&#x6709;&#x89C4;&#x5219;</span>
-sudo iptables -F &amp;&amp; sudo iptables -X &amp;&amp; sudo iptables -F -t nat &amp;&amp; sudo iptables -X -t nat
-<span class="hljs-comment"># &#x5982;&#x679C;&#x5F00;&#x542F;&#x4E86;ipvs&#xFF0C;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x6E05;&#x9664;</span>
+<span class="token comment"># &#x5220;&#x9664;&#x7B2C;&#x4E03;&#x6761;&#x89C4;&#x5219;</span>
+iptables -D INPUT <span class="token number">7</span>
+<span class="token comment"># &#x5220;&#x9664;&#x6240;&#x6709;&#x89C4;&#x5219;</span>
+<span class="token function">sudo</span> iptables -F <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> iptables -X <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> iptables -F -t nat <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> iptables -X -t nat
+<span class="token comment"># &#x5982;&#x679C;&#x5F00;&#x542F;&#x4E86;ipvs&#xFF0C;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x6E05;&#x9664;</span>
 ipvsadm --clear
 
-<span class="hljs-comment"># &#x6E05;&#x9664;&#x7F51;&#x6865;</span>
-ip link del weave
-ip link del docker0
-ip link del vethwe-bridge
-ip link del vxlan-6784
+<span class="token comment"># &#x6E05;&#x9664;&#x7F51;&#x6865;</span>
+<span class="token function">ip</span> <span class="token function">link</span> del weave
+<span class="token function">ip</span> <span class="token function">link</span> del docker0
+<span class="token function">ip</span> <span class="token function">link</span> del vethwe-bridge
+<span class="token function">ip</span> <span class="token function">link</span> del vxlan-6784
 
-<span class="hljs-comment"># &#x5220;&#x9664;kubeconfig&#x6587;&#x4EF6;</span>
-rm -rf ~/.kube/
+<span class="token comment"># &#x5220;&#x9664;kubeconfig&#x6587;&#x4EF6;</span>
+<span class="token function">rm</span> -rf ~/.kube/
 </code></pre>
 <h2 id="&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;">&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;</h2>
 <p>[1] <a href="https://feisky.gitbooks.io/kubernetes/content/deploy/kubeadm.html" target="_blank">kubeadm</a></p>
@@ -1233,7 +1223,7 @@ rm -rf ~/.kube/
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 使用kubeadm 安装k8s集群","date":"2021-02-20T01:12:03.000Z","draft":false,"tags":["kubernetes","kubeadm"],"categories":["云计算"],"level":"1.3.1","depth":2,"next":{"title":"3. 容器编排与 kubernetes 作业管理","level":"1.4","depth":1,"ref":"","articles":[{"title":"3.1 为什么我们需要Pod","level":"1.4.1","depth":2,"path":"chapter3/why-pod.md","ref":"chapter3/why-pod.md","articles":[]},{"title":"3.2 深入解析Pod对象(一)：基本概念","level":"1.4.2","depth":2,"path":"chapter3/pod-concept1.md","ref":"chapter3/pod-concept1.md","articles":[]},{"title":"3.3 深入解析Pod对象(二): 使用进阶","level":"1.4.3","depth":2,"path":"chapter3/pod-concept2.md","ref":"chapter3/pod-concept2.md","articles":[]},{"title":"3.4 谈谈“控制器”模式","level":"1.4.4","depth":2,"path":"chapter3/controller-mode.md","ref":"chapter3/controller-mode.md","articles":[]},{"title":"3.3 Deployment：作业副本与水平扩容","level":"1.4.5","depth":2,"path":"chapter3/deployment.md","ref":"chapter3/deployment.md","articles":[]},{"title":"3.6 深入理解 StatefulSet（一）：拓扑状态","level":"1.4.6","depth":2,"path":"chapter3/statefulset-1.md","ref":"chapter3/statefulset-1.md","articles":[]},{"title":"3.7 深入理解 StatefulSet（二）：存储状态","level":"1.4.7","depth":2,"path":"chapter3/statefulset-2.md","ref":"chapter3/statefulset-2.md","articles":[]},{"title":"3.8 容器化守护进程的意义：DaemonSet","level":"1.4.8","depth":2,"path":"chapter3/daemonset.md","ref":"chapter3/daemonset.md","articles":[]},{"title":"3.9 撬动离线业务：Job 与 CronJob","level":"1.4.9","depth":2,"path":"chapter3/job.md","ref":"chapter3/job.md","articles":[]},{"title":"3.10 声明式 API 与 Kubernetes 编程范式","level":"1.4.10","depth":2,"path":"chapter3/declarative-api.md","ref":"chapter3/declarative-api.md","articles":[]}]},"previous":{"title":"2. kubernetes 集群搭建与实践","level":"1.3","depth":1,"ref":"","articles":[{"title":"2.1 使用kubeadm 安装k8s集群","level":"1.3.1","depth":2,"path":"chapter2/kubeadm.md","ref":"chapter2/kubeadm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","sharing","back-to-top-button","page-treeview","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter2/kubeadm.md","mtime":"2021-06-12T09:26:13.993Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-12T15:16:03.768Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1 使用kubeadm 安装k8s集群","date":"2021-02-20T01:12:03.000Z","draft":false,"tags":["kubernetes","kubeadm"],"categories":["云计算"],"level":"1.3.1","depth":2,"next":{"title":"3. 容器编排与 kubernetes 作业管理","level":"1.4","depth":1,"ref":"","articles":[{"title":"3.1 为什么我们需要Pod","level":"1.4.1","depth":2,"path":"chapter3/why-pod.md","ref":"chapter3/why-pod.md","articles":[]},{"title":"3.2 深入解析Pod对象(一)：基本概念","level":"1.4.2","depth":2,"path":"chapter3/pod-concept1.md","ref":"chapter3/pod-concept1.md","articles":[]},{"title":"3.3 深入解析Pod对象(二): 使用进阶","level":"1.4.3","depth":2,"path":"chapter3/pod-concept2.md","ref":"chapter3/pod-concept2.md","articles":[]},{"title":"3.4 谈谈“控制器”模式","level":"1.4.4","depth":2,"path":"chapter3/controller-mode.md","ref":"chapter3/controller-mode.md","articles":[]},{"title":"3.3 Deployment：作业副本与水平扩容","level":"1.4.5","depth":2,"path":"chapter3/deployment.md","ref":"chapter3/deployment.md","articles":[]},{"title":"3.6 深入理解 StatefulSet（一）：拓扑状态","level":"1.4.6","depth":2,"path":"chapter3/statefulset-1.md","ref":"chapter3/statefulset-1.md","articles":[]},{"title":"3.7 深入理解 StatefulSet（二）：存储状态","level":"1.4.7","depth":2,"path":"chapter3/statefulset-2.md","ref":"chapter3/statefulset-2.md","articles":[]},{"title":"3.8 容器化守护进程的意义：DaemonSet","level":"1.4.8","depth":2,"path":"chapter3/daemonset.md","ref":"chapter3/daemonset.md","articles":[]},{"title":"3.9 撬动离线业务：Job 与 CronJob","level":"1.4.9","depth":2,"path":"chapter3/job.md","ref":"chapter3/job.md","articles":[]},{"title":"3.10 声明式 API 与 Kubernetes 编程范式","level":"1.4.10","depth":2,"path":"chapter3/declarative-api.md","ref":"chapter3/declarative-api.md","articles":[]}]},"previous":{"title":"2. kubernetes 集群搭建与实践","level":"1.3","depth":1,"ref":"","articles":[{"title":"2.1 使用kubeadm 安装k8s集群","level":"1.3.1","depth":2,"path":"chapter2/kubeadm.md","ref":"chapter2/kubeadm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-search","-lunr","search-pro","-sharing","sharing-plus","back-to-top-button","splitter","github","favicon","-highlight","prism","pageview-count"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/XueqiangChen"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"asset/img/favicon.ico","bookmark":"asset/img/favicon.ico","appleTouch":"asset/img/favicon.ico","appleTouchMore":{"120x120":"asset/img/favicon.ico","180x180":"asset/img/favicon.ico"}},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter2/kubeadm.md","mtime":"2021-06-17T10:40:59.091Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-17T11:15:36.310Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1247,15 +1237,15 @@ rm -rf ~/.kube/
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
@@ -1263,15 +1253,15 @@ rm -rf ~/.kube/
         
     
         
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
         
     
         

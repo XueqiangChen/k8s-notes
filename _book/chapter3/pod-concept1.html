@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
@@ -29,11 +29,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
                 
             
                 
@@ -61,6 +65,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -73,6 +78,23 @@
     
     
     <link rel="prev" href="why-pod.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../asset/img/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../asset/img/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../asset/img/favicon.ico">
+        
     
 
     </head>
@@ -553,88 +575,88 @@
 <p>&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x5171;&#x540C;&#x7279;&#x5F81;&#x662F;&#xFF0C;&#x5B83;&#x4EEC;&#x63CF;&#x8FF0;&#x7684;&#x662F;&#x201C;&#x673A;&#x5668;&#x201D;&#x8FD9;&#x4E2A;&#x6574;&#x4F53;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x91CC;&#x9762;&#x8FD0;&#x884C;&#x7684;&#x201C;&#x7A0B;&#x5E8F;&#x201D;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x914D;&#x7F6E;&#x8FD9;&#x4E2A;&#x201C;&#x673A;&#x5668;&#x201D;&#x7684;&#x7F51;&#x5361;&#xFF08;&#x5373;&#xFF1A;Pod &#x7684;&#x7F51;&#x7EDC;&#x5B9A;&#x4E49;&#xFF09;&#xFF0C;&#x914D;&#x7F6E;&#x8FD9;&#x4E2A;&#x201C;&#x673A;&#x5668;&#x201D;&#x7684;&#x78C1;&#x76D8;&#xFF08;&#x5373;&#xFF1A;Pod &#x7684;&#x5B58;&#x50A8;&#x5B9A;&#x4E49;&#xFF09;&#xFF0C;&#x914D;&#x7F6E;&#x8FD9;&#x4E2A;&#x201C;&#x673A;&#x5668;&#x201D;&#x7684;&#x9632;&#x706B;&#x5899;&#xFF08;&#x5373;&#xFF1A;Pod &#x7684;&#x5B89;&#x5168;&#x5B9A;&#x4E49;&#xFF09;&#x3002;&#x66F4;&#x4E0D;&#x7528;&#x8BF4;&#xFF0C;&#x8FD9;&#x53F0;&#x201C;&#x673A;&#x5668;&#x201D;&#x8FD0;&#x884C;&#x5728;&#x54EA;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x4E0A;&#xFF08;&#x5373;&#xFF1A;Pod &#x7684;&#x8C03;&#x5EA6;&#xFF09;&#x3002;</p>
 <p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x5C31;&#x5148;&#x4E3A;&#x4F60;&#x4ECB;&#x7ECD; Pod &#x4E2D;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x5B57;&#x6BB5;&#x7684;&#x542B;&#x4E49;&#x548C;&#x7528;&#x6CD5;&#x3002;</p>
 <p><strong>NodeSelector&#xFF1A;&#x662F;&#x4E00;&#x4E2A;&#x4F9B;&#x7528;&#x6237;&#x5C06; Pod &#x4E0E; Node &#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#x7684;&#x5B57;&#x6BB5;</strong>&#xFF0C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
-<span class="hljs-attr">kind:</span> Pod
-...
-<span class="hljs-attr">spec:</span>
-<span class="hljs-attr"> nodeSelector:</span>
-<span class="hljs-attr">   disktype:</span> ssd
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token punctuation">...</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+ <span class="token key atrule">nodeSelector</span><span class="token punctuation">:</span>
+   <span class="token key atrule">disktype</span><span class="token punctuation">:</span> ssd
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E2A; Pod &#x6C38;&#x8FDC;&#x53EA;&#x80FD;&#x8FD0;&#x884C;&#x5728;&#x643A;&#x5E26;&#x4E86;&#x201C;disktype: ssd&#x201D;&#x6807;&#x7B7E;&#xFF08;Label&#xFF09;&#x7684;&#x8282;&#x70B9;&#x4E0A;&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x5B83;&#x5C06;&#x8C03;&#x5EA6;&#x5931;&#x8D25;&#x3002;</p>
 <p><strong>NodeName</strong>&#xFF1A;&#x4E00;&#x65E6; Pod &#x7684;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x88AB;&#x8D4B;&#x503C;&#xFF0C;Kubernetes &#x9879;&#x76EE;&#x5C31;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x8FD9;&#x4E2A; Pod &#x5DF2;&#x7ECF;&#x7ECF;&#x8FC7;&#x4E86;&#x8C03;&#x5EA6;&#xFF0C;&#x8C03;&#x5EA6;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x8D4B;&#x503C;&#x7684;&#x8282;&#x70B9;&#x540D;&#x5B57;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x4E00;&#x822C;&#x7531;&#x8C03;&#x5EA6;&#x5668;&#x8D1F;&#x8D23;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F46;&#x7528;&#x6237;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5B83;&#x6765;&#x201C;&#x9A97;&#x8FC7;&#x201D;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x4E2A;&#x505A;&#x6CD5;&#x4E00;&#x822C;&#x662F;&#x5728;&#x6D4B;&#x8BD5;&#x6216;&#x8005;&#x8C03;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x7528;&#x5230;&#x3002;</p>
 <p><strong>HostAliases&#xFF1A;&#x5B9A;&#x4E49;&#x4E86; Pod &#x7684; hosts &#x6587;&#x4EF6;&#xFF08;&#x6BD4;&#x5982; /etc/hosts&#xFF09;&#x91CC;&#x7684;&#x5185;&#x5BB9;</strong>&#xFF0C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
-<span class="hljs-attr">kind:</span> Pod
-...
-<span class="hljs-attr">spec:</span>
-<span class="hljs-attr">  hostAliases:</span>
-<span class="hljs-attr">  - ip:</span> <span class="hljs-string">&quot;10.1.2.3&quot;</span>
-<span class="hljs-attr">    hostnames:</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;foo.remote&quot;</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;bar.remote&quot;</span>
-...
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token punctuation">...</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hostAliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">ip</span><span class="token punctuation">:</span> <span class="token string">&quot;10.1.2.3&quot;</span>
+    <span class="token key atrule">hostnames</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;foo.remote&quot;</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;bar.remote&quot;</span>
+<span class="token punctuation">...</span>
 </code></pre>
 <p>&#x5728;&#x8FD9;&#x4E2A; Pod &#x7684; YAML &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x7EC4; IP &#x548C; hostname &#x7684;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x8FD9;&#x4E2A; Pod &#x542F;&#x52A8;&#x540E;&#xFF0C;/etc/hosts &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-bash">cat /etc/hosts
-<span class="hljs-comment"># Kubernetes-managed hosts file.</span>
-127.0.0.1 localhost
-...
-10.244.135.10 hostaliases-pod
-10.1.2.3 foo.remote
-10.1.2.3 bar.remote
+<pre class="language-"><code class="lang-bash"><span class="token function">cat</span> /etc/hosts
+<span class="token comment"># Kubernetes-managed hosts file.</span>
+<span class="token number">127.0</span>.0.1 localhost
+<span class="token punctuation">..</span>.
+<span class="token number">10.244</span>.135.10 hostaliases-pod
+<span class="token number">10.1</span>.2.3 foo.remote
+<span class="token number">10.1</span>.2.3 bar.remote
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF0C;&#x6700;&#x4E0B;&#x9762;&#x4E24;&#x884C;&#x8BB0;&#x5F55;&#xFF0C;&#x5C31;&#x662F;&#x6211;&#x901A;&#x8FC7; HostAliases &#x5B57;&#x6BB5;&#x4E3A; Pod &#x8BBE;&#x7F6E;&#x7684;&#x3002;&#x9700;&#x8981;&#x6307;&#x51FA;&#x7684;&#x662F;&#xFF0C;&#x5728; Kubernetes &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x8BBE;&#x7F6E; hosts &#x6587;&#x4EF6;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x4E86; hosts &#x6587;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x5728; Pod &#x88AB;&#x5220;&#x9664;&#x91CD;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;kubelet &#x4F1A;&#x81EA;&#x52A8;&#x8986;&#x76D6;&#x6389;&#x88AB;&#x4FEE;&#x6539;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
 <p>&#x9664;&#x4E86;&#x4E0A;&#x8FF0;&#x8DDF;&#x201C;&#x673A;&#x5668;&#x201D;&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x5916;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;<strong>&#x51E1;&#x662F;&#x8DDF;&#x5BB9;&#x5668;&#x7684; Linux Namespace &#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x4E00;&#x5B9A;&#x662F; Pod &#x7EA7;&#x522B;&#x7684;</strong>&#x3002;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#x4E5F;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#xFF1A;Pod &#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5C31;&#x662F;&#x8981;&#x8BA9;&#x5B83;&#x91CC;&#x9762;&#x7684;&#x5BB9;&#x5668;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x5730;&#x5171;&#x4EAB; Linux Namespace&#xFF0C;&#x4EC5;&#x4FDD;&#x7559;&#x5FC5;&#x8981;&#x7684;&#x9694;&#x79BB;&#x548C;&#x9650;&#x5236;&#x80FD;&#x529B;&#x3002;&#x8FD9;&#x6837;&#xFF0C;Pod &#x6A21;&#x62DF;&#x51FA;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x5C31;&#x8DDF;&#x865A;&#x62DF;&#x673A;&#x91CC;&#x7A0B;&#x5E8F;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x4E86;&#x3002;</p>
 <p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5728;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A; Pod &#x7684; YAML &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x5B9A;&#x4E49;&#x4E86; shareProcessNamespace=true&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
-<span class="hljs-attr">kind:</span> Pod
-<span class="hljs-attr">metadata:</span>
-<span class="hljs-attr">  name:</span> nginx
-<span class="hljs-attr">spec:</span>
-<span class="hljs-attr">  shareProcessNamespace:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">  containers:</span>
-<span class="hljs-attr">  - name:</span> nginx
-<span class="hljs-attr">    image:</span> nginx
-<span class="hljs-attr">  - name:</span> shell
-<span class="hljs-attr">    image:</span> busybox
-<span class="hljs-attr">    stdin:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">    tty:</span> <span class="hljs-literal">true</span>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">shareProcessNamespace</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> shell
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> busybox
+    <span class="token key atrule">stdin</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">tty</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
 <p>&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E2A; Pod &#x91CC;&#x7684;&#x5BB9;&#x5668;&#x8981;&#x5171;&#x4EAB; PID Namespace&#x3002;</p>
 <p>&#x800C;&#x5728;&#x8FD9;&#x4E2A; YAML &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x8FD8;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x5BB9;&#x5668;&#xFF1A;&#x4E00;&#x4E2A;&#x662F; nginx &#x5BB9;&#x5668;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5F00;&#x542F;&#x4E86; tty &#x548C; stdin &#x7684; shell &#x5BB9;&#x5668;&#x3002;&#x6211;&#x5728;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x5BB9;&#x5668;&#x57FA;&#x7840;&#x65F6;&#xFF0C;&#x66FE;&#x7ECF;&#x8BB2;&#x89E3;&#x8FC7;&#x4EC0;&#x4E48;&#x662F; tty &#x548C; stdin&#x3002;&#x800C;&#x5728; Pod &#x7684; YAML &#x6587;&#x4EF6;&#x91CC;&#x58F0;&#x660E;&#x5F00;&#x542F;&#x5B83;&#x4EEC;&#x4FE9;&#xFF0C;&#x5176;&#x5B9E;&#x7B49;&#x540C;&#x4E8E;&#x8BBE;&#x7F6E;&#x4E86; docker run &#x91CC;&#x7684; -it&#xFF08;-i &#x5373; stdin&#xFF0C;-t &#x5373; tty&#xFF09;&#x53C2;&#x6570;&#x3002;<em>&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x662F;&#x4E0D;&#x592A;&#x7406;&#x89E3;&#x5B83;&#x4EEC;&#x4FE9;&#x7684;&#x4F5C;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BA4;&#x4E3A; tty &#x5C31;&#x662F; Linux &#x7ED9;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E2A;&#x5E38;&#x9A7B;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x7528;&#x6237;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x5165;&#xFF0C;&#x8FD4;&#x56DE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x3002;</em>&#x5F53;&#x7136;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x5728; tty &#x4E2D;&#x8F93;&#x5165;&#x4FE1;&#x606F;&#xFF0C;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x540C;&#x65F6;&#x5F00;&#x542F; stdin&#xFF08;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x6D41;&#xFF09;&#x3002;</p>
 <p>&#x4E8E;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A; Pod &#x88AB;&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; shell &#x5BB9;&#x5668;&#x7684; tty &#x8DDF;&#x8FD9;&#x4E2A;&#x5BB9;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x4E00;&#x8D77;&#x5B9E;&#x8DF5;&#x4E00;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-bash">$ kubectl create <span class="hljs-_">-f</span> nginx.yaml
+<pre class="language-"><code class="lang-bash">$ kubectl create -f nginx.yaml
 </code></pre>
 <p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; kubectl attach &#x547D;&#x4EE4;&#xFF0C;&#x8FDE;&#x63A5;&#x5230; shell &#x5BB9;&#x5668;&#x7684; tty &#x4E0A;&#xFF1A;</p>
-<pre><code class="lang-bash">$ kubectl attach -it nginx -c shell
+<pre class="language-"><code class="lang-bash">$ kubectl attach -it nginx -c shell
 </code></pre>
 <p>&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5728; shell &#x5BB9;&#x5668;&#x91CC;&#x6267;&#x884C; ps &#x6307;&#x4EE4;&#xFF0C;&#x67E5;&#x770B;&#x6240;&#x6709;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;&#xFF1A;</p>
-<pre><code class="lang-bash">$ kubectl attach -it nginx -c shell
-/ <span class="hljs-comment"># ps ax</span>
-PID   USER     TIME  COMMAND
-    1 root      0:00 /pause
-    8 root      0:00 nginx: master process nginx -g daemon off;
-   14 101       0:00 nginx: worker process
-   15 root      0:00 sh
-   21 root      0:00 ps ax
+<pre class="language-"><code class="lang-bash">$ kubectl attach -it nginx -c shell
+/ <span class="token comment"># ps ax</span>
+PID   <span class="token environment constant">USER</span>     TIME  COMMAND
+    <span class="token number">1</span> root      <span class="token number">0</span>:00 /pause
+    <span class="token number">8</span> root      <span class="token number">0</span>:00 nginx: master process nginx -g daemon off<span class="token punctuation">;</span>
+   <span class="token number">14</span> <span class="token number">101</span>       <span class="token number">0</span>:00 nginx: worker process
+   <span class="token number">15</span> root      <span class="token number">0</span>:00 <span class="token function">sh</span>
+   <span class="token number">21</span> root      <span class="token number">0</span>:00 <span class="token function">ps</span> ax
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x5BB9;&#x5668;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5B83;&#x672C;&#x8EAB;&#x7684; ps ax &#x6307;&#x4EE4;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x770B;&#x5230; nginx &#x5BB9;&#x5668;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA; Infra &#x5BB9;&#x5668;&#x7684; /pause &#x8FDB;&#x7A0B;&#x3002;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x6574;&#x4E2A; Pod &#x91CC;&#x7684;&#x6BCF;&#x4E2A;&#x5BB9;&#x5668;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x6765;&#x8BF4;&#x90FD;&#x662F;&#x53EF;&#x89C1;&#x7684;&#xFF1A;&#x5B83;&#x4EEC;&#x5171;&#x4EAB;&#x4E86;&#x540C;&#x4E00;&#x4E2A; PID Namespace&#x3002;</p>
 <p>&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;<strong>&#x51E1;&#x662F; Pod &#x4E2D;&#x7684;&#x5BB9;&#x5668;&#x8981;&#x5171;&#x4EAB;&#x5BBF;&#x4E3B;&#x673A;&#x7684; Namespace&#xFF0C;&#x4E5F;&#x4E00;&#x5B9A;&#x662F; Pod &#x7EA7;&#x522B;&#x7684;&#x5B9A;&#x4E49;</strong>&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
-<span class="hljs-attr">kind:</span> Pod
-<span class="hljs-attr">metadata:</span>
-<span class="hljs-attr">  name:</span> nginx
-<span class="hljs-attr">spec:</span>
-<span class="hljs-attr">  hostNetwork:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">  hostIPC:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">  hostPID:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">  containers:</span>
-<span class="hljs-attr">  - name:</span> nginx
-<span class="hljs-attr">    image:</span> nginx
-<span class="hljs-attr">  - name:</span> shell
-<span class="hljs-attr">    image:</span> busybox
-<span class="hljs-attr">    stdin:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">    tty:</span> <span class="hljs-literal">true</span>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hostNetwork</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">hostIPC</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">hostPID</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> shell
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> busybox
+    <span class="token key atrule">stdin</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">tty</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
 <p>&#x5728;&#x8FD9;&#x4E2A; Pod &#x4E2D;&#xFF0C;&#x6211;&#x5B9A;&#x4E49;&#x4E86;&#x5171;&#x4EAB;&#x5BBF;&#x4E3B;&#x673A;&#x7684; Network&#x3001;IPC &#x548C; PID Namespace&#x3002;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x8FD9;&#x4E2A; Pod &#x91CC;&#x7684;&#x6240;&#x6709;&#x5BB9;&#x5668;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x7F51;&#x7EDC;&#x3001;&#x76F4;&#x63A5;&#x4E0E;&#x5BBF;&#x4E3B;&#x673A;&#x8FDB;&#x884C; IPC &#x901A;&#x4FE1;&#x3001;&#x770B;&#x5230;&#x5BBF;&#x4E3B;&#x673A;&#x91CC;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x3002;</p>
 <p>&#x5F53;&#x7136;&#xFF0C;&#x9664;&#x4E86;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;Pod &#x91CC;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5B57;&#x6BB5;&#x5F53;&#x5C5E;&#x201C;Containers&#x201D;&#x4E86;&#x3002;&#x800C;&#x5728;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x8FD8;&#x4ECB;&#x7ECD;&#x8FC7;&#x201C;Init Containers&#x201D;&#x3002;&#x5176;&#x5B9E;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x90FD;&#x5C5E;&#x4E8E; Pod &#x5BF9;&#x5BB9;&#x5668;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x5185;&#x5BB9;&#x4E5F;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x662F; Init Containers &#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x4F1A;&#x5148;&#x4E8E;&#x6240;&#x6709;&#x7684; Containers&#xFF0C;&#x5E76;&#x4E14;&#x4E25;&#x683C;&#x6309;&#x7167;&#x5B9A;&#x4E49;&#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x3002;</p>
@@ -643,21 +665,21 @@ PID   USER     TIME  COMMAND
 <p>ImagePullPolicy &#x7684;&#x503C;&#x9ED8;&#x8BA4;&#x662F; Always&#xFF0C;&#x5373;&#x6BCF;&#x6B21;&#x521B;&#x5EFA; Pod &#x90FD;&#x91CD;&#x65B0;&#x62C9;&#x53D6;&#x4E00;&#x6B21;&#x955C;&#x50CF;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5F53;&#x5BB9;&#x5668;&#x7684;&#x955C;&#x50CF;&#x662F;&#x7C7B;&#x4F3C;&#x4E8E; nginx &#x6216;&#x8005; nginx:latest &#x8FD9;&#x6837;&#x7684;&#x540D;&#x5B57;&#x65F6;&#xFF0C;ImagePullPolicy &#x4E5F;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A; Always&#x3002;</p>
 <p>&#x800C;&#x5982;&#x679C;&#x5B83;&#x7684;&#x503C;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A; Never &#x6216;&#x8005; IfNotPresent&#xFF0C;&#x5219;&#x610F;&#x5473;&#x7740; Pod &#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x4E3B;&#x52A8;&#x62C9;&#x53D6;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x5728;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x65F6;&#x624D;&#x62C9;&#x53D6;&#x3002;</p>
 <p><strong>&#x5176;&#x6B21;&#xFF0C;&#x662F; Lifecycle &#x5B57;&#x6BB5;</strong>&#x3002;&#x5B83;&#x5B9A;&#x4E49;&#x7684;&#x662F; Container Lifecycle Hooks&#x3002;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;Container Lifecycle Hooks &#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x662F;&#x5728;&#x5BB9;&#x5668;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x89E6;&#x53D1;&#x4E00;&#x7CFB;&#x5217;&#x201C;&#x94A9;&#x5B50;&#x201D;&#x3002;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
-<span class="hljs-attr">kind:</span> Pod
-<span class="hljs-attr">metadata:</span>
-<span class="hljs-attr">  name:</span> lifecycle-demo
-<span class="hljs-attr">spec:</span>
-<span class="hljs-attr">  containers:</span>
-<span class="hljs-attr">  - name:</span> lifecycle-demo-container
-<span class="hljs-attr">    image:</span> nginx
-<span class="hljs-attr">    lifecycle:</span>
-<span class="hljs-attr">      postStart:</span>
-<span class="hljs-attr">        exec:</span>
-<span class="hljs-attr">          command:</span> [<span class="hljs-string">&quot;/bin/sh&quot;</span>, <span class="hljs-string">&quot;-c&quot;</span>, <span class="hljs-string">&quot;echo Hello from the postStart handler &gt; /usr/share/message&quot;</span>]
-<span class="hljs-attr">      preStop:</span>
-<span class="hljs-attr">        exec:</span>
-<span class="hljs-attr">          command:</span> [<span class="hljs-string">&quot;/usr/sbin/nginx&quot;</span>,<span class="hljs-string">&quot;-s&quot;</span>,<span class="hljs-string">&quot;quit&quot;</span>]
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> lifecycle<span class="token punctuation">-</span>demo
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> lifecycle<span class="token punctuation">-</span>demo<span class="token punctuation">-</span>container
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">lifecycle</span><span class="token punctuation">:</span>
+      <span class="token key atrule">postStart</span><span class="token punctuation">:</span>
+        <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/bin/sh&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;-c&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;echo Hello from the postStart handler &gt; /usr/share/message&quot;</span><span class="token punctuation">]</span>
+      <span class="token key atrule">preStop</span><span class="token punctuation">:</span>
+        <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/usr/sbin/nginx&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;-s&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;quit&quot;</span><span class="token punctuation">]</span>
 </code></pre>
 <p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6765;&#x81EA; Kubernetes &#x5B98;&#x65B9;&#x6587;&#x6863;&#x7684; Pod &#x7684; YAML &#x6587;&#x4EF6;&#x3002;&#x5B83;&#x5176;&#x5B9E;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; nginx &#x955C;&#x50CF;&#x7684;&#x5BB9;&#x5668;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A; YAML &#x6587;&#x4EF6;&#x7684;&#x5BB9;&#x5668;&#xFF08;Containers&#xFF09;&#x90E8;&#x5206;&#xFF0C;&#x4F60;&#x4F1A;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x5BB9;&#x5668;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A; postStart &#x548C; preStop &#x53C2;&#x6570;&#x3002;&#x8FD9;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#x5462;&#xFF1F;</p>
 <p>&#x5148;&#x8BF4; postStart &#x5427;&#x3002;&#x5B83;&#x6307;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x7ACB;&#x523B;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x9700;&#x8981;&#x660E;&#x786E;&#x7684;&#x662F;&#xFF0C;<em>postStart &#x5B9A;&#x4E49;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x867D;&#x7136;&#x662F;&#x5728; Docker &#x5BB9;&#x5668; ENTRYPOINT &#x6267;&#x884C;&#x4E4B;&#x540E;&#xFF0C;&#x4F46;&#x5B83;&#x5E76;&#x4E0D;&#x4E25;&#x683C;&#x4FDD;&#x8BC1;&#x987A;&#x5E8F;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5728; postStart &#x542F;&#x52A8;&#x65F6;&#xFF0C;ENTRYPOINT &#x6709;&#x53EF;&#x80FD;&#x8FD8;&#x6CA1;&#x6709;&#x7ED3;&#x675F;&#x3002;</em></p>
@@ -722,7 +744,7 @@ PID   USER     TIME  COMMAND
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2 深入解析Pod对象(一)：基本概念","date":"2021-02-26T07:14:52.000Z","draft":false,"tags":["kubernetes","pod"],"categories":["云计算"],"level":"1.4.2","depth":2,"next":{"title":"3.3 深入解析Pod对象(二): 使用进阶","level":"1.4.3","depth":2,"path":"chapter3/pod-concept2.md","ref":"chapter3/pod-concept2.md","articles":[]},"previous":{"title":"3.1 为什么我们需要Pod","level":"1.4.1","depth":2,"path":"chapter3/why-pod.md","ref":"chapter3/why-pod.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","sharing","back-to-top-button","page-treeview","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter3/pod-concept1.md","mtime":"2021-06-12T11:56:09.263Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-12T15:16:03.768Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2 深入解析Pod对象(一)：基本概念","date":"2021-02-26T07:14:52.000Z","draft":false,"tags":["kubernetes","pod"],"categories":["云计算"],"level":"1.4.2","depth":2,"next":{"title":"3.3 深入解析Pod对象(二): 使用进阶","level":"1.4.3","depth":2,"path":"chapter3/pod-concept2.md","ref":"chapter3/pod-concept2.md","articles":[]},"previous":{"title":"3.1 为什么我们需要Pod","level":"1.4.1","depth":2,"path":"chapter3/why-pod.md","ref":"chapter3/why-pod.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-search","-lunr","search-pro","-sharing","sharing-plus","back-to-top-button","splitter","github","favicon","-highlight","prism","pageview-count"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/XueqiangChen"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"asset/img/favicon.ico","bookmark":"asset/img/favicon.ico","appleTouch":"asset/img/favicon.ico","appleTouchMore":{"120x120":"asset/img/favicon.ico","180x180":"asset/img/favicon.ico"}},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter3/pod-concept1.md","mtime":"2021-06-17T10:40:59.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-17T11:15:36.310Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -736,15 +758,15 @@ PID   USER     TIME  COMMAND
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
@@ -752,15 +774,15 @@ PID   USER     TIME  COMMAND
         
     
         
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
         
     
         

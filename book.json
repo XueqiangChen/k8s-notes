@@ -9,15 +9,56 @@
     },
     "plugins": [
         "expandable-chapters",
-        "search",
-        "sharing",
+        "-search",
+        "-lunr",
+        "search-pro",
+        "-sharing",
+        "sharing-plus",
         "back-to-top-button",
-        "page-treeview"
+        "splitter",
+        "github",
+        "favicon",
+        "-highlight",
+        "prism",
+        "pageview-count"
     ],
     "pluginsConfig": {
         "sharing": {
-            "facebook": false,
-            "weibo": true
+           "douban": false,
+           "facebook": false,
+           "google": false,
+           "hatenaBookmark": false,
+           "instapaper": false,
+           "line": false,
+           "linkedin": false,
+           "messenger": false,
+           "pocket": false,
+           "qq": false,
+           "qzone": false,
+           "stumbleupon": false,
+           "twitter": true,
+           "viber": false,
+           "vk": false,
+           "weibo": true,
+           "whatsapp": false,
+           "all": [
+               "douban", "facebook", "google", "hatenaBookmark", 
+               "instapaper", "linkedin","twitter", "weibo", 
+               "messenger","qq", "qzone","viber","vk","weibo",
+               "pocket", "stumbleupon","whatsapp"
+           ]
+        },
+        "github": {
+            "url": "https://github.com/XueqiangChen"
+        },
+        "favicon": {
+		    "shortcut": "asset/img/favicon.ico",
+			"bookmark": "asset/img/favicon.ico",
+			"appleTouch": "asset/img/favicon.ico",
+			"appleTouchMore": {
+   				"120x120": "asset/img/favicon.ico",
+   				"180x180": "asset/img/favicon.ico"
+			}
         }
         
     }

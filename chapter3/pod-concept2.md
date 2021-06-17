@@ -226,7 +226,7 @@ zone="us-est-coast"
 
 目前，Downward API 支持的字段已经非常丰富了，比如：
 
-```txt
+```
 1. 使用fieldRef可以声明使用:
 spec.nodeName - 宿主机名字
 status.hostIP - 宿主机IP
