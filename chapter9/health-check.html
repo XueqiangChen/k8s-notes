@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
@@ -29,11 +29,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
                 
             
                 
@@ -61,6 +65,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -73,6 +78,23 @@
     
     
     <link rel="prev" href="commands.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../asset/img/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../asset/img/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../asset/img/favicon.ico">
+        
     
 
     </head>
@@ -543,22 +565,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
-<li><div><a href="#&#x4E00;-&#x80CC;&#x666F;">&#x4E00;. &#x80CC;&#x666F;</a><i></i></div></li>
-<li><div><a href="#&#x4E8C;-health-check&#x65B9;&#x5F0F;">&#x4E8C;. Health Check&#x65B9;&#x5F0F;</a><i></i></div></li>
-<li><div><a href="#&#x4E09;-&#x5BB9;&#x5668;&#x5316;&#x7684;health-check&#x673A;&#x5236;">&#x4E09;. &#x5BB9;&#x5668;&#x5316;&#x7684;Health Check&#x673A;&#x5236;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#1-http&#x65B9;&#x5F0F;&#x7684;health-check">1. Http&#x65B9;&#x5F0F;&#x7684;Health Check</a><i></i></div></li>
-<li><div><a href="#2-tcp&#x65B9;&#x5F0F;&#x7684;health-check">2. Tcp&#x65B9;&#x5F0F;&#x7684;Health Check</a><i></i></div></li>
-<li><div><a href="#3-other&#x65B9;&#x5F0F;&#x7684;health-check">3. Other&#x65B9;&#x5F0F;&#x7684;Health Check</a><i></i></div></li>
-<li><div><a href="#4-&#x81EA;&#x5B9A;&#x4E49;health-check">4. &#x81EA;&#x5B9A;&#x4E49;Health Check</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#&#x56DB;-&#x5173;&#x4E8E;&#x5BB9;&#x5668;readinessprobe&#x548C;livenessprobe&#x7684;&#x8BF4;&#x660E;">&#x56DB;. &#x5173;&#x4E8E;&#x5BB9;&#x5668;ReadinessProbe&#x548C;LivenessProbe&#x7684;&#x8BF4;&#x660E;</a><i></i></div></li>
-</ul>
-</div>
-
-
-<!--more-->
+                                <!--more-->
 <h2 id="&#x4E00;-&#x80CC;&#x666F;">&#x4E00;. &#x80CC;&#x666F;</h2>
 <p>&#x53D1;&#x5E03;&#x5BB9;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x8F93;&#x5165;Health Check&#x7684;&#x68C0;&#x67E5;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x4FBF;K8S&#x96C6;&#x7FA4;&#x80FD;&#x591F;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x7684;&#x5065;&#x5EB7;&#x72B6;&#x6001;&#xFF0C;&#x505A;&#x5BB9;&#x5668;&#x7684;&#x505C;&#x6B62;&#x548C;&#x91CD;&#x5EFA;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x516C;&#x53F8;&#x53D1;&#x5E03;&#x7684;&#x5BB9;&#x5668;&#x5E94;&#x7528;&#x7C7B;&#x578B;&#x5305;&#x62EC;&#x591A;&#x79CD;&#xFF0C;&#x6709;Nginx+PHP&#xFF0C;OSP&#xFF0C;Nginx+Tomcat&#x7B49;&#xFF0C;&#x800C;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x7684;Health Check&#x7684;&#x65B9;&#x5F0F;&#x90FD;&#x5404;&#x5F02;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x7EDF;&#x4E00;&#x5404;&#x5E94;&#x7528;&#x7684;Health Check&#x68C0;&#x67E5;&#x65B9;&#x5F0F;&#x3002;</p>
 <h2 id="&#x4E8C;-health-check&#x65B9;&#x5F0F;">&#x4E8C;. Health Check&#x65B9;&#x5F0F;</h2>
@@ -578,68 +585,68 @@
 </ul>
 <h3 id="1-http&#x65B9;&#x5F0F;&#x7684;health-check">1. Http&#x65B9;&#x5F0F;&#x7684;Health Check</h3>
 <p>K8S&#x542F;&#x52A8;&#x7684;Nginx+PHP &#x548C; Nginx+Tomcat&#x7C7B;&#x578B;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#xFF0C;&#x4EE5;&#x53CA;ai-agent&#x7C7B;&#x578B;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x505A;Health Check</p>
-<p><code>/apps/sh/k8s_node/health_check.sh http &lt;port&gt; &lt;timeout&gt;</code></p>
-<pre><code class="lang-yaml"><span class="hljs-attr">livenessProbe:</span>
-<span class="hljs-attr">  exec:</span>
-<span class="hljs-attr">    command:</span>
-<span class="hljs-bullet">    -</span> bash
-<span class="hljs-bullet">    -</span> /apps/sh/k8s_node/health_check.sh
-<span class="hljs-bullet">    -</span> http
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;80&quot;</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;5&quot;</span>
-<span class="hljs-attr">  failureThreshold:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  initialDelaySeconds:</span> <span class="hljs-number">300</span>
-<span class="hljs-attr">  periodSeconds:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  successThreshold:</span> <span class="hljs-number">1</span>
-<span class="hljs-attr">  timeoutSeconds:</span> <span class="hljs-number">5</span>
-<span class="hljs-attr">name:</span> php-k6zq82
-<span class="hljs-attr">readinessProbe:</span>
-<span class="hljs-attr">  exec:</span>
-<span class="hljs-attr">    command:</span>
-<span class="hljs-bullet">    -</span> bash
-<span class="hljs-bullet">    -</span> /apps/sh/k8s_node/health_check.sh
-<span class="hljs-bullet">    -</span> http
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;80&quot;</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;1&quot;</span>
-<span class="hljs-attr">  failureThreshold:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  initialDelaySeconds:</span> <span class="hljs-number">10</span>
-<span class="hljs-attr">  periodSeconds:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  successThreshold:</span> <span class="hljs-number">1</span>
-<span class="hljs-attr">  timeoutSeconds:</span> <span class="hljs-number">1</span>
+<p><code>/apps/sh/k8s_node/health_check.sh http <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timeout</span><span class="token punctuation">&gt;</span></span></code></p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> bash
+    <span class="token punctuation">-</span> /apps/sh/k8s_node/health_check.sh
+    <span class="token punctuation">-</span> http
+    <span class="token punctuation">-</span> <span class="token string">&quot;80&quot;</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;5&quot;</span>
+  <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">300</span>
+  <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> php<span class="token punctuation">-</span>k6zq82
+<span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> bash
+    <span class="token punctuation">-</span> /apps/sh/k8s_node/health_check.sh
+    <span class="token punctuation">-</span> http
+    <span class="token punctuation">-</span> <span class="token string">&quot;80&quot;</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;1&quot;</span>
+  <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">1</span>
 </code></pre>
 <p>&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x5B9A;&#x4E49;&#x4E86;&#x5E94;&#x7528;&#x7C7B;&#x578B;&#x4E0E;&#x5176;http&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x5BF9;&#x5E94;&#x7684;&#x7AEF;&#x53E3;
 <code>probe.httpget.apps=${PROBE_HTTPGET_APPS:{&quot;web&quot;:80,&quot;ai-agent&quot;:8079}}</code></p>
 <p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#x4E0B;&#x53D1;PROBE_HTTPGET_APPS&#x6765;&#x4FEE;&#x6539;</p>
 <h3 id="2-tcp&#x65B9;&#x5F0F;&#x7684;health-check">2. Tcp&#x65B9;&#x5F0F;&#x7684;Health Check</h3>
 <p>K8S&#x542F;&#x52A8;&#x7684;OSP&#x670D;&#x52A1;&#xFF0C;Saturn&#x670D;&#x52A1;&#x4EE5;&#x53CA;ai-model&#x7C7B;&#x578B;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x505A;Health Check</p>
-<p><code>/apps/sh/k8s_node/health_check.sh tcp &lt;port&gt; &lt;timeout&gt;</code></p>
-<pre><code class="lang-yaml"><span class="hljs-attr">livenessProbe:</span>
-<span class="hljs-attr">  exec:</span>
-<span class="hljs-attr">    command:</span>
-<span class="hljs-bullet">    -</span> bash
-<span class="hljs-bullet">    -</span> /apps/sh/k8s_node/health_check.sh
-<span class="hljs-bullet">    -</span> tcp
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;8080&quot;</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;5&quot;</span>
-<span class="hljs-attr">  failureThreshold:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  initialDelaySeconds:</span> <span class="hljs-number">300</span>
-<span class="hljs-attr">  periodSeconds:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  successThreshold:</span> <span class="hljs-number">1</span>
-<span class="hljs-attr">  timeoutSeconds:</span> <span class="hljs-number">5</span>
-<span class="hljs-attr">name:</span> osp-kdo8d6
-<span class="hljs-attr">readinessProbe:</span>
-<span class="hljs-attr">  exec:</span>
-<span class="hljs-attr">    command:</span>
-<span class="hljs-bullet">    -</span> bash
-<span class="hljs-bullet">    -</span> /apps/sh/k8s_node/health_check.sh
-<span class="hljs-bullet">    -</span> tcp
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;8080&quot;</span>
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;1&quot;</span>
-<span class="hljs-attr">  failureThreshold:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  initialDelaySeconds:</span> <span class="hljs-number">10</span>
-<span class="hljs-attr">  periodSeconds:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  successThreshold:</span> <span class="hljs-number">1</span>
-<span class="hljs-attr">  timeoutSeconds:</span> <span class="hljs-number">1</span>
+<p><code>/apps/sh/k8s_node/health_check.sh tcp <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timeout</span><span class="token punctuation">&gt;</span></span></code></p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> bash
+    <span class="token punctuation">-</span> /apps/sh/k8s_node/health_check.sh
+    <span class="token punctuation">-</span> tcp
+    <span class="token punctuation">-</span> <span class="token string">&quot;8080&quot;</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;5&quot;</span>
+  <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">300</span>
+  <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> osp<span class="token punctuation">-</span>kdo8d6
+<span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> bash
+    <span class="token punctuation">-</span> /apps/sh/k8s_node/health_check.sh
+    <span class="token punctuation">-</span> tcp
+    <span class="token punctuation">-</span> <span class="token string">&quot;8080&quot;</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;1&quot;</span>
+  <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">1</span>
 </code></pre>
 <p>Noah&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x5B9A;&#x4E49;&#x4E86;&#x5E94;&#x7528;&#x7C7B;&#x578B;&#x4E0E;&#x5176;tcp&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x5BF9;&#x5E94;&#x7684;&#x7AEF;&#x53E3;
 <code>probe.tcpsocket.apps=${NOAH_PROBE_TCPSOCKET_APPS:{&quot;osp&quot;:8080,&quot;saturn&quot;:24500,&quot;ai-model&quot;:8500}}</code></p>
@@ -647,32 +654,32 @@
 <h3 id="3-other&#x65B9;&#x5F0F;&#x7684;health-check">3. Other&#x65B9;&#x5F0F;&#x7684;Health Check</h3>
 <p>&#x5982;&#x679C;&#x5E94;&#x7528;&#x7C7B;&#x578B;&#x4E0D;&#x5728;probe.httpget.apps&#x548C;probe.tcpsocket.apps&#x7684;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x5219;&#x4F7F;&#x7528;other&#x7C7B;&#x578B;&#x7684;&#x5065;&#x5EB7;&#x68C0;&#x67E5;</p>
 <p>other&#x7C7B;&#x578B;&#x7684;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x5B9E;&#x73B0;&#x4E3A;touch /tmp/health&#xFF0C;&#x5BB9;&#x5668;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x9ED8;&#x8BA4;&#x6210;&#x529F;&#x3002;</p>
-<p><code>/apps/sh/k8s_node/health_check.sh other &lt;timeout&gt;</code></p>
-<pre><code class="lang-yaml"><span class="hljs-attr">livenessProbe:</span>
-<span class="hljs-attr">  exec:</span>
-<span class="hljs-attr">    command:</span>
-<span class="hljs-bullet">    -</span> bash
-<span class="hljs-bullet">    -</span> /apps/sh/k8s_node/health_check.sh
-<span class="hljs-bullet">    -</span> other
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;5&quot;</span>
-<span class="hljs-attr">  failureThreshold:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  initialDelaySeconds:</span> <span class="hljs-number">300</span>
-<span class="hljs-attr">  periodSeconds:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  successThreshold:</span> <span class="hljs-number">1</span>
-<span class="hljs-attr">  timeoutSeconds:</span> <span class="hljs-number">5</span>
-<span class="hljs-attr">name:</span> php-k6zq82
-<span class="hljs-attr">readinessProbe:</span>
-<span class="hljs-attr">  exec:</span>
-<span class="hljs-attr">    command:</span>
-<span class="hljs-bullet">    -</span> bash
-<span class="hljs-bullet">    -</span> /apps/sh/k8s_node/health_check.sh
-<span class="hljs-bullet">    -</span> other
-<span class="hljs-bullet">    -</span> <span class="hljs-string">&quot;1&quot;</span>
-<span class="hljs-attr">  failureThreshold:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  initialDelaySeconds:</span> <span class="hljs-number">10</span>
-<span class="hljs-attr">  periodSeconds:</span> <span class="hljs-number">3</span>
-<span class="hljs-attr">  successThreshold:</span> <span class="hljs-number">1</span>
-<span class="hljs-attr">  timeoutSeconds:</span> <span class="hljs-number">1</span>
+<p><code>/apps/sh/k8s_node/health_check.sh other <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timeout</span><span class="token punctuation">&gt;</span></span></code></p>
+<pre class="language-"><code class="lang-yaml"><span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> bash
+    <span class="token punctuation">-</span> /apps/sh/k8s_node/health_check.sh
+    <span class="token punctuation">-</span> other
+    <span class="token punctuation">-</span> <span class="token string">&quot;5&quot;</span>
+  <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">300</span>
+  <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> php<span class="token punctuation">-</span>k6zq82
+<span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">exec</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> bash
+    <span class="token punctuation">-</span> /apps/sh/k8s_node/health_check.sh
+    <span class="token punctuation">-</span> other
+    <span class="token punctuation">-</span> <span class="token string">&quot;1&quot;</span>
+  <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+  <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">1</span>
 </code></pre>
 <h3 id="4-&#x81EA;&#x5B9A;&#x4E49;health-check">4. &#x81EA;&#x5B9A;&#x4E49;Health Check</h3>
 <p>Noah&#x5BB9;&#x5668;&#x81EA;&#x5B9A;&#x4E49;&#x5065;&#x5EB7;&#x68C0;&#x67E5;&#xFF0C;&#x5728;&#x6784;&#x5EFA;&#x5BB9;&#x5668;&#x955C;&#x50CF;&#x65F6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;moana extend&#x7684;&#x65B9;&#x5F0F;&#x5728;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x5C06;custom_health_check.sh&#x653E;&#x5230;/apps/sh&#x76EE;&#x5F55;&#x4E0B;&#xFF1A;</p>
@@ -728,7 +735,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"9.2 容器健康检查","date":"2021-02-27T09:40:49.000Z","draft":false,"tags":["kubernetes","health check"],"categories":["云计算"],"level":"1.10.2","depth":2,"next":{"title":"9.3 [译]Kubernetes深入研究：CustomResources的代码生成","level":"1.10.3","depth":2,"path":"chapter9/code-generation-for-customresources.md","ref":"chapter9/code-generation-for-customresources.md","articles":[]},"previous":{"title":"9.1 常用的 k8s 命令","level":"1.10.1","depth":2,"path":"chapter9/commands.md","ref":"chapter9/commands.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","sharing","back-to-top-button","page-treeview","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter9/health-check.md","mtime":"2021-06-12T15:32:47.185Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-12T15:33:56.961Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"9.2 容器健康检查","date":"2021-02-27T09:40:49.000Z","draft":false,"tags":["kubernetes","health check"],"categories":["云计算"],"level":"1.10.2","depth":2,"next":{"title":"9.3 [译]Kubernetes深入研究：CustomResources的代码生成","level":"1.10.3","depth":2,"path":"chapter9/code-generation-for-customresources.md","ref":"chapter9/code-generation-for-customresources.md","articles":[]},"previous":{"title":"9.1 常用的 k8s 命令","level":"1.10.1","depth":2,"path":"chapter9/commands.md","ref":"chapter9/commands.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-search","-lunr","search-pro","-sharing","sharing-plus","back-to-top-button","splitter","github","favicon","-highlight","prism","pageview-count"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/XueqiangChen"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"asset/img/favicon.ico","bookmark":"asset/img/favicon.ico","appleTouch":"asset/img/favicon.ico","appleTouchMore":{"120x120":"asset/img/favicon.ico","180x180":"asset/img/favicon.ico"}},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter9/health-check.md","mtime":"2021-06-17T11:27:59.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-17T11:28:40.349Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -742,15 +749,15 @@
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
@@ -758,15 +765,15 @@
         
     
         
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
         
     
         

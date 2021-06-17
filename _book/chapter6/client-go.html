@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
@@ -29,11 +29,15 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
                 
             
                 
@@ -61,6 +65,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -71,6 +76,23 @@
     
     
     <link rel="prev" href="qos-sc.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../asset/img/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../asset/img/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../asset/img/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../asset/img/favicon.ico">
+        
     
 
     </head>
@@ -545,18 +567,18 @@
 <p>&#x5BA2;&#x6237;&#x7AEF;&#x5E93;&#x901A;&#x5E38;&#x4E3A;&#x60A8;&#x5904;&#x7406;&#x8BF8;&#x5982;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x4E4B;&#x7C7B;&#x7684;&#x5E38;&#x89C1;&#x4EFB;&#x52A1;&#x3002; &#x5982;&#x679C; API &#x5BA2;&#x6237;&#x7AEF;&#x5728; Kubernetes &#x96C6;&#x7FA4;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5BA2;&#x6237;&#x7AEF;&#x5E93;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x5E76;&#x4F7F;&#x7528; Kubernetes &#x670D;&#x52A1;&#x5E10;&#x6237;&#x8FDB;&#x884C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#xFF0C; &#x6216;&#x8005;&#x80FD;&#x591F;&#x7406;&#x89E3; <a href="https://kubernetes.io/zh/docs/tasks/access-application-cluster/configure-access-multiple-clusters/" target="_blank">kubeconfig &#x6587;&#x4EF6;</a> &#x683C;&#x5F0F;&#x6765;&#x8BFB;&#x53D6;&#x51ED;&#x636E;&#x548C; API &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#x3002;</p>
 <p>kubernetes &#x5B98;&#x65B9;&#x652F;&#x6301;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x6709; go/python/java/dotnet/js &#x7B49;&#xFF0C;&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x8981;&#x8BA8;&#x8BBA;&#x7684;&#x662F;&#x5176;&#x4E2D;&#x7684; <a href="https://github.com/kubernetes/client-go/" target="_blank">go &#x5BA2;&#x6237;&#x7AEF;</a>&#x3002;</p>
 <p>&#x9996;&#x5148;&#x4E0B;&#x8F7D;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x8FDB;&#x5165;&#x5230;<code>examples</code>&#x76EE;&#x5F55;&#xFF1A;</p>
-<pre><code class="lang-bash">&#x279C; git <span class="hljs-built_in">clone</span> git@github.com:kubernetes/client-go.git
-&#x279C;  ~ <span class="hljs-built_in">cd</span> client-go/examples
-&#x279C;  examples git:(master) &#x2717; ll
+<pre class="language-"><code class="lang-bash">&#x279C; <span class="token function">git</span> clone git@github.com:kubernetes/client-go.git
+&#x279C;  ~ <span class="token builtin class-name">cd</span> client-go/examples
+&#x279C;  examples git:<span class="token punctuation">(</span>master<span class="token punctuation">)</span> &#x2717; ll
 total 32K
--rwxr-xr-x 1 root root 2.0K Apr  6 17:33 README.md
-drwxr-xr-x 2 root root 4.0K Apr  6 17:46 create-update-delete-deployment
-drwxr-xr-x 2 root root 4.0K Apr  6 17:33 dynamic-create-update-delete-deployment
-drwxr-xr-x 2 root root 4.0K Apr  6 17:33 fake-client
-drwxr-xr-x 2 root root 4.0K Apr  6 17:33 <span class="hljs-keyword">in</span>-cluster-client-configuration
-drwxr-xr-x 2 root root 4.0K Apr  6 17:33 leader-election
-drwxr-xr-x 2 root root 4.0K Apr  6 17:33 out-of-cluster-client-configuration
-drwxr-xr-x 2 root root 4.0K Apr  6 17:33 workqueue
+-rwxr-xr-x <span class="token number">1</span> root root <span class="token number">2</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:33 README.md
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:46 create-update-delete-deployment
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:33 dynamic-create-update-delete-deployment
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:33 fake-client
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:33 in-cluster-client-configuration
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:33 leader-election
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:33 out-of-cluster-client-configuration
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4</span>.0K Apr  <span class="token number">6</span> <span class="token number">17</span>:33 workqueue
 </code></pre>
 <p>go &#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x7684;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x6765;&#x770B;&#x4E00;&#x4E0B;<a href="https://github.com/kubernetes/client-go/tree/master/examples/create-update-delete-deployment" target="_blank">create-update-delete-deployment</a> &#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E2D;&#x662F;&#x5173;&#x4E8E;&#x64CD;&#x4F5C;deployment&#x8D44;&#x6E90;&#x5BF9;&#x8C61;&#x7684;&#x6837;&#x4F8B;&#xFF0C;&#x5305;&#x62EC;&#x521B;&#x5EFA;&#xFF0C;&#x67E5;&#x8BE2;&#xFF0C;&#x66F4;&#x65B0;&#xFF0C;&#x5220;&#x9664;&#x3002;</p>
 <blockquote>
@@ -567,58 +589,58 @@ drwxr-xr-x 2 root root 4.0K Apr  6 17:33 workqueue
 <p><img src="https://chenxqblog-1258795182.cos.ap-guangzhou.myqcloud.com/frame_generic_dark.png" alt=""></p>
 <p>&#x603B;&#x7684;&#x6765;&#x770B;&#xFF0C;<code>main</code> &#x4F7F;&#x7528; <code>kubeconfig</code> &#x7684;&#x914D;&#x7F6E;&#x6765;&#x751F;&#x6210; rest client&#xFF0C;&#x901A;&#x8FC7; rest client &#x8C03;&#x7528; k8s api &#x8FDB;&#x884C;&#x8D44;&#x6E90;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
 <p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5177;&#x4F53;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x8BFB;&#x53D6; <code>kubeconfig</code> &#x914D;&#x7F6E;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-go"><span class="hljs-keyword">var</span> kubeconfig *<span class="hljs-keyword">string</span>
-<span class="hljs-keyword">if</span> home := homedir.HomeDir(); home != <span class="hljs-string">&quot;&quot;</span> {
-    kubeconfig = flag.String(<span class="hljs-string">&quot;kubeconfig&quot;</span>, filepath.Join(home, <span class="hljs-string">&quot;.kube&quot;</span>, <span class="hljs-string">&quot;config&quot;</span>), <span class="hljs-string">&quot;(optional) absolute path to the kubeconfig file&quot;</span>)
-} <span class="hljs-keyword">else</span> {
-    kubeconfig = flag.String(<span class="hljs-string">&quot;kubeconfig&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;absolute path to the kubeconfig file&quot;</span>)
-}
-flag.Parse()
+<pre class="language-"><code class="lang-go"><span class="token keyword">var</span> kubeconfig <span class="token operator">*</span><span class="token builtin">string</span>
+<span class="token keyword">if</span> home <span class="token operator">:=</span> homedir<span class="token punctuation">.</span><span class="token function">HomeDir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> home <span class="token operator">!=</span> <span class="token string">&quot;&quot;</span> <span class="token punctuation">{</span>
+    kubeconfig <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">&quot;kubeconfig&quot;</span><span class="token punctuation">,</span> filepath<span class="token punctuation">.</span><span class="token function">Join</span><span class="token punctuation">(</span>home<span class="token punctuation">,</span> <span class="token string">&quot;.kube&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;config&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;(optional) absolute path to the kubeconfig file&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    kubeconfig <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token string">&quot;kubeconfig&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;absolute path to the kubeconfig file&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+flag<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-config, err := clientcmd.BuildConfigFromFlags(<span class="hljs-string">&quot;&quot;</span>, *kubeconfig)
+config<span class="token punctuation">,</span> err <span class="token operator">:=</span> clientcmd<span class="token punctuation">.</span><span class="token function">BuildConfigFromFlags</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token operator">*</span>kubeconfig<span class="token punctuation">)</span>
 </code></pre>
 <p>&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x6307;&#x5B9A;<code>kubeconfig</code>&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x8C03;&#x7528;<code>clientcmd.BuildConfigFromFlags(&quot;&quot;, *kubeconfig)</code>&#x6765;&#x89E3;&#x6790; config &#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x3002; <code>BuildConfigFromFlags</code> &#x51FD;&#x6570;&#x662F;&#x7528;&#x6765;&#x4ECE;master&#x5730;&#x5740;&#x6216;&#x8005;kubeconfig&#x6587;&#x4EF6;&#x5730;&#x5740;&#x6765;&#x6784;&#x5EFA;config&#x914D;&#x7F6E;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x505A;&#x4E86;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;&#xFF1A;</p>
 <ol>
 <li>&#x8C03;&#x7528;<code>func NewNonInteractiveDeferredLoadingClientConfig(loader ClientConfigLoader, overrides *ConfigOverrides) ClientConfig</code></li>
 <li>&#x8C03;&#x7528; <code>func (config *DeferredLoadingClientConfig) ClientConfig() (*restclient.Config, error)</code> &#x51FD;&#x6570;</li>
 </ol>
-<pre><code class="lang-go"><span class="hljs-keyword">func</span> BuildConfigFromFlags(masterUrl, kubeconfigPath <span class="hljs-keyword">string</span>) (*restclient.Config, error) {
-    ......
-    <span class="hljs-keyword">return</span> NewNonInteractiveDeferredLoadingClientConfig(
-        &amp;ClientConfigLoadingRules{ExplicitPath: kubeconfigPath},
-        &amp;ConfigOverrides{ClusterInfo: clientcmdapi.Cluster{Server: masterUrl}}).ClientConfig()
-}
+<pre class="language-"><code class="lang-go"><span class="token keyword">func</span> <span class="token function">BuildConfigFromFlags</span><span class="token punctuation">(</span>masterUrl<span class="token punctuation">,</span> kubeconfigPath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>restclient<span class="token punctuation">.</span>Config<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span><span class="token operator">...</span>
+    <span class="token keyword">return</span> <span class="token function">NewNonInteractiveDeferredLoadingClientConfig</span><span class="token punctuation">(</span>
+        <span class="token operator">&amp;</span>ClientConfigLoadingRules<span class="token punctuation">{</span>ExplicitPath<span class="token punctuation">:</span> kubeconfigPath<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token operator">&amp;</span>ConfigOverrides<span class="token punctuation">{</span>ClusterInfo<span class="token punctuation">:</span> clientcmdapi<span class="token punctuation">.</span>Cluster<span class="token punctuation">{</span>Server<span class="token punctuation">:</span> masterUrl<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ClientConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x8FD9;&#x4E24;&#x4E2A;&#x94FE;&#x5F0F;&#x51FD;&#x6570;&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#x4E8B;&#x60C5;&#xFF1A;</p>
-<pre><code class="lang-go"><span class="hljs-keyword">func</span> NewNonInteractiveDeferredLoadingClientConfig(loader ClientConfigLoader, overrides *ConfigOverrides) ClientConfig {
-    <span class="hljs-keyword">return</span> &amp;DeferredLoadingClientConfig{loader: loader, overrides: overrides, icc: &amp;inClusterClientConfig{overrides: overrides}}
-}
+<pre class="language-"><code class="lang-go"><span class="token keyword">func</span> <span class="token function">NewNonInteractiveDeferredLoadingClientConfig</span><span class="token punctuation">(</span>loader ClientConfigLoader<span class="token punctuation">,</span> overrides <span class="token operator">*</span>ConfigOverrides<span class="token punctuation">)</span> ClientConfig <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&amp;</span>DeferredLoadingClientConfig<span class="token punctuation">{</span>loader<span class="token punctuation">:</span> loader<span class="token punctuation">,</span> overrides<span class="token punctuation">:</span> overrides<span class="token punctuation">,</span> icc<span class="token punctuation">:</span> <span class="token operator">&amp;</span>inClusterClientConfig<span class="token punctuation">{</span>overrides<span class="token punctuation">:</span> overrides<span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><code>NewNonInteractiveDeferredLoadingClientConfig</code> &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>ClientConfig</code> &#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;: <code>DeferredLoadingClientConfig</code>&#x3002;<code>DeferredLoadingClientConfig</code> &#x4E3B;&#x8981;&#x5DE5;&#x4F5C;&#x662F;&#x786E;&#x4FDD;&#x88C5;&#x8F7D;&#x7684; <code>Config</code> &#x5B9E;&#x4F8B;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x6700;&#x65B0; <code>kubeconfig</code> &#x6570;&#x636E;&#xFF08;&#x5BF9;&#x4E8E;&#x914D;&#x7F6E;&#x4E86;&#x591A;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#xFF0C;<code>export KUBECONFIG=cluster1-config:cluster2-config</code>&#xFF0C;&#x9700;&#x8981;&#x6267;&#x884C; merge&#xFF09;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x6CE8;&#x91CA;&#x4E2D;&#x5199;&#x9053;&#xFF1A;</p>
-<pre><code>It is used in cases where the loading rules may change after you&apos;ve instantiated them and you want to be sure that the most recent rules are used.  This is useful in cases where you bind flags to loading rule parameters before the parse happens and you want your calling code to be ignorant of how the values are being mutated to avoid passing extraneous information down a call stack
+<pre class="language-"><code>It is used in cases where the loading rules may change after you&apos;ve instantiated them and you want to be sure that the most recent rules are used.  This is useful in cases where you bind flags to loading rule parameters before the parse happens and you want your calling code to be ignorant of how the values are being mutated to avoid passing extraneous information down a call stack
 
 &#x5B9E;&#x4F8B;&#x5316;&#x52A0;&#x8F7D;&#x89C4;&#x5219;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x66F4;&#x6539;&#x52A0;&#x8F7D;&#x89C4;&#x5219;&#xFF0C;&#x5E76;&#x4E14;&#x8981;&#x786E;&#x4FDD;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x3002;&#x8FD9;&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#x5F88;&#x6709;&#x7528;&#xFF1A;
 &#x5728;&#x89E3;&#x6790;&#x53D1;&#x751F;&#x4E4B;&#x524D;&#x5C06;&#x6807;&#x5FD7;&#x7ED1;&#x5B9A;&#x5230;&#x52A0;&#x8F7D;&#x89C4;&#x5219;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x5E0C;&#x671B;&#x60A8;&#x7684;&#x8C03;&#x7528;&#x4EE3;&#x7801;&#x4E0D;&#x77E5;&#x9053;&#x503C;&#x7684;&#x53D8;&#x5316;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x5728;&#x8C03;&#x7528;&#x5806;&#x6808;&#x4E2D;&#x4F20;&#x9012;&#x65E0;&#x5173;&#x7684;&#x4FE1;&#x606F;
 </code></pre><p>&#x4E0A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E86; ClientConfig &#x63A5;&#x53E3;&#x5B9E;&#x4F8B;&#x3002;&#x7136;&#x540E;&#x8C03;&#x7528; ClientConfig &#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x7684; ClientConfig() &#x65B9;&#x6CD5;&#x3002;ClientConfig() &#x5DE5;&#x4F5C;&#x662F;&#x89E3;&#x6790;&#x3001;&#x5904;&#x7406; kubeconfig &#x6587;&#x4EF6;&#x91CC;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684; rest#Config &#x5B9E;&#x4F8B;&#x3002;</p>
-<pre><code class="lang-go"><span class="hljs-comment">// ClientConfig implements ClientConfig</span>
-<span class="hljs-keyword">func</span> (config *DeferredLoadingClientConfig) ClientConfig() (*restclient.Config, error) {
-    mergedClientConfig, err := config.createClientConfig()
-    ......
+<pre class="language-"><code class="lang-go"><span class="token comment">// ClientConfig implements ClientConfig</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>config <span class="token operator">*</span>DeferredLoadingClientConfig<span class="token punctuation">)</span> <span class="token function">ClientConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>restclient<span class="token punctuation">.</span>Config<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    mergedClientConfig<span class="token punctuation">,</span> err <span class="token operator">:=</span> config<span class="token punctuation">.</span><span class="token function">createClientConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token operator">...</span><span class="token operator">...</span>
 
-    <span class="hljs-comment">// load the configuration and return on non-empty errors and if the</span>
-    <span class="hljs-comment">// content differs from the default config</span>
-    mergedConfig, err := mergedClientConfig.ClientConfig()
-    ......
+    <span class="token comment">// load the configuration and return on non-empty errors and if the</span>
+    <span class="token comment">// content differs from the default config</span>
+    mergedConfig<span class="token punctuation">,</span> err <span class="token operator">:=</span> mergedClientConfig<span class="token punctuation">.</span><span class="token function">ClientConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token operator">...</span><span class="token operator">...</span>
 
-    <span class="hljs-comment">// check for in-cluster configuration and use it</span>
-    <span class="hljs-keyword">if</span> config.icc.Possible() {
-        klog.V(<span class="hljs-number">4</span>).Infof(<span class="hljs-string">&quot;Using in-cluster configuration&quot;</span>)
-        <span class="hljs-keyword">return</span> config.icc.ClientConfig()
-    }
+    <span class="token comment">// check for in-cluster configuration and use it</span>
+    <span class="token keyword">if</span> config<span class="token punctuation">.</span>icc<span class="token punctuation">.</span><span class="token function">Possible</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        klog<span class="token punctuation">.</span><span class="token function">V</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Infof</span><span class="token punctuation">(</span><span class="token string">&quot;Using in-cluster configuration&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> config<span class="token punctuation">.</span>icc<span class="token punctuation">.</span><span class="token function">ClientConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-comment">// return the result of the merged client config</span>
-    <span class="hljs-keyword">return</span> mergedConfig, err
-}
+    <span class="token comment">// return the result of the merged client config</span>
+    <span class="token keyword">return</span> mergedConfig<span class="token punctuation">,</span> err
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x4E2A;&#x91CD;&#x8981;&#x90E8;&#x5206;&#xFF1A;</p>
 <p>1.<code>mergedClientConfig, err := config.createClientConfig()</code></p>
@@ -633,69 +655,69 @@ config, err := clientcmd.BuildConfigFromFlags(<span class="hljs-string">&quot;&q
 <p>2.<code>mergedConfig, err := mergedClientConfig.ClientConfig()</code></p>
 <p>&#x771F;&#x6B63;&#x521B;&#x5EFA; rest#Config &#x7684;&#x5730;&#x65B9;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x89E3;&#x6790;&#x3001;&#x5904;&#x7406; kubeconfig &#x4E2D;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;&#x3002;</p>
 <p>&#x5B8C;&#x6210; rest client &#x521B;&#x5EFA;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x521B;&#x5EFA; <code>clientset</code> :</p>
-<pre><code class="lang-go">clientset, err := kubernetes.NewForConfig(config)
+<pre class="language-"><code class="lang-go">clientset<span class="token punctuation">,</span> err <span class="token operator">:=</span> kubernetes<span class="token punctuation">.</span><span class="token function">NewForConfig</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x7684; <code>func NewForConfig(c *rest.Config) (*Clientset, error)</code> &#x51FD;&#x6570;&#x4F1A;&#x6839;&#x636E; api group &#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x8D44;&#x6E90;&#x751F;&#x6210;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x4F8B;&#x5982;&#x8FD9;&#x91CC;&#x7528;&#x5230;&#x7684; deployment &#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;deployment&#x7684;namespace&#xFF1A;</p>
-<pre><code class="lang-go">deploymentsClient := clientset.AppsV1().Deployments(apiv1.NamespaceDefault)
+<pre class="language-"><code class="lang-go">deploymentsClient <span class="token operator">:=</span> clientset<span class="token punctuation">.</span><span class="token function">AppsV1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Deployments</span><span class="token punctuation">(</span>apiv1<span class="token punctuation">.</span>NamespaceDefault<span class="token punctuation">)</span>
 </code></pre>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x521B;&#x5EFA; deployment &#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&#xFF1A;</p>
-<pre><code class="lang-go">deployment := &amp;appsv1.Deployment{
-    ObjectMeta: metav1.ObjectMeta{
-        Name: <span class="hljs-string">&quot;demo-deployment&quot;</span>,
-    },
-    Spec: appsv1.DeploymentSpec{
-        Replicas: int32Ptr(<span class="hljs-number">2</span>),
-        Selector: &amp;metav1.LabelSelector{
-            MatchLabels: <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">string</span>{
-                <span class="hljs-string">&quot;app&quot;</span>: <span class="hljs-string">&quot;demo&quot;</span>,
-            },
-        },
-        Template: apiv1.PodTemplateSpec{
-            ObjectMeta: metav1.ObjectMeta{
-                Labels: <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">string</span>{
-                    <span class="hljs-string">&quot;app&quot;</span>: <span class="hljs-string">&quot;demo&quot;</span>,
-                },
-            },
-            Spec: apiv1.PodSpec{
-                Containers: []apiv1.Container{
-                    {
-                        Name:  <span class="hljs-string">&quot;web&quot;</span>,
-                        Image: <span class="hljs-string">&quot;nginx:1.12&quot;</span>,
-                        Ports: []apiv1.ContainerPort{
-                            {
-                                Name:          <span class="hljs-string">&quot;http&quot;</span>,
-                                Protocol:      apiv1.ProtocolTCP,
-                                ContainerPort: <span class="hljs-number">80</span>,
-                            },
-                        },
-                    },
-                },
-            },
-        },
-    },
-}
+<pre class="language-"><code class="lang-go">deployment <span class="token operator">:=</span> <span class="token operator">&amp;</span>appsv1<span class="token punctuation">.</span>Deployment<span class="token punctuation">{</span>
+    ObjectMeta<span class="token punctuation">:</span> metav1<span class="token punctuation">.</span>ObjectMeta<span class="token punctuation">{</span>
+        Name<span class="token punctuation">:</span> <span class="token string">&quot;demo-deployment&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    Spec<span class="token punctuation">:</span> appsv1<span class="token punctuation">.</span>DeploymentSpec<span class="token punctuation">{</span>
+        Replicas<span class="token punctuation">:</span> <span class="token function">int32Ptr</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Selector<span class="token punctuation">:</span> <span class="token operator">&amp;</span>metav1<span class="token punctuation">.</span>LabelSelector<span class="token punctuation">{</span>
+            MatchLabels<span class="token punctuation">:</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+                <span class="token string">&quot;app&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;demo&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        Template<span class="token punctuation">:</span> apiv1<span class="token punctuation">.</span>PodTemplateSpec<span class="token punctuation">{</span>
+            ObjectMeta<span class="token punctuation">:</span> metav1<span class="token punctuation">.</span>ObjectMeta<span class="token punctuation">{</span>
+                Labels<span class="token punctuation">:</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+                    <span class="token string">&quot;app&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;demo&quot;</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            Spec<span class="token punctuation">:</span> apiv1<span class="token punctuation">.</span>PodSpec<span class="token punctuation">{</span>
+                Containers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>apiv1<span class="token punctuation">.</span>Container<span class="token punctuation">{</span>
+                    <span class="token punctuation">{</span>
+                        Name<span class="token punctuation">:</span>  <span class="token string">&quot;web&quot;</span><span class="token punctuation">,</span>
+                        Image<span class="token punctuation">:</span> <span class="token string">&quot;nginx:1.12&quot;</span><span class="token punctuation">,</span>
+                        Ports<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>apiv1<span class="token punctuation">.</span>ContainerPort<span class="token punctuation">{</span>
+                            <span class="token punctuation">{</span>
+                                Name<span class="token punctuation">:</span>          <span class="token string">&quot;http&quot;</span><span class="token punctuation">,</span>
+                                Protocol<span class="token punctuation">:</span>      apiv1<span class="token punctuation">.</span>ProtocolTCP<span class="token punctuation">,</span>
+                                ContainerPort<span class="token punctuation">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+                            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x521B;&#x5EFA;deployment&#xFF1A;</p>
-<pre><code class="lang-go"><span class="hljs-comment">// Create Deployment</span>
-fmt.Println(<span class="hljs-string">&quot;Creating deployment...&quot;</span>)
-result, err := deploymentsClient.Create(context.TODO(), deployment, metav1.CreateOptions{})
-<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
-   <span class="hljs-built_in">panic</span>(err)
-}
-fmt.Printf(<span class="hljs-string">&quot;Created deployment %q.\n&quot;</span>, result.GetObjectMeta().GetName())
+<pre class="language-"><code class="lang-go"><span class="token comment">// Create Deployment</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;Creating deployment...&quot;</span><span class="token punctuation">)</span>
+result<span class="token punctuation">,</span> err <span class="token operator">:=</span> deploymentsClient<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">TODO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> deployment<span class="token punctuation">,</span> metav1<span class="token punctuation">.</span>CreateOptions<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+   <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;Created deployment %q.\n&quot;</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span><span class="token function">GetObjectMeta</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">GetName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x521B;&#x5EFA;&#x7684;&#x51FD;&#x6570;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x8C03;&#x7528; HTTP &#x7684; POST &#x8BF7;&#x6C42;&#x6765;&#x8DDF;K8s&#x96C6;&#x7FA4;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x7684;&#x3002;</p>
-<pre><code class="lang-go"><span class="hljs-keyword">func</span> (c *deployments) Create(ctx context.Context, deployment *v1.Deployment, opts metav1.CreateOptions) (result *v1.Deployment, err error) {
-    result = &amp;v1.Deployment{}
-    err = c.client.Post().
-        Namespace(c.ns).
-        Resource(<span class="hljs-string">&quot;deployments&quot;</span>).
-        VersionedParams(&amp;opts, scheme.ParameterCodec).
-        Body(deployment).
-        Do(ctx).
-        Into(result)
-    <span class="hljs-keyword">return</span>
-}
+<pre class="language-"><code class="lang-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>deployments<span class="token punctuation">)</span> <span class="token function">Create</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">,</span> deployment <span class="token operator">*</span>v1<span class="token punctuation">.</span>Deployment<span class="token punctuation">,</span> opts metav1<span class="token punctuation">.</span>CreateOptions<span class="token punctuation">)</span> <span class="token punctuation">(</span>result <span class="token operator">*</span>v1<span class="token punctuation">.</span>Deployment<span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    result <span class="token operator">=</span> <span class="token operator">&amp;</span>v1<span class="token punctuation">.</span>Deployment<span class="token punctuation">{</span><span class="token punctuation">}</span>
+    err <span class="token operator">=</span> c<span class="token punctuation">.</span>client<span class="token punctuation">.</span><span class="token function">Post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+        <span class="token function">Namespace</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>ns<span class="token punctuation">)</span><span class="token punctuation">.</span>
+        <span class="token function">Resource</span><span class="token punctuation">(</span><span class="token string">&quot;deployments&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+        <span class="token function">VersionedParams</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>opts<span class="token punctuation">,</span> scheme<span class="token punctuation">.</span>ParameterCodec<span class="token punctuation">)</span><span class="token punctuation">.</span>
+        <span class="token function">Body</span><span class="token punctuation">(</span>deployment<span class="token punctuation">)</span><span class="token punctuation">.</span>
+        <span class="token function">Do</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span>
+        <span class="token function">Into</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x81F3;&#x4E8E;post&#x7684;&#x8BF7;&#x6C42;&#x7EC6;&#x8282;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x505A;&#x8BE6;&#x7EC6;&#x7684;&#x9610;&#x8FF0;&#x3002;</p>
 <p><strong>&#x53C2;&#x8003;&#xFF1A;</strong></p>
@@ -743,7 +765,7 @@ fmt.Printf(<span class="hljs-string">&quot;Created deployment %q.\n&quot;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.4 kubernetes go 客户端","date":"2021-04-06T11:58:51.000Z","draft":false,"tags":["kubernetes","client-go"],"categories":["云计算"],"level":"1.7.4","depth":2,"next":{"title":"7. kubernetes 容器运行时","level":"1.8","depth":1,"ref":"","articles":[]},"previous":{"title":"6.3 Qos 源代码分析","level":"1.7.3","depth":2,"path":"chapter6/qos-sc.md","ref":"chapter6/qos-sc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","sharing","back-to-top-button","page-treeview","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter6/client-go.md","mtime":"2021-06-12T15:32:47.182Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-12T15:33:56.961Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.4 kubernetes go 客户端","date":"2021-04-06T11:58:51.000Z","draft":false,"tags":["kubernetes","client-go"],"categories":["云计算"],"level":"1.7.4","depth":2,"next":{"title":"7. kubernetes 容器运行时","level":"1.8","depth":1,"ref":"","articles":[]},"previous":{"title":"6.3 Qos 源代码分析","level":"1.7.3","depth":2,"path":"chapter6/qos-sc.md","ref":"chapter6/qos-sc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-search","-lunr","search-pro","-sharing","sharing-plus","back-to-top-button","splitter","github","favicon","-highlight","prism","pageview-count"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/XueqiangChen"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"asset/img/favicon.ico","bookmark":"asset/img/favicon.ico","appleTouch":"asset/img/favicon.ico","appleTouchMore":{"120x120":"asset/img/favicon.ico","180x180":"asset/img/favicon.ico"}},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"chenxueqiang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《kubernetes 学习笔记》","links":{"sidebar":{"AHA MOMENT":"https://ahamoment.cn"}},"gitbook":"*","description":"kubernetes 学习笔记"},"file":{"path":"chapter6/client-go.md","mtime":"2021-06-17T11:27:59.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-17T11:28:40.349Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -757,15 +779,15 @@ fmt.Printf(<span class="hljs-string">&quot;Created deployment %q.\n&quot;</span>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
@@ -773,15 +795,15 @@ fmt.Printf(<span class="hljs-string">&quot;Created deployment %q.\n&quot;</span>
         
     
         
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
         
     
         
