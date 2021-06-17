@@ -1,4 +1,4 @@
-name: github pages
+name: gitbook publish
 
 on:
   push:
@@ -7,26 +7,17 @@ on:
   pull_request:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  build:
+    name: Build Gitbook
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-      
-      - run: npm install -g gitbook-cli
-
-      - name: Install gitbook plugin
-        run: gitbook install
-
-      - name: Build
-        run: gitbook build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      # Check out the repo first
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # Run this action to publish gitbook
+      - name: Publish
+        uses: tuliren/publish-gitbook@v1.0.0
         with:
+          # specify either github_token or personal_token
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_book
-          user_name: 'XueqiangChen'
-          user_email: '569503960@qq.com'
+          # personal_token: ${{ secrets.PERSONAL_TOKEN }}
